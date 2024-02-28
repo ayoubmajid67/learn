@@ -1,0 +1,1225 @@
+<!--  roadMap -->
+html => hyperText Markup language : 
+the language to build the web 
+ ship + building + skeleton :
+
+<!-- versions :  -->
+-4 :
+-5 :
+
+
+<!-- what I need To learn :  -->
+text editor : 
+internet browser :
+windows and internet knowledge :
+always search : 
+have a target : 
+focus :
+always Search : 
+start any idea :
+always search before asking : 
+
+<!-- how to study -->
+watch videos with focus : 
+check courses code :
+do the assignments :
+
+
+<!-- elements and browser  -->
+
+html  element => tag : 
+
+html element => <html></html> parent of all  (head body footer .) 
+head element => <head></head> contains info about the page : (meta)
+body element => <body></body>  cover all element in the page 
+
+basic structure : ---------------------[-]
+<html>
+  <head>
+    information about the page 
+  </head>
+
+  <body>
+    cover all element of the page 
+  </body>
+
+</html>
+
+head element : ---------------------[-]
+title element => <title>Page name</title>  set the name of the page
+
+<!-- head and nested elements  -->
+
+meta element => <meta charset="UTF-8"> 
+1- WHAT IS IT ? 
+The charset attribute, often used in the <meta> tag of an HTML document,
+specifies the character encoding used in the document.
+Character encoding defines how characters in the document
+are represented as binary data.
+It's crucial to specify the correct character encoding to ensure
+that the web browser interprets and displays the text correctly
+
+2- The most common charset:
+ ✨UTF-8 (Unicode Transformation Format 8-bit)
+ ✨ISO-8859-1 (Latin-1): 
+ ✨UTF-16:
+
+meta element => <meta name="description" content="Text">
+1- what is it ?
+The HTML <meta> element with the name="description"
+attribute is used to provide a brief description of a web page's content.
+This description is often used by search engines and web crawlers
+as a summary of the page's content, and it may be displayed in search
+engine results.
+✨name="description" specifies that this <meta> 
+✨element is providing a description.
+content="This is a brief description of the content of my web page." i
+
+2-advantage ?
+Having a well-crafted meta description is essential for search engine 
+optimization (SEO) because it can influence whether users click 
+on your page when it appears in search results. 
+It's a good practice to write informative and engaging descriptions 
+that accurately represent the content of your web page. 
+
+meta E=><meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+1-what is it? 
+  The HTML `<meta>` element with the `name="viewport"` attribute is used to 
+  control how a web page is displayed on different devices,
+  particularly on mobile devices. 
+  It helps ensure that the web page's layout and text are properly 
+  scaled and adapted to the screen size of the device.
+
+✨`width=device-width`: This sets the width of the viewport to be equal to
+ the device's width. In other words, it ensures that the web page's 
+ content adjusts to fit the screen width of the device, which is essential 
+ for responsive design.
+
+✨- `initial-scale=1.0`: This sets the initial zoom level when the web page
+   is first loaded. A value of `1.0` means no zooming is applied,
+   so the web page is initially displayed at its natural size. Users can then zoom 
+   in or out as needed.
+
+2-advantage ?
+  Including this `<meta>` tag with these attributes is a common practice 
+  in responsive web design. It helps create a better user experience by making 
+  sure that web pages are readable and usable on a variety of screen sizes and devices,
+  from desktop computers to smartphones and tablets.
+    
+
+
+
+style element => <style></style> => for css code : 
+
+script element => <script></script>=> for javaScript code : 
+
+link element => <link rel="stylesheet" href="path"> => for add an external styling
+
+ comment => <!--whatever you want-->  => describe code :  || testing 
+
+
+<!-- doctype standard & quirks mode  -->
+doctype element => <!DOCTYPE html>  =>  identifier the html version : 
+ the DOCTYPE declaration in HTML specifies the version of HTML being 
+ used and can affect how web browsers render web pages.
+ Standard mode follows modern web standards, while quirks mode emulates older,
+ non-standard behavior for compatibility with legacy web content.
+
+
+
+1- if you don't specify the doctype :  
+ the quirks mode is working  => don't support some of  elements 
+ In quirks mode, the web browser behaves as if it is rendering content according
+ to older, non-standard specifications. This mode is primarily
+ used to ensure backward compatibility with older web pages that 
+ were designed before modern web standards.
+ 
+ ✨An example of a DOCTYPE declaration that triggers quirks mode for HTML 4.01 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+
+2- otherwise  : 
+ the standard mode is working => support all :
+ This declaration signals that you are using HTML5, which is the latest HTML
+ specification as of my knowledge cutoff date in September 2021.
+ In standard mode, the web browser should render the page according to the HTML5 
+ specification.  
+
+ ✨an example of html5:
+<!DOCTYPE html>
+
+<!-- heading and use cases -->
+heading element => <h1>large one</h1> <h2></h2> <h3></h3> <h4></h4> <h5></h5> <h6></h6>
+
+<!-- syntax and Tests -->
+1-the browser ignore the spaces :
+
+2- you can put   an element code in multiple line : 
+<meta name="viewport" 
+content="width=device-width,initial-scale=1.0"> 
+
+3- the value of attribute can be in single coat '' or double coat or nothing 
+if  it's one word : 
+example:
+<meta charset="UTF-8"
+charset='UTF-8'
+charset=UTF-8>
+
+
+In HTML (Hypertext Markup Language), the concepts of syntax and testing 
+are important for creating well-structured and functional web pages. 
+Here's how these concepts apply to HTML:
+
+1. **Syntax in HTML**:
+   -✨ **HTML Syntax**: HTML has its own set of rules and syntax for structuring web 
+   content. HTML documents are composed of elements and tags, and they follow a
+    hierarchical structure. Elements are enclosed in angle brackets, and tags 
+    consist of an opening tag `<tag>` and a closing tag `</tag>`, if applicable.
+   
+   -✨ **Attributes**: HTML elements often have attributes that provide additional
+    information about the element. Attributes are specified within the opening tag
+     and have a name and a value, separated by an equal sign, e.g., `attribute="value"`.
+   
+   -✨ **Proper Nesting**: Elements should be properly nested within each other. 
+    For example, a `<div>` element should not be placed inside a `<p>` element.
+     Proper nesting ensures the correct rendering of web content.
+   
+   -✨ **Valid HTML**: It's essential to write HTML code that adheres 
+   to the HTML specifications. You can use validation tools like the W3C Markup 
+   Validation Service to check your HTML documents for syntax errors and ensure 
+   they conform to the standards.
+
+2. **Testing in HTML**:
+   -✨ **HTML Validation**: Testing HTML documents for validity is crucial.
+    The W3C Markup Validation Service mentioned above can help identify syntax errors
+     and non-compliance with HTML standards.
+  
+   -✨**Cross-Browser Testing**: HTML pages may render differently in different web
+    browsers. Cross-browser testing involves testing your web pages in various browsers
+     to ensure they appear and function consistently across different platforms.
+
+   -✨**Responsive Design Testing**: If your web pages are designed to be responsive 
+   (adapting to different screen sizes and devices), you should test them on various 
+   devices, such as desktops, tablets, and smartphones, 
+   to ensure they display correctly.
+
+   -✨**Accessibility Testing**: Ensure that your HTML content is accessible
+    to users with disabilities. Testing includes checking for proper semantic HTML,
+     keyboard navigation, and screen reader compatibility.
+
+   -✨**Functional Testing**: If your web page contains interactive elements or forms,
+    you should test their functionality to ensure they work as intended.
+     This involves checking user interactions, form submissions, and error handling.
+
+In HTML, writing clean and valid code, along with thorough testing,
+ is essential for creating web pages that work reliably and provide a positive user 
+ experience. HTML validation tools and testing methodologies are valuable
+  resources to help ensure the quality and correctness of your HTML documents.
+
+
+  <!-- PARAGRAPH ELEMENT :  -->
+  <p>test</p> => block element : 
+
+  <!-- block and inline element : -->
+  In HTML and CSS, elements are classified into two primary categories:
+  block-level elements and inline elements. 
+  These classifications determine how elements behave in terms of layout 
+  and how they interact with other elements on a web page.
+
+1-Block-Level Elements:-----[-]
+
+✨Definition:
+Block-level elements are those elements that typically create a "block" 
+or rectangular box on a web page, and they often start on a new line.
+They span the full width of their parent container by default.
+
+✨Examples:
+Common block-level elements include <div>, <p>, <h1>, <ul>, <li>, <table>, 
+and <form>, among others.
+
+✨Behavior:
+Block-level elements create a visual separation between content,
+ and each block-level element typically starts on a new line.
+They can contain other block-level and inline elements, 
+creating a hierarchical structure.
+You can control their width, height, margins, and padding.
+
+2-Inline Elements:-----[-]
+
+✨Definition:
+Inline elements, as the name suggests, do not create a new block or line but
+ flow within the text or content of a block-level element.
+They only take up as much width as necessary for their content.
+
+✨Examples:
+Common inline elements include <span>, <a>, <strong>, <em>, <img>, <br>, and <i>, 
+among others.
+
+✨Behavior:
+Inline elements do not create a visual break or new line; they flow with the surrounding
+text or content.They cannot contain block-level elements but can contain other inline
+elements.You can control their width, height, margins, and padding to some extent, 
+but they won't affect the layout as much as block-level elements.
+
+<!-- element attributes -->
+In HTML, element attributes are additional pieces of information that can be 
+added to HTML elements to provide extra details or functionality. 
+Attributes are always specified in the opening tag of an HTML element and are written
+ as name-value pairs. Here's a brief overview of some common HTML attributes:
+
+✨id Attribute:
+Used to uniquely identify an element on a web page. IDs must be unique within a document.
+Example: <div id="header">...</div>
+
+✨class Attribute:
+Used to assign one or more class names to an element. Classes are often used to apply CSS
+ styles or JavaScript functionality to multiple elements.
+Example: <p class="highlighted">...</p>
+
+✨src Attribute:
+Typically used with elements like <img> <script></script> and <iframe>
+ to specify the source file or URL for the element's content.
+Example: <img src="image.jpg" alt="An image">
+
+✨href Attribute:
+Used with <a> elements to specify the URL to which the link points.
+Example: <a href="https://www.example.com">Visit Example.com</a>
+
+✨alt Attribute:
+Used with <img> elements to provide alternative text that describes the image. 
+It's important for accessibility and SEO.
+Example: <img src="icon.png" alt="An icon">
+
+✨title Attribute:
+Provides additional information about an element. Often displayed as a tooltip when the user
+ hovers over the element.
+Example: <a href="page.html" title="Visit this page">Link</a>
+
+✨style Attribute:
+Used to inline CSS styles directly within an HTML element. 
+Can be used for quick styling but is generally not recommended for larger projects.
+Example: <p style="color: blue; font-size: 16px;">Styled text</p>
+
+✨disabled Attribute:
+Used with form elements like <input> and <button> to disable their functionality.
+Example: <input type="text" disabled>
+
+✨placeholder Attribute:
+Used with form input elements to provide a hint or example text that disappears
+ when the user starts typing.
+Example: <input type="text" placeholder="Enter your name">
+
+✨data-* Attributes:
+Custom attributes starting with data- that allow you to store custom data in HTML
+ elements. These can be accessed and manipulated using JavaScript.
+Example: <div data-user-id="123">...</div>
+
+These are just a few examples of common HTML attributes.
+Different elements have specific attributes that are relevant to their purpose
+ and functionality. Understanding how to use attributes is important for building 
+ effective and interactive web pages.
+
+<!-- formatting Element  -->
+
+b element => <b>Text</b> => bold Text 
+strong element => <strong>text</strong> => bold && important 
+i element => <i>text</i>  => italic 
+em element => <em>text</em> => Emphasized
+mark element=> <mark>text</mark> => highlighted text 
+u element => <u>text</u> => underline 
+small element=> <small>text</small> => small text   
+del element => <del>test</del> => deleted test :  || discounted price 
+ins element => <ins>text</ins> => inserted text : 
+sub element=> <sub>text</sub> => subscript :under  
+example : <p>h<sub>2</sub>o</p>
+sup element => <sub>text</sub> => superscript :above
+example:  <p>x<sup>2</sup></p>
+
+
+
+<!-- link and anchor tag  -->
+
+<!--  a element -->
+<a href="URL"  target="">google</a>
+
+0-href attribute : 
+The `href` attribute is a fundamental attribute used in HTML anchor (`<a>`) 
+  elements to define a hyperlink. It specifies the URL (Uniform Resource Locator)
+   of the resource that the link points to. Here's all you need to know about the 
+   `href` attribute in anchor elements:
+
+  1. **Basic Usage:**
+     ```html
+     <a href="https://www.example.com">Visit Example.com</a>
+     ```
+  
+     In this example, the `href` attribute is set to "https://www.example.com,"
+     which is the URL of the target resource. When a user clicks on the link
+     text "Visit Example.com," the browser will navigate to the URL specified
+     in the `href` attribute.
+  
+  2. **Relative URLs:**
+  
+     The `href` attribute can also contain relative URLs, which are URLs that are
+     relative to the current document's location. Relative URLs are often used
+      when linking to resources within the same website.
+  
+     ```html
+     <a href="/about.html">About Us</a>
+     ```
+  
+     In this case, clicking the "About Us" link would navigate 
+     to the "about.html" page in the root directory of the current website.
+  
+  3. **Email Links:**
+  
+     The `href` attribute can be used to create email links,
+      which allow users to send emails to a specified email address 
+      when they click the link.
+  
+     ```html
+     <a href="mailto:contact@example.com">Contact Us</a>
+     ```
+  
+     Clicking the "Contact Us" link would open the default email
+      client with a new email message addressed to "contact@example.com."
+  
+  4. **Anchors to Page Sections:**
+  
+     The `href` attribute can also link to specific sections within the
+      same web page by using fragment identifiers. For example:
+  
+     ```html
+     <a href="#section1">Jump to Section 1</a>
+     ```
+  
+     In this case, clicking the link would scroll the page 
+     to the element with the `id` attribute of "section1."
+  
+  5. **JavaScript Actions:**
+  
+     You can use the `href` attribute to trigger JavaScript actions
+      or functions when the link is clicked by setting the attribute to
+       a JavaScript statement or function call.
+  
+     ```html
+     <a href="javascript:void(0);" onclick="myFunction();">Click Me</a>
+     ```
+  
+     Here, clicking the link would execute the JavaScript
+      function `myFunction()`.
+  
+  6. **Downloading Files:**
+  
+     The `href` attribute can link to downloadable files, 
+     such as PDFs or documents, allowing users to download the
+      file when they click the link.
+  
+     ```html
+     <a href="documents/my-document.pdf" download>Download PDF</a>
+     ```
+  
+     The `download` attribute, when present, suggests to the browser 
+     that the linked target should be downloaded instead of navigating to it.
+  
+  7. **Targeting Frames or Windows:**
+  
+     The `href` attribute can be used in conjunction with the `target` 
+     attribute to specify where the linked content should be displayed 
+     or opened. For example, `target="_blank"` will open the link in a new browser window or tab.
+  
+     ```html
+     <a href="https://www.example.com" target="_blank">Open in new tab</a>
+     ```
+  
+  The `href` attribute is a versatile attribute that allows you to 
+  create various types of hyperlinks, from simple external links to complex 
+  navigational elements and interactions on web pages. Its usage depends 
+  on the specific requirements of your web project.
+
+
+
+1- target  attribute:
+In HTML, the target attribute is used within anchor (<a>) and form (<>) 
+  elements to specify where the linked content or form submission results 
+  should be displayed or opened. The target attribute determines the context 
+  in which the linked resource or form action should be loaded or displayed. 
+  Here are some common values for the target attribute:
+
+  ✨ _blank: When you set target="_blank", it opens the linked content or form 
+  submission result in a new browser window or tab. This is commonly used when you 
+  want to open a link or form submission in a separate browsing context.
+ 
+  ✨ example:
+  <a href="https://www.example.com" target="_blank">Open in new tab</a>
+  
+  ✨_self: This is the default behavior.
+   It opens the linked content or form submission result in the same window 
+   or frame where the link was clicked or form was submitted. 
+   You typically don't need to specify this explicitly unless you want 
+   to override a previously set target attribute.
+  
+   ✨ example:
+   <a href="https://www.example.com" target="_self">Open in the same window</a>
+
+
+2-target for  anchor links------------[-]
+
+In CSS (Cascading Style Sheets), the `:target` pseudo-class is used 
+to select and style an HTML element that is the target of a fragment
+ identifier in the URL. It's commonly used to create interactive web pages
+  with anchor links that navigate to different sections of a document.
+
+Here's how it works:
+
+1. **HTML Structure:** In your HTML document, you define sections or elements with
+ `id` attributes. These `id` attributes are used as fragment identifiers in the URL.
+
+   ```html
+   <div id="section1">
+       <!-- Content for section 1 goes here -->
+   </div>
+
+   <div id="section2">
+       <!-- Content for section 2 goes here -->
+   </div>
+   ```
+
+2. **Anchor Links:** You create anchor links in your HTML document that link 
+to these sections. These links use the `href` attribute to specify 
+the fragment identifier (the `id` of the target element).
+
+   ```html
+   <a href="#section1">Go to Section 1</a>
+   <a href="#section2">Go to Section 2</a>
+   ```
+
+3. **CSS with :target:** You can apply CSS styles to the target element using 
+the `:target` pseudo-class. When a link with a matching `href` is clicked,
+ the corresponding target element becomes the "target" and can be styled 
+ accordingly.
+
+   ```css
+   #section1:target {
+       background-color: yellow;
+   }
+
+   #section2:target {
+       background-color: lightblue;
+   }
+   ```
+
+4. **Behavior:** When you click on one of the anchor links, the URL in the browser's
+ address bar changes to include the fragment identifier (e.g., `#section1`). 
+ This makes the corresponding element with the matching `id` the target, 
+ and the CSS styles specified for `:target` will be applied.
+
+So, in this example, when you click the "Go to Section 1" link, 
+the background color of `#section1` will turn yellow.
+ Clicking "Go to Section 2" will change the background color of `#section2` 
+ to light blue.
+
+`:target` can be used for various interactive purposes on web pages,
+ such as creating navigation menus, one-page scrolling sites, 
+ or highlighting content sections when linked to from a table of contents.
+ It provides a way to style elements based on user interaction and URL
+ fragment identifiers.
+
+<!-- img and deal with paths  -->
+
+<img src="path" alt="description about the page">
+
+<!-- ul ol dl -->
+
+✨ul=> unordered list : 
+     li => list item 
+
+<!-- nested ul -->
+<ul>
+  <li>
+   text 
+   <ul>
+     <li>text</li>
+     ... 
+   </ul>
+  </li>
+</ul>
+
+✨ol => ordered list 
+li => list item 
+
+<ol attributes >
+<li></li>
+
+</ol>
+<!-- attributes -->
+
+<ol reversed>  reverse the ordering of items : 
+</ol>
+
+<ol start="startValue"> set the start  counting value 
+</ol>
+
+<ol  type="1 [A a] [I i]"> set the type of ordering 
+</ol>
+
+✨ dl => description list 
+dt => term
+dd => term details
+✨Examples
+<dl>
+  <dt>HTML</dt>
+    <dd>hyper text language</dd>
+    <dd>create the structure of the webpage </dd>
+   <dt>css</dt>
+   <dd>Cascading style sheet</dd>
+ 
+ </dl>
+
+ <!-- table -->
+ tr=> row 
+ td=> table data cell
+ th=> table header cell 
+
+
+ ✨structure : 
+ <table>
+  <thead>
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+  </tfoot>
+</table>
+
+this structure maintains  the correct order of items : 
+even if you change it in the code 
+
+<!-- table attributes -->
+<table  border="value"> add border with valuePx 
+
+</table>
+
+<table   cellpadding ="value"> deal the padding  with valuePx 
+
+</table>
+
+<!-- caption  -->
+<table>
+  <caption>Title</caption>  title of the table 
+</table>
+
+<!-- merge  -->
+✨colspan  control the number of cells  required of an  td  element
+✨rowspan  control the number of rows  required of an  td  element
+<table>
+  <tr>
+ <th>name</th>
+ <th>last</th>
+ <th>mark</th>
+</tr>
+ <tr>
+   <td>ayoub</td>
+   <td>majid</td>
+   <td>17</td>
+ </tr>
+ <tfoot>
+  <tr>
+     <td colspan="2">total</td>
+     <td>17.00</td>
+  </tr>
+ </tfoot>
+</table>
+
+<!-- span and break and horizontal line  -->
+
+✨span : for add a specific styling of content of another element : 
+<h1>My name is <span>ayoub</span></h1>
+
+✨br => new line :  <br>
+✨ hr => horizontal 
+
+
+<!-- div -->
+
+✨ div is a container of elements  : 
+example : 
+<div class="container">
+  <h1>book store</h1>
+  <p>this is my book welcome</p>
+</div>
+
+<style>
+  .container {
+    background-color: #ccc;
+    text-align: center;
+    padding: 4px;
+  }
+
+
+  /* html entities  */
+  HTML entities are special codes or sequences of characters used in HTML to represent 
+  characters that have special meanings or are not easily typed directly from the keyboard. 
+  They are used to display characters that might otherwise be misinterpreted by browsers
+   or to represent characters that have no direct keyboard input.
+
+HTML entities start with an ampersand (`&`) and end with a semicolon (`;`). 
+Here are some common HTML entities and their corresponding characters:
+
+1. **Character Entities:**
+
+   - `&amp` - Represents the ampersand character (`&`).
+   - `&lt` - Represents the less-than symbol (`<`).
+   - `&gt` - Represents the greater-than symbol (`>`).
+   - `&quot` - Represents double quotation marks (`"`).
+   - `&apos` - Represents single quotation marks (apostrophes) (`'`).
+
+  
+2. **Numeric Character References:**
+
+   Numeric character references allow you to represent characters using their 
+   Unicode code points. You use the format `&#xxx`, where `xxx` is the
+  decimal representation of the character's Unicode code point.
+   Example:
+   ```html
+  '&#169' => copyright icon  
+   ```
+   Output:
+   ```
+   © 2023 MyWebsite.com
+   ```
+
+3. **Named Entities:**
+
+   Named entities provide a more human-readable way to represent 
+   special characters. For example, `&copy` represents the copyright 
+   symbol ©.
+
+4. **Non-Breaking Space:**
+
+ ✨The non-breaking space entity, `&nbsp`, represents a space that prevents
+    line breaks or word wraps. 
+    It's useful for creating indentation or maintaining 
+    spacing in HTML.
+
+5. **Other Special Characters:**
+
+   HTML entities can represent a wide range of special characters,
+    including accented letters, mathematical symbols, arrows, and more.
+     For example,
+     ✨ `&eacute` represents the é character,
+     ✨and `&mdash`  represents an em dash (—).
+
+
+HTML entities are crucial for ensuring that your web pages are displayed
+ correctly and consistently across different browsers and devices, 
+ especially when dealing with non-standard characters or symbols. 
+ They help maintain the integrity of your content and make it accessible to
+  a global audience.
+
+  /* semantic element  */
+
+  Semantic elements in HTML are elements that convey meaningful information about
+   the structure and content of a web page to both browsers and developers. 
+   They provide context and describe the role of the contained content.
+    Using semantic elements helps improve the accessibility,
+     search engine optimization (SEO), and maintainability of web pages.
+      Here are some common semantic elements in HTML:
+
+1. **`<header>`:**
+
+   The `<header>` element typically represents the introductory content at the
+     beginning of a section or page. It often contains a site's logo,
+      navigation menus, and other key information.
+
+   ```html
+   <header>
+       <h1>My Website</h1>
+       <nav>
+           <ul>
+               <li><a href="/">Home</a></li>
+               <li><a href="/about">About</a></li>
+               <li><a href="/contact">Contact</a></li>
+           </ul>
+       </nav>
+   </header>
+   ```
+
+2. **`<nav>`:**
+
+   The `<nav>` element is used to define a section of navigation links, 
+    such as menus or lists of links to other parts of the website.
+
+   ```html
+   <nav>
+       <ul>
+           <li><a href="/">Home</a></li>
+           <li><a href="/about">About</a></li>
+           <li><a href="/contact">Contact</a></li>
+       </ul>
+   </nav>
+   ```
+
+3. **`<main>`:**
+
+   The `<main>` element represents the main content of a web page. There should be 
+    only one `<main>` element on a page, and it should contain the primary content 
+      of the page.
+
+   ```html
+   <main>
+       <h1>Welcome to My Website</h1>
+       <p>This is the main content of the page.</p>
+   </main>
+   ```
+
+4. **`<article>`:**
+
+   The `<article>` element is used to define a self-contained piece of content 
+    that can be distributed and reused independently. Articles can
+     include blog posts, news articles, comments, and forum posts.
+
+   ```html
+   <article>
+       <h2>Article Title</h2>
+       <p>Article content goes here.</p>
+   </article>
+   ```
+
+5. **`<section>`:**
+
+   The `<section>` element is a generic container for grouping related content. 
+    It doesn't have any specific semantic meaning on its own but is often used
+     to create subsections within a document.
+
+   ```html
+   <section>
+       <h2>Section Title</h2>
+       <p>Section content goes here.</p>
+   </section>
+   ```
+
+6. **`<aside>`:**
+
+   The `<aside>` element represents content that is tangentially related to the 
+    content around it. It's commonly used for sidebars, pull quotes,
+     or advertisements.
+
+   ```html
+   <article>
+       <h2>Article Title</h2>
+       <p>Article content goes here.</p>
+       <aside>
+           <h3>Related Links</h3>
+           <ul>
+               <li><a href="#">Link 1</a></li>
+               <li><a href="#">Link 2</a></li>
+           </ul>
+       </aside>
+   </article>
+   ```
+
+7. **`<footer>`:**
+
+   The `<footer>` element typically represents the closing section of a 
+    document or a section, containing metadata, copyright information, 
+    or contact details.
+
+   ```html
+   <footer>
+       <p> 2023 My Website</p>
+       <p>Contact: contact@example.com</p>
+   </footer>
+   ```
+
+Using semantic elements helps make your HTML code more meaningful and easier
+ to understand. It also benefits accessibility tools, search engines, and 
+ developers who work with your code. When combined with appropriate use of
+  headings (`<h1>`, `<h2>`, etc.) and other HTML elements, semantic elements 
+    provide a clear and structured representation of your web content.
+
+
+    
+    /* layout with div and classes */
+    <div class="header">
+    <h2>logo</h2>
+    <ul>
+        <li>home</li>
+        <li>about</li>
+        <li>Services</li>
+        <li>contact us</li>
+    </ul>
+</div>
+<hr>
+
+<div class="navigation">
+  <ul>
+     <li>link1</li>
+     <li>link2</li>
+     <li>link3</li>
+     <li>link4</li>
+     <li>link5</li>
+  </ul>
+</div>
+
+<hr>
+<div class="content">
+<img src="img1.jpg" alt="">
+</div>
+
+<div class="sidebar">
+
+
+</div>
+
+<hr>
+<div class="footer">
+
+</div>
+
+    /* layout with HTML entities and classes */
+    <header>
+    <h2>logo</h2>
+    <ul>
+        <li>home</li>
+        <li>about</li>
+        <li>Services</li>
+        <li>contact us</li>
+    </ul>
+</header>
+<hr>
+
+<nav>
+<ul>
+    <li>link1</li>
+    <li>link2</li>
+    <li>link3</li>
+    <li>link4</li>
+    <li>link5</li>
+</ul>
+</nav>
+
+<hr>
+<section>
+
+    
+    <figure>
+        <img src="img1.jpg" alt=""  style="width: 100px;">
+        <figcaption>caption of the image</figcaption>
+    </figure>
+</section>
+
+<aside>
+
+
+</aside>
+
+<hr>
+<footer>
+
+</footer>
+
+
+/* audio */----------------------[-]
+
+<audio src="path"></audio>
+
+/* multiple source  */
+
+if the first audio do not supported the browser will mov the the second source 
+<audio src="">
+  <source src="path1" type="mme type1">
+  <source src="path2"  type="mme type2">
+  </audio>
+
+/*Fallback Content:  */
+ In case the browser doesn't support the <audio> element or any of the specified formats, 
+ you can provide fallback content, which will be displayed to users. This is enclosed between
+ the opening and closing <audio> tags.
+<audio src="">
+  <source src="path1" type="mime type">
+  <source src="path2"  type="mime type">
+  error message 
+  </audio>
+
+
+
+
+  /* attribute  */
+ ✨ controls : show the controls 
+ ✨  loop:  infinite  play to audio 
+ ✨  autoplay : auto play the audio when the page load
+ ✨  muted : mute the sound of the audio 
+ ✨  type  :attribute to define the MIME type of the audio file. This helps 
+            the browser identify which format to use. Common MIME types include 
+            ✨audio/mpeg (MP3), 
+            ✨ audio/ogg (Ogg Vorbis), 
+            ✨ and audio/wav (Waveform Audio File Format).
+ 
+ ✨ preload attribute: You can use the preload attribute to specify whether the browser
+  should preload the audio content. It can take values like none, metadata, or auto. 
+  
+  1-preload="none": Use when you want to minimize initial page load times and conserve bandwidth.
+   Suitable for pages with many media elements.
+
+  2-preload="metadata": Use when you want to display essential information about the media 
+  without fully downloading it. This can enhance user experience by showing the media's 
+  duration or dimensions.
+
+  3-preload="auto": Use when you want to ensure seamless playback by preloading the entire media
+   file. This is ideal for media elements that are expected to be played immediately or for 
+   longer media files
+
+   /* video tag */
+/* the same to audio with added attributes  */
+<video>
+
+<source src="path" type="mime type">
+
+</video>
+
+/* added attributes */
+width: width of video
+height: height of video  
+poster: cover of the video 
+
+/* add translation of video :  */
+example : 
+<video  controls width="100%"  poster="img1.jpg" >
+
+<source src="video/plasma_ball_-_11414 (720p).mp4" type="video/mp4">
+your browser does not support video tag 
+<track src="my_fileEn.vtt" kind="subtitles" srclang="en" label="english">
+<track src="my_fileAr.vtt" kind="subtitles" srclang="ar" label="arabic">
+</video>
+
+
+/* forms*/
+
+/* form */ ----------------[]
+
+HTML forms are a fundamental part of web development, allowing users to input data and
+ submit it to web servers for processing. HTML forms are created using the <form> element
+   and can include various attributes to control their behavior and appearance.
+    Here are some important attributes used with the <form> element:
+<form action=""></form>
+/* form attributes :  */
+✨action : 
+The action attribute specifies the URL of the server-side script or endpoint to which
+ the form data should be submitted when the user submits the form.
+Example: <form action="/submit-form.php">
+
+✨method:
+The method attribute determines how the form data is sent to the server. It can be either GET or
+ POST.
+.GET appends the form data to the URL as query parameters. It is suitable for simple queries
+ and should not be used for sensitive data.
+
+ .POST sends the form data in the request body. It is suitable for larger data sets 
+and sensitive information.
+Example: <form action="/submit-form.php" method="POST">
+
+✨target:
+The target attribute specifies where the response from the server should be displayed.
+  Common values include _self (default, same window), _blank (new tab or window), 
+  or the name of an iframe.
+ Example: <form action="/submit-form.php" method="POST" target="_blank">
+
+✨name:
+ The name attribute assigns a unique name to the form, which can be used to reference the form
+ in JavaScript or CSS.
+ Example: <form name="myForm">
+
+✨autocomplete:
+ The autocomplete attribute controls whether the browser should offer to autocomplete form 
+ fields based on previously entered data.
+ Values include on (default), off, username, current-password, etc.
+ Example: <form action="/login" method="POST" autocomplete="on">
+
+✨novalidate:
+ The novalidate attribute, when present, disables browser-based form validation. 
+ It is useful when you want to perform custom validation with JavaScript.
+ Example: <form action="/submit-form.php" method="POST" novalidate>
+
+
+✨accept-charset:
+ The accept-charset attribute specifies the character encoding that the server should use 
+ when processing form data.
+ Example: <form action="/submit-form.php" method="POST" accept-charset="UTF-8">
+
+
+  /* inputs :  */
+
+  <input> Element (Text Input):
+
+✨type: Specifies the type of input element
+ (e.g., text, password, email, number, checkbox, radio, file, date, color, etc.).
+
+ ✨name: Provides a name for the input element, which is used to identify 
+the input data when the form is submitted.
+
+✨value: Sets the initial value for the input element.
+✨placeholder: Displays a hint or example text within the input field.
+✨required: Specifies that the input field must be filled out before submitting the form.
+✨disabled: Disables the input field, preventing user interaction.
+✨readonly: Makes the input field read-only, preventing user editing.
+✨maxlength: Sets the maximum number of characters allowed in a text input.
+✨min and max (for number inputs): Define the allowable numeric range.
+
+✨pattern: Specifies a regular expression pattern for input validation.
+<label for="phone">Phone Number:</label>
+<input type="text" id="phone" name="phone" pattern="\d{3}-\d{3}-\d{4}" required>
+
+✨autocomplete: Controls whether the browser should suggest autocompletions for the input.
+✨autofocus: Automatically gives focus to the input element when the page loads.
+
+/* label with input  */
+<label for="inputId"></label>
+<input type="radio" name="id" id="">
+
+example : 
+<!-- // link label with input using id  -->
+<div>
+ <input type="radio" name="os" value="windows" checked id="win"> 
+ <label for="win">windows</label>
+ </div>
+
+
+ /* check box */
+ <input type="checkbox" name="os" value="windows" checked id="win1"> 
+       <label for="win1">windows</label>
+     </div>
+     <div>
+        <input type="checkbox" name="os" value="mac" id="mac1" checked> 
+        <label for="mac1">mac</label>
+      </div>
+      <div>
+        <input type="checkbox" name="os" value="linux" id="linux1"> 
+        <label for="linux1">linux</label>
+      </div>
+
+  /* select   */
+
+✨name: Provides a name for the dropdown list, used to identify the selected option(s) 
+when the form is submitted.
+
+✨size: Sets the number of visible options when the dropdown list is displayed.
+✨multiple: Allows multiple options to be selected (only if present).
+✨disabled: Disables the dropdown list, preventing user interaction.
+✨required: Specifies that an option must be selected before submitting the form.
+/* example  */
+<label for="book">choose book</label>
+  <select name="selectedBook" id="book" multiple>
+  <optgroup label="cat1" >
+    <option value="1" selected>book 1</option>
+    <option value="2">book 2</option>
+    <option value="3">book 3</option>
+  </optgroup>
+  <optgroup label="cat2">
+    <option value="4">book gin 1</option>
+    <option value="5">book gin 2</option>
+    <option value="6">book gin 3</option>
+  </optgroup>
+  
+/* text aria */
+<textarea> Element (Multiline Text Input):
+
+The <textarea> element allows users to enter multiple lines of text, 
+  making it suitable for longer text entries, comments, or messages.
+
+ ✨name: Provides a name for the textarea, used to identify the text input when the form is 
+submitted.
+
+ ✨rows and cols: Specify the initial number of rows and columns displayed in the textarea.
+ ✨placeholder: Displays a hint or example text within the textarea.
+ ✨required: Specifies that text must be entered into the textarea before submitting the form.
+ ✨disabled: Disables the textarea, preventing user interaction.
+ ✨readonly: Makes the textarea read-only, preventing user editing.
+
+ /* example */
+ <textarea name="textAriaContent" id="" cols="30" rows="10" placeholder="text"></textarea>
+
+ /* date list  */
+
+ The <datalist> element in HTML is used in conjunction with the <input> element to provide 
+  a list of predefined options or suggestions for user input. It allows you to create an 
+  auto-complete or suggestion feature for text input fields, making it easier for users to
+   select valid input values while still allowing freeform text entry.
+
+  1- Create a <datalist> Element:
+
+    <datalist id="colors">
+    <option value="Red">
+    <option value="Green">
+    <option value="Blue">
+    <option value="Yellow">
+    <option value="Orange">
+</datalist>
+
+2-Associate the <datalist> with an <input> Element:
+
+You associate the <datalist> with an <input> element using the list attribute 
+  and setting its value to the id of the <datalist>.
+
+<label for="colorChoice">Choose a color:</label>
+<input type="text" id="colorChoice" name="color" list="colors">
+
+
+✨example : 
+<form>
+    <label for="colorChoice">Choose a color:</label>
+    <input type="text" id="colorChoice" name="color" list="colors">
+    <datalist id="colors">
+        <option value="Red">
+        <option value="Green">
+        <option value="Blue">
+        <option value="Yellow">
+        <option value="Orange">
+    </datalist>
+    <input type="submit" value="Submit">
+</form>
+
+
+/* Q and blockQuote wbr,button,bdi */
+
+✨quote  is contain "" and it's an  inline element  => <q>Text</q>
+
+✨block  quote element  => <blockquote>text</blockquote>
+
+✨button element =>   <button>Text</button>
+
+break line => <wbr>
+
+bdi => change the directly of content 
+
+/* example  */
+<h1>2  <bdi>السلام عليكم</bdi>   world </h1>
+
+
+
+
+/* code */
+<code>code</code> => maintains spaces 
+/* pre */
+<pre>code</pre> => maintains spaces  && break line 
+
+/* iframe */
+<iframe src="path" frameborder="0"></iframe>
+
+
+<div role="divRole"></div>
+
+

@@ -1,0 +1,145 @@
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+:root{
+    --mainSideBackColor:#E8E9EA; 
+    --userBorderColor: #FD5802; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+    display: flex; 
+    background: rgb(86,48,154);
+    background: linear-gradient(203deg, rgba(86,48,154,1) 41%, rgba(9,9,121,1) 86%);
+    padding-top: 23px;
+    padding-right:10px;
+    padding: 0;    
+    background: rgb(11, 13, 29) ;
+
+}
+
+.leftSide,
+.rightSide{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height:100vh ;
+
+}
+
+.leftSide{
+
+   gap: 20px;
+   flex-shrink: 0;
+   flex-basis: 24vw;
+   transition: all 1s ;
+
+
+}
+.rightSide{
+    padding: 24px 0px;
+    flex-grow: 1;
+    background-color: var(--mainSideBackColor); 
+    gap: 30px;
+}
+
+.leftSide .leftSideItems{
+  
+    background-color: white;
+    width: 77%;
+    padding:  8px 3px ;
+    border-radius: 40px;
+    text-wrap: nowrap;
+    text-indent:16px;
+    text-overflow: ellipsis ;
+    overflow: hidden;
+    user-select: none;
+    cursor: pointer;
+}
+.leftSide .leftSideItems h4{
+    font-weight: 800;
+    width: 96%;
+}
+.leftSide .leftSideItems h5{
+    padding-left: 1.5px;
+    font-size: 86%;
+}
+.rightSide article{
+
+   width: 90%;
+   padding: 14px;
+   box-shadow: 0px 2px  8px rgba(0, 0, 0, 0.433);
+   background-color: white;
+   border-radius: 10px;
+   
+}
+.rightSide article h3{
+    padding-bottom: 10px ;
+    border-bottom: 1.9px solid rgba(0, 0, 0, 0.405);
+   
+}
+.rightSide article p{
+    padding-top: 10px; 
+    overflow: hidden;
+}
+.leftSide .leftSideItems{
+    border: 5px solid transparent; 
+}
+
+.leftSide .activeUser{
+    border: 5px solid var(--userBorderColor); 
+}
+#menu{
+
+    color: white;
+    font-size: 34px;
+    align-self: flex-end;
+    background: none;
+    background-color: aliceblue; 
+}
+
+
+@media (max-width:1034px){
+
+    .leftSide{
+        font-size: 70%; 
+    }
+
+    .leftSide .leftSideItems{
+        
+    }
+    .leftSide .leftSideItems{
+        text-indent: 10px;
+    } 
+ 
+
+}
+@media (max-width:498px){
+    .leftSide .leftSideItems{
+        text-indent: 5px;
+        width: 90%;
+    } 
+    .leftSide{
+        font-size: 60%; 
+    }
+    .leftSide .leftSideItems h5{
+        font-size: 77%;
+    }
+}
+
+@media (max-width:432px){
+    .leftSide .leftSideItems{
+        text-indent: 0px;
+        text-wrap: wrap;
+       
+    } 
+
+    
+
+}
+

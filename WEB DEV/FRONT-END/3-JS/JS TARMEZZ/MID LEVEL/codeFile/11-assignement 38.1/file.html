@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+  *{
+    font-family: cursive;
+    box-sizing: border-box;
+
+  }
+  body{
+    transition: 0.5s;
+  }
+  .container{
+ width: 100%;
+ height: 96vh;
+
+ display: flex;
+ justify-content: center;
+ align-content: center;
+ align-items: center;
+ align-self: center;
+  }
+  button{
+   
+ transition: 0.5s;
+  
+  }
+
+</style>
+<body id="body">
+    
+    <div class="container">
+        <button id="submit" style="font-size: 30px;padding: 3px 20px;"  onclick="click();">click</button>
+
+
+ 
+    </div>
+    
+           <script>
+            
+        
+        
+            const btn=document.getElementById('submit'); 
+            const body=document.getElementById('body');
+            
+        
+          let RandomColor=["red","green","black","yellow","blue","gray"]
+
+          function getRandomInt(min, max) {
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        let Random=function(RandomArray){
+
+            const max=RandomArray.length; 
+            const min =0 ; 
+            let index=getRandomInt(max,min);   
+            console.log(index); 
+            btn.style.color="black";   
+          body.style.background=RandomArray[index];   
+          
+            }
+
+        btn.onclick=function(){  
+          btn.style.backgroundColor="blue"; 
+
+          let counter = 0;
+
+        const intervalId = setInterval(() => {
+        
+            Random(RandomColor);
+          counter++;
+
+          // Stop the interval after 5 iterations
+          if (counter === 5) {
+            clearInterval(intervalId);
+            console.log("Interval stopped.");
+          }
+        }, 1000);
+
+        Random(RandomColor);
+          setTimeout(() => {
+            btn.style.background="#ececec"; 
+            btn.style.color="black";
+            body.style.background="none"; 
+          },6100);
+
+        }
+
+
+
+    
+    
+
+     
+    
+
+    </script>
+</body>
+</html>

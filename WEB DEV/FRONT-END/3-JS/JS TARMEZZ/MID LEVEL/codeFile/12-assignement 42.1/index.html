@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=
+   , initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let array = [21, 35, 4, 65, 5, 67];
+
+      let getLengthAndCumulative = (arr) => {
+        let newArr = [];
+
+        newArr.push(arr.length);
+
+        let value = arr.reduce((pre, current) => {
+          return pre + current;
+        });
+        newArr.push(value);
+
+        return newArr;
+      };
+
+      let newArr = getLengthAndCumulative(array);
+
+      console.log(newArr);
+    </script>
+  </body>
+</html>

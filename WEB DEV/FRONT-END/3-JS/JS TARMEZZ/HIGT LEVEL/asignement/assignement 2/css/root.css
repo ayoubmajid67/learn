@@ -1,0 +1,34 @@
+*{
+    padding: 0;
+    margin: 0;
+    transition: 0.4s;
+box-sizing: border-box;
+font-family: var(--primitiveFont);
+user-select: none;
+
+}
+
+
+:root{
+ 
+
+--primitiveColor:white; 
+
+--bodyBackgroundColor:black; 
+--primitiveFont:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+--linkColor:rgb(205, 122, 38); 
+--containerShadowColor:rgba(255, 0, 0, 0.695); 
+--inputBorderColor:rgba(104, 20, 164, 0.493); 
+}
+
+
+body{
+    background-color: var(--bodyBackgroundColor);
+    color:var(--primitiveColor);
+    width: 100%;
+    height: 100%;
+
+}
+a{
+    color: var(--linkColor);
+}

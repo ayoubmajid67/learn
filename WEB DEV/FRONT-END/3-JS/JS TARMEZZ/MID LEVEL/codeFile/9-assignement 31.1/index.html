@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <center><h1 id="result"></h1></center>
+
+
+    <script>
+        
+
+    let result=document.getElementById("result"); 
+    console.log(result)
+for(let i=1; i<=10;i++){
+   result.innerHTML+=("Multiplication Table of "+i+ "<br><br>")
+    for(let j=1 ; j<=10;j++){
+
+        result.innerHTML+=(i +"*"+j+ "=" +(i*j) + "<br>");
+    }
+
+    result.innerHTML+=("<br><hr><br>"); 
+
+}
+    </script>
+</body>
+</html>

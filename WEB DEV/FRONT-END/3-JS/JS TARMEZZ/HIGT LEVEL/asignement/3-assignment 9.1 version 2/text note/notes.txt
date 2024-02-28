@@ -1,0 +1,17 @@
+    --mainSideBackColor: #E8E9EA;
+    --userBorderColor: #FD5802;
+
+ bodyBackColor: linear-gradient(203deg, rgba(86,48,154,1) 41%, rgba(9,9,121,1) 86%);
+
+
+Request INformation 
+
+posts----------
+
+title : 
+body : 
+
+
+user ------------
+username
+email

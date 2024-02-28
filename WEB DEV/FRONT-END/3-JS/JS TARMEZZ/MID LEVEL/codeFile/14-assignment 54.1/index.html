@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+     <!-- _________________________css code __________________________ -->
+    <style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --infoBack: #000041;
+  --fontFamily: cursive;
+}
+
+body {
+  transition: all 2s;
+}
+.container {
+  width: 100%;
+  height: 98vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: center;
+  align-content: center;
+  align-items: center;
+  padding: 5px;
+  font-family: var(--fontFamily);
+  gap: 1px;
+}
+
+.container .getInfo {
+  flex-grow: 0.55;
+  width: 100%;
+  background-color: var(--infoBack);
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  align-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 5px #47474a;
+  min-height: 200px;
+}
+
+.container .getInfo #remove,
+.container .getInfo #submit,
+.container .getInfo #nameInput {
+  font-size: 26px;
+  margin-top: 50px;
+  padding: 4px 0px;
+  border-radius: 6px;
+}
+
+.container .getInfo #remove,
+.container .getInfo #submit {
+  padding: 4px 8px;
+}
+
+.container .showResult {
+  width: 100%;
+  flex-grow: 0.45;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  gap: 5px;
+  overflow: auto;
+}
+
+.container .showResult h1 {
+  font-weight: 600;
+  word-wrap: break-word; /* Allow long words to wrap */
+  transition: all 0.6s;
+  padding: 10px;
+}
+
+.container .showResult #showDefaultResult:hover {
+  background-color: red;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.container .showResult h1 span:first-child {
+  color: red;
+  text-transform: uppercase;
+}
+
+.container .showResult h1 span {
+  font-weight: 700;
+  text-shadow: 1px 1px 10px rgb(75, 63, 63);
+}
+
+.container .showResult .greenHover:hover {
+  background-color: green;
+}
+
+
+    </style>
+
+
+  </head>
+  <style></style>
+  <body>
+    <div class="container">
+      <div class="getInfo">
+        <input type="text" name="" id="nameInput" placeholder="name" />
+
+        <button id="submit">submit</button>
+        <button id="remove">remove</button>
+      </div>
+
+      <div class="showResult" id="showResult">
+        <h1 id="showDefaultResult">
+          <span>p</span>lease <span>e</span>ntre <span>y</span>our
+          <span>n</span>ame
+        </h1>
+      </div>
+    </div>
+  
+   
+
+<!-- _____________________________script code ________________________-->
+    <script>
+   
+// maxElement= 5;
+
+const submitBtn = document.getElementById("submit");
+const showDefaultResult = document.getElementById("showDefaultResult");
+const showResult = document.getElementById("showResult");
+const nameInput = document.getElementById("nameInput");
+const remove = document.getElementById("remove");
+
+// represent the max element to change justify-content style from showREsult div  to  flex-start : 
+const maxElement = 5;
+
+let objects = document.getElementsByClassName("object");
+
+
+//submit event ___________________________________________________________________________
+submitBtn.onclick = function () {
+  const inputValue = nameInput.value;
+  
+  if (!isValid(inputValue)) {
+    alert("you have to enter the name");
+    return;
+  }
+
+  SetJustifyCenter();
+  let newElement = prepareElement(inputValue);
+
+  pushObject(newElement);
+
+  // this function is  for control the  <h1>please entre your name</h1> => (turn on display none or block)
+  setDefaultResult();
+};
+
+function isValid(inputValue) {
+  return inputValue != "";
+}
+
+function prepareElement(inputValue) {
+  let newElement = CreateObject(inputValue);
+  newElement = setClassName(newElement);
+  return newElement;
+}
+
+function CreateObject(inputValue) {
+  let newElement = document.createElement("h1");
+  newElement.textContent = inputValue;
+  return newElement;
+}
+function setClassName(object) {
+  object.classList.add("object", "greenHover");
+  return object;
+}
+function SetJustifyCenter() {
+  if (maxElement <= getNbrObject())
+    showResult.style.justifyContent = "flex-start";
+  else showResult.style.justifyContent = "center";
+}
+
+function getNbrObject() {
+  return document.getElementsByClassName("object").length;
+}
+
+function setDefaultResult() {
+  if (getNbrObject() > 0) showDefaultResult.style.display = "none";
+  else showDefaultResult.style.display = "block";
+}
+
+function pushObject(object) {
+  showResult.appendChild(object);
+}
+
+
+/// remove event _______________________________________________________
+remove.onclick = function () {
+  if (isEmpty()) alert("there is no element :");
+  else {
+    removeObject(objects[getNbrObject() - 1], showResult);
+    setDefaultResult();
+    SetJustifyCenter();
+  }
+};
+
+function isEmpty() {
+  return getNbrObject() == 0;
+}
+
+function removeObject(object, parent) {
+  showResult.removeChild(object);
+}
+
+
+
+    </script>
+  </body>
+</html>

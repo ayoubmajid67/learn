@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --infoBack: #000041;
+  --fontFamily: cursive;
+}
+
+body {
+  transition: all 2s;
+}
+.container {
+  width: 100%;
+  height: 98vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: center;
+  align-content: center;
+  align-items: center;
+  padding: 5px;
+  font-family: var(--fontFamily);
+  gap: 1px;
+}
+
+.container .getInfo {
+  flex-grow: 0.55;
+  width: 100%;
+  background-color: var(--infoBack);
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  align-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 5px #47474a;
+  min-height: 200px;
+}
+
+.container .getInfo #remove,
+.container .getInfo #submit,
+.container .getInfo #nameInput {
+  font-size: 26px;
+  margin-top: 50px;
+  padding: 4px 0px;
+  border-radius: 6px;
+}
+
+.container .getInfo #remove,
+.container .getInfo #submit {
+  padding: 4px 8px;
+}
+
+.container .showResult {
+  width: 100%;
+  flex-grow: 0.45;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  gap: 5px;
+  overflow: auto;
+}
+
+.container .showResult h1 {
+  font-weight: 600;
+  word-wrap: break-word; /* Allow long words to wrap */
+  transition: all 0.6s;
+  padding: 10px;
+}
+
+.container .showResult #showDefaultResult:hover {
+  background-color: red;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.container .showResult h1 span:first-child {
+  color: red;
+  text-transform: uppercase;
+}
+
+.container .showResult h1 span {
+  font-weight: 700;
+  text-shadow: 1px 1px 10px rgb(75, 63, 63);
+}
+
+.container .showResult .greenHover:hover {
+  background-color: green;
+}

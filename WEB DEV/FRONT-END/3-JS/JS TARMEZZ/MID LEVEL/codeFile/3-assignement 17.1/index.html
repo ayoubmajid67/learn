@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+ 
+    <div class="container">
+       <div class="Pwidth">
+        <label for="weight">weight</label><br>
+        <input type="number" name="width" id="weight">
+    </div>
+     
+    <div class="Pheight">
+        <label for="height">height</label><br>
+        <input type="number" name="height"  id="height">
+    </div>
+        <button id="submit">submit</button><br>
+
+    
+    </div>
+
+    <div class="ResultContainer">
+        <h1  id="result">result</h1>
+    </div>
+   
+
+    <script>
+        let inp1=document.getElementById('weight'); 
+let inp2=document.getElementById('height'); 
+let btn=document.getElementById('submit'); 
+let outResult=document.getElementById('result'); 
+
+
+
+btn.onclick=function(){
+
+    if(inp1.value==""){ 
+
+         alert("you must entre the weight : "); 
+    }
+else if(inp2.value==""){ 
+    alert("you must entre the height "); 
+}
+
+else if(inp1.value=="" || inp2.value==""){
+
+    alert("you need to entre the weight and the height before get  your NBM "); 
+}
+
+else if(!Boolean(parseFloat(inp1.value))|| !Boolean(parseFloat(inp2.value))){ 
+
+    alert(" invalid value"); 
+}
+
+else{
+ let result=parseFloat(inp1.value)/(parseFloat(inp2.value)*parseFloat(inp2.value));   
+ 
+ 
+ switch(true){
+
+    case  result >=40:
+
+    outResult.innerText="سمنة خطيرة"; 
+   
+break; 
+
+ case  result >=35:
+
+ outResult.innerText="سمنة درجة تانية";
+   
+break; 
+
+case  result >=30:
+
+outResult.innerText="سمنة درجة اولى";
+
+break; 
+
+case  result >=25:
+
+outResult.innerText="وزن زاىد";
+
+break; 
+
+case  result >=18:
+
+outResult.innerText="وزن متالي"; 
+
+break; 
+
+
+case  result <18  && result>=0:
+
+    outResult.innerText="نحافة";
+
+break; 
+
+default: 
+alert("invalid choice"); 
+
+
+ }
+ 
+ console.log("your IBM  is ",result); 
+
+}
+
+
+
+
+}
+    
+   
+
+
+    </script>
+
+    <!--  -->
+    
+  <style>
+    body{
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+font-family: cursive;
+}
+
+.container{
+
+height: 380px;
+background-color: aquamarine;
+
+padding: 10px;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+align-items: center;
+
+margin-bottom: -22px;
+
+}
+
+
+.container  div{ 
+    text-align: center;
+    padding: 5px;
+height: 54vh;
+display: flex;
+flex-direction: column;
+
+
+}
+
+.container div label{ 
+    font-size: 26px;
+    font-weight: 470;
+   
+    
+}
+
+input{
+
+ padding: 4px;
+ padding-bottom: 6px;
+ border-bottom:2px solid rgb(255, 115, 0) ;
+
+ transition: 0.5s;
+}
+
+input:hover{ 
+
+    transform: scale(1.03);
+
+}
+input:focus{
+ box-shadow: 1px 1px 12px black ;
+
+}
+
+#submit{
+ font-size: 22px;
+padding: 3px 6px;
+border-radius: 3px;
+margin-bottom:40px;
+transition: 0.5s;
+font-weight: 700;
+}
+#submit:hover{
+color: rgb(97, 126, 17);
+
+
+}
+
+.ResultContainer{
+    
+  
+    height:54.6vh;
+    background-color: rgb(104, 192, 98);
+    border-top: 5px solid black;
+    text-align: center;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.ResultContainer h1{
+     font-size: 50px;
+}
+  </style>
+    <script src="index.js"></script>
+</body>
+</html>

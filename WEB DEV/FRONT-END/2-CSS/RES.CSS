@@ -1,0 +1,2453 @@
+الزيرو🤗 "بسم الله الرحمن الرحيم...". 00:00  #01 - Introduction And What I Need To Learn. 
+08:05  #02 - Your First Project And Syntax. 
+16:31  #03 - Element Styling. 
+22:26  #04 - Name Conventions And Rules. 
+30:14  #05 - Background - Color, Image, Repeat. 
+37:56  #06 - Background - Attachment, Position, Size. 
+45:52  #07 - Padding. 
+54:39  #08 - Margin. 
+01:02:40 #09 - Border. 
+01:08:23 #10 - Outline. 
+01:14:48 #11 - Display - Block, Inline Block, Inline. 
+01:26:25 #12 - Element Visibility And Use Cases. 
+
+01:31:19 #13 - Grouping Multiple Selectors. 
+01:37:02 #14 - Nesting. 
+01:42:07 #15 - Dimensions - Width And Height. 
+01:50:06 #16 - Overflow - Overflow-X And Overflow-Y. 
+01:54:44 #17 - Text - Color And Shadow. 
+01:58:24 #18 - Text - Alignment. 
+02:02:54 #19 - Text - Decoration And Transform. 
+02:06:44 #20 - Text - Spacing. 
+02:16:35 #21 - Text - Overflow And Use Cases. 
+02:20:21 #22 - Inheritance. 
+02:25:42 #23 - Typography - Font Family. 
+02:36:14 #24 - Typography - Font Size And CSS Units. 
+02:45:14 #25 - Typography - Font Style And Variant And Weight. 
+02:49:45 #26 - Mouse Cursor.
+
+02:53:46 #27 - Float And Clear. 
+03:02:34 #28 - Mastering The CSS Calculation. 
+03:11:12 #29 - Opacity. 
+03:13:59 #30 - Position. 
+03:24:52 #31 - Z-Index. 
+03:31:28 #32 - Lists Styling. 
+03:38:28 #33 - Table Styling. 
+
+03:45:47 #34 - Pseudo Classes. 
+03:57:00 #35 - Pseudo Elements - First Letter, First Line, Selection. 
+04:03:35 #36 - Pseudo Elements - Before, After, Content. 
+04:14:28 #37 - Pseudo Elements - Content And Trainings. 
+04:23:32 #38 - Vendor Prefixes. 
+04:32:27 #39 - Border Radius. 
+04:38:24 #40 - Box Shadow And Examples. 
+04:45:24 #41 - The Box Model And Box Sizing. 
+
+
+
+04:52:28 #42 - Transition. 
+05:05:44 #43 - !Important Declaration And Use Cases. 
+05:10:53 #44 - The Margin Collapse. 
+05:18:28 #45 - CSS Variables And Trainings. 
+05:26:47 #46 - Flex Box Parent - Direction, Wrap, Flow. 
+05:35:55 #47 - Flex Box Parent - Justify Content. 
+05:46:17 #48 - Flex Box Parent - Align Items. 
+05:50:59 #49 - Flex Box Parent - Align Content. 
+05:56:18 #50 - Flex Box Child - Grow, Shrink, Order. 
+06:02:59 #51 - Flex Box Child - Flex Basis, Flex Shorthand. 
+06:11:39 #52 - Flex Box Child - Align Self, Games, Task. 
+06:14:47 #53 - Finish Flex Froggy Game. 
+
+06:26:05 #54 - Filters. 
+06:29:46 #55 - Gradients. 
+06:41:54 #56 - Pointer Events And Caret Color. 
+06:46:19 #57 - Grid - Parent - Template Columns. 
+06:57:38 #58 - Grid - Parent - Template Rows And Gap. 
+07:05:15 #59 - Grid - Parent - Justify Content And Align Content. 
+07:09:39 #60 - Grid - Parent - Complete Layout With Template Areas. 
+07:21:16 #61 - Grid - Child - Grid Column And Grid Row. 
+07:28:26 #62 - Grid - Child - Grid Area And Trainings. 
+07:34:47 #63 - Grid - Min, Max And Auto Fill. 
+07:42:20 #64 - Finish The Grid Garden Game. 
+
+07:59:50 #65 - 2D Transform - Scale. 
+08:04:30 #66 - 2D Transform - Rotate. 
+08:11:26 #67 - 2D Transform - Translate. 
+08:16:27 #68 - 2D Transform - Skew. 
+08:21:13 #69 - 2D Transform - Matrix. 
+08:28:15 #70 - Transform - Origin. 
+08:36:29 #71 - 3D Transform - Rotate. 
+08:42:26 #72 - 3D Transform - Translate, Perspective, Perspective Origin. 
+08:46:59 #73 - 3D Transform - Backface Visibility And Flip Product. 
+
+الاسبوع الثامن والاخير حسب خطة الزيرو علي الموقع..
+08:56:01 #74 - Animation - KeyFrames, Name, Duration. 
+09:02:42 #75 - Animation - Iteration Count, Timing Function, Spinner Loading. 
+09:06:55 #76 - Animation - Direction, Fill Mode, Play State, Delay. 
+09:17:44 #77 - Up And Down Loading Animation Training. 
+09:23:31 #78 - CSS Selectors Reference Part 1. 
+09:32:45 #79 - CSS Selectors Reference Part 2. 
+09:41:47 #80 - CSS Selectors Reference Part 3. 
+09:51:45 #81 - CSS Selectors Reference Part 4. 
+10:00:44 #82 - CSS Selectors Reference Part 5. 
+10:08:21 #83 - Media Queries And Responsive Designs Intro. 
+10:17:06 #84 - Media Queries And Responsive Designs Standards. 
+10:28:23 #85 - Media Queries And Responsive Designs Practice. 
+10:39:52 #86 - Create Your Framework. 
+10:49:37 #87 - CSS Global Values. 
+11:00:05 #88 - The End.
+/* INTRODUCTION TO CSS  : */
+
+/*remastering for old people */
+new content in the last years 
+new quality 
+merge css all levels 
+old content is not bad 
+what about old content 
+focus on important content FlexBox
+notes on old properties float 
+
+/* what is css */
+cascade style sheet 
+language to create the presentation and visuals 
+ship + building + skeleton 
+
+/* levels  */
+css level 1 
+css level 2 
+css level 3 
+
+/* why I need to learn */
+web designer 
+ui developer
+front-end Developer  
+
+/* what I need to learn */
+learn html language 
+text editor [visual studio code ]
+internet browser 
+windows and internet knowledge 
+always search 
+have a Target 
+Focus 
+always search 
+start any idea 
+always search before asking 
+
+
+/* how to study  */
+watch video with focus 
+check courses code [https//elzero.org/category/courses/css-course]
+do the assignments  [https//elzero.org/category/courses/css-assignments]
+
+/* your first project and syntax */
+
+
+
+/* add style to an element  */
+selector{
+    property:values; 
+ /* ...  */
+}
+
+/* id selector  */
+#idName{
+    /* code */
+}
+
+/* class selector */
+.className{
+
+    /* code */
+}
+
+
+/* element styling */ ---------[-]
+
+tag and class add styling to all elements has the
+same tag 
+
+
+/* import css file  */
+
+1- internal css : 
+✨Location: Internal CSS is defined within the <style> element in the document's <head> section.
+ It applies styles to elements on the same page.
+
+ ✨Scope: Internal styles affect all elements on the page that match the selectors defined
+ within the <style> element.
+
+✨Usage: Suitable for medium-sized websites or individual pages where you want to maintain a
+ consistent look throughout the page.
+
+✨Example:
+<stye>
+
+</style>
+
+2- external css : 
+✨Location: External CSS is stored in separate .css files and linked to the HTML document
+ using the <link> element in the <head> section. It can be reused across multiple pages.
+
+✨Scope: External styles can apply to multiple HTML documents (pages) that link to the same
+ external CSS file.
+
+✨Usage: Ideal for larger websites or projects where you want to maintain consistent 
+styles across multiple pages.
+
+✨Example (HTML):
+<link rel="stylesheet" href="cssFileSrc">
+
+3- inline css : 
+✨Location: Inline styles are applied directly within an HTML element's opening tag,
+ using the style attribute.
+
+✨Scope: Inline styles apply only to the specific element they are defined on.
+ They don't affect other elements on the page.
+
+✨Usage: Useful for making quick, one-off style changes to individual elements.
+
+✨Example:
+<Tag style="styling... ">content</Tag>
+
+✨-Key Considerations:
+Inline styles override styles defined in internal and external CSS.
+External CSS provides the most maintainable and organized way to manage styles, 
+especially for larger websites.
+Separating CSS from HTML (external CSS) is considered a best practice for web development,
+ promoting modularity and maintainability.
+
+ /* name conventions and rules */ 
+1-you can't start by number :
+
+2-Use  CamelCase or snake_case:
+
+Choose a naming convention for your programming language and stick
+ to it.
+
+✨CamelCase: Capitalize the first letter of each word except the
+ first word, without spaces or underscores (e.g., myVariableName, 
+ calculateTotalAmount).
+ ✨snake_case: Use lowercase letters with underscores to separate words
+ (e.g., my_variable_name, calculate_total_amount). 
+
+ 3-Descriptive Names:
+
+ Use names that clearly and concisely describe the purpose and
+  functionality of the variable, function, class, or other code element.
+ Avoid overly cryptic or abbreviated names that are difficult to understand.
+  Clarity should take precedence over brevity.
+
+
+  /* background-color , image ,repeat */
+  selector{
+    background-color: color;
+    background-color: rgb(red green blue alphaChannel%);/*  0 ->255*/
+    background-color:#RRGGBB ; /*hex code*/
+    color: hsl(H, S%, L%);
+    H: Replace H with the desired hue value in degrees (0 to 360).
+    S: Replace S with the desired saturation value as a percentage (0% to 100%).  
+    L: Replace L with the desired lightness value as a percentage (0% to 100%).
+
+
+  }
+
+  /* background-img : */
+  select{
+
+    background-image: url("path");
+    /* default is repeat  */
+    background-repeat: repeat no-repeat repeat-x repeat-y;
+    
+    /* default scroll */
+    /* make background fixed in the page :  */
+    background-attachment: scroll fixed;   
+
+  /* default      background-position: left top ; */
+  /* directions : left right top bottom center  */
+  /* if set just one value the second it will be center auto */
+    background-position: xPosition yPosition ;
+ 
+ /* by using px   */
+  background-position: horizontalValuePx  verticalValuePx;
+ 
+  /* by using %   */
+  background-position: horizontalValue%  verticalValue%;
+
+  /* default is auto  */
+  background-size:auto cover contain ; 
+auto: This value allows the background image to display at its original size 
+     without scaling. If the background image is larger than the element,
+     it may overflow the element.
+
+cover: When you set background-size to cover, the background image is scaled to cover
+      the entire element while maintaining its aspect ratio. 
+      This means that the entire element will be covered by the background image, 
+      and it may result in some cropping of the image if the aspect ratios of the image and 
+      the element differ.
+
+contain: Setting background-size to contain scales the background image to fit within 
+      the element's content box while maintaining its aspect ratio. This ensures that the
+      entire background image is visible, and there will be no cropping. However, 
+      there may be empty space within the element if the aspect ratios differ.
+        
+ 
+  }
+
+  /* background-size with px an %  */
+  background-size:widthValue heightValue;
+
+  /* padding */
+selector{
+/* top right bottom left */
+/* [top bottom] [left right] */
+    padding:value;
+    padding-top: value;
+    padding-right: value;
+    padding-bottom: value;
+    padding-left: value;
+}
+ 
+/* margin */
+selector{
+
+    margin: value;
+    margin-top: value;
+    margin-right: value;
+    margin-bottom: value;
+    margin-left: value;
+
+/* centre a div : */
+
+}
+
+✨In CSS, setting margin: auto; is a common technique used to horizontally center
+an element within its parent container. This technique works for block-level
+elements like <div>, <p>, and others, as long as the parent container has a 
+defined width.
+
+Here's how it works:
+
+✨Horizontal Centering:
+
+When you apply margin: auto; to a block-level element (e.g., a <div>),
+it centers the element horizontally within its parent container.
+The margin on both the left and right sides of the element is automatically
+adjusted to evenly distribute the available space, causing the element to appear centered.
+Requires a Defined Width:
+
+✨To use margin: auto; for horizontal centering, the parent container 
+must have a defined width. If the parent container's width is not specified, 
+the centering won't work because there's no available space to distribute evenly.
+
+/* border */
+selector{
+
+    /* border width */
+    border-width: value;
+   
+    /* border color */
+    border-color:color; 
+ 
+    /* border style  */
+    border-style: TypeOfBorder; 
+
+    /* example */
+    border-width: 10px 40px;
+    border-style: solid;
+    border-color: red green  white violet;
+
+    /* shorthand */
+    border: width type color;     
+}
+
+/* outline  */
+selector{
+
+    /* the same  as border  */
+    /* but the difference here it's that the outline it's not  part of 
+    the element(selected element )  */
+    outline:width type color ;
+
+    /* allow just one direction  => outline-style: just one value  */
+}
+
+}
+/* block */
+take full width if no width 
+add  line break 
+respect padding margin  
+/* inline */
+-do not respect width and height 
+- do not respect padding and margin expect  [left + right]
+-do not add line break 
+-allow elements before and after it 
+
+/* inline block  */
+-allow elements before and after it 
+-respect padding margin  width and height 
+
+/* element visibility and use cases  */
+
+}
+
+/* display none  */
+selector{
+
+/* drop the  element  from the page   */
+display:none ;
+
+/* visibility  */
+/* default is visible */
+
+/* save its place in the flow */
+visibility: visible hidden ;
+
+
+}
+
+/* grouping  */
+CSS grouping is a technique that allows you to apply the same set of styles
+or rules to multiple selectors at once. It's done by listing multiple selectors separated by
+commas within a single set of curly braces. Key points about CSS grouping 
+include:
+✨Comma Separated Selectors: Group selectors by separating them with commas to apply the same 
+styles
+ to all elements that match any of the selectors listed.
+ /* Grouping selectors for various heading elements */
+h1, h2, h3 {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+✨Grouping Properties: You can also group property-value pairs within the curly braces, 
+making it efficient to apply multiple styles to a set of selectors.
+/* Grouping Properties for Button Styles */
+.primary-button, .secondary-button, .success-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}
+
+✨Nested Grouping: Nest grouped selectors within other grouped selectors to create more complex
+ rule sets,
+ allowing for organized and specific styling.
+ /* Base Styles for Navigation Items */
+.nav-item {
+  display: inline-block;
+  margin-right: 20px;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+/* Nested Grouping for Dropdown Items */
+.nav-item.dropdown {
+  position: relative;
+}
+
+✨Efficiency and Maintainability: CSS grouping reduces redundancy, making your code more
+ efficient and easier to maintain. It's especially useful when you need to make global style changes.
+
+✨Readability: Maintain readability by avoiding excessively long lists of selectors in a single group.
+ If necessary, break down your CSS rules into smaller, more manageable groups.
+
+
+ /* dimensions width and height*/
+
+✨width and height are fundamental properties in CSS that control the size and layout of elements 
+on a webpage. You can set them using various units of measurement, control minimum and maximum dimensions
+, and use them to create responsive and visually appealing web designs. Understanding how to manipulate
+ dimensions is crucial for effective web development and design.
+
+ ✨Width: Width refers to the horizontal dimension of an element, such as a div, image, or text 
+ block. It determines how wide the element is on the webpage.
+ ✨Height: Height refers to the vertical dimension of an element, specifying how tall it is on the webpage
+
+ ✨You can specify minimum and maximum dimensions for an element using min-width, max-width, min-height,
+  and max-height properties. These properties ensure that an element stays within a defined range of 
+  sizes
+ /* default  height and width is auto   */
+ ✨Setting width: auto; or height: auto; allows the browser to automatically determine the size
+   based on the content or the parent container.
+
+ ✨ make an element take just the needs space: 
+ selector{
+  width:fit-content; 
+ }
+
+ /* overflow x and y */
+ default visible 
+ ✨In CSS, the overflow property is used to control what happens when the content of an element 
+ overflows its container. It specifies how to handle content that is too large or too small to fit
+ within the allocated space. The overflow property can be applied to both block-level and
+ inline-level elements, such as divs, paragraphs, and images. Here's all you need to
+ know about the overflow property:
+ ✨visible (default): Content that overflows the container will be visible and may extend beyond
+  the container's boundaries, potentially overlapping other elements.
+
+ ✨hidden: Content that overflows the container will be clipped or hidden, and users won't be 
+ able to see or access it. This is often used when you want to hide overflowing content.
+ 
+ ✨scroll: Scrollbars (both horizontal and vertical) will appear inside the container, allowing 
+ users to scroll and access the overflowing content. Scrollbars will be shown whether the content
+  overflows or not.
+ 
+ ✨auto: Scrollbars will only appear when the content overflows the container. If the content fits
+  within the container, no scrollbars will be shown.
+ 
+ inherit: The overflow property will inherit the value from its parent element.
+
+ overflow-x:value;
+ overflow-y: value;
+ 
+
+/* text color,shadow */
+
+text-shadow: H-shadow V-shadow blur color; 
+
+/* text alignment  */
+
+✨1. direction Property:
+
+The direction property in CSS is used to control the text direction within an element. 
+It primarily affects the rendering of text in languages that are written from right to left (RTL),
+ like Arabic or Hebrew, as opposed to left-to-right (LTR) languages like English.
+
+Values:
+ltr (default): Indicates a left-to-right text direction.
+rtl: Indicates a right-to-left text direction.
+
+✨2. vertical-align Property:
+
+The vertical-align property is used to control the vertical alignment of inline or inline-block
+ elements within their containing elements. It doesn't apply to block-level elements.
+
+Values:
+baseline (default): Aligns the element's baseline with the baseline of its parent.
+top: Aligns the top of the element with the tallest element in the line.
+bottom: Aligns the bottom of the element with the lowest element in the line.
+middle: Vertically centers the element within the line.
+text-top: Aligns the top of the element with the top of the parent element's font.
+text-bottom: Aligns the bottom of the element with the bottom of the parent element's font.
+
+example : 
+<div>
+
+ <span>vf</span>
+    <img src="css_project/im1.png" alt="" style="width: 160px;">
+    dd
+</div>
+div{
+  text-align: center;
+  vertical-align: top;
+  background-color: rgb(196, 192, 192);
+  }
+  div img{
+      vertical-align: middle;
+  }
+
+
+  /* text decoration, transform */
+
+  ✨1. text-decoration Property:
+
+The text-decoration property in CSS is used to control the decoration of text, such as underlines,
+ overlines, line-throughs, and more. It allows you to add or remove visual effects to text within 
+ HTML elements like paragraphs, headings, and links.
+ 
+Values:
+none (default): No decoration is applied to the text.
+underline: Adds a line underneath the text.
+overline: Adds a line over the text.
+line-through: Adds a line through the text (strikethrough).
+blink: Causes the text to blink (rarely used and not widely supported).
+
+You can also specify multiple values to apply multiple decorations to text. For example, 
+text-decoration: underline overline; would underline the text and add a line above it.
+
+
+  ✨2. text-transform Property:
+
+The text-transform property is used to control the capitalization or transformation of
+ text within HTML elements. It allows you to change the case of text characters.
+
+Values:
+none (default): No transformation is applied.
+uppercase: Converts all text to uppercase.
+lowercase: Converts all text to lowercase.
+capitalize: Capitalizes the first character of each word.
+
+/* text spacing : */
+
+/* 
+-letter spacing : 
+-indentation 
+-line height 
+-word spacing + Wraping + white space 
+*/
+✨1. letter-spacing Property:
+
+The letter-spacing property in CSS controls the amount of space between individual characters in 
+text. It can be used to increase or decrease the space between letters.
+
+Values: You can specify values in various units like px, em, rem, and %.
+Positive values increase the space between characters.
+Negative values decrease the space between characters.
+normal (default) retains the default spacing between characters.
+
+✨2. word-spacing Property:
+
+The word-spacing property controls the amount of space between words in text. It's used to increase 
+or decrease the space between words within an element.
+
+Values: You can specify values in various units like px, em, rem, and %.
+Positive values increase the space between words.
+Negative values decrease the space between words.
+normal (default) retains the default spacing between words.
+
+✨3. text-indent Property:
+
+The text-indent property sets the indentation of the first line of text within an element,
+typically used for paragraphs and block-level elements.
+
+Values: You can specify values in various units like px, em, rem, and %.
+Positive values indent the first line to the right.
+Negative values indent the first line to the left.
+0 (default) means no indentation
+
+
+✨4. line-height Property:
+
+The line-height property controls the amount of space between lines of text within an element.
+ It's used to adjust the vertical spacing between lines, improving readability and aesthetics.
+
+Values: You can specify values in various units like px, em, rem, and %.
+Numeric values determine a multiple of the element's font size.
+normal (default) uses the browser's default line height.
+Values greater than 1 increase the line spacing, while values less than 1 decrease it.
+
+✨5. word-break Property:
+
+The word-break property controls how words should be broken and wrapped when they exceed 
+the available width of their container.
+
+Values:
+normal (default): Words break at their normal break points (e.g., spaces and hyphens).
+break-all: Words can break at any character, including within the word itself.
+keep-all: Words mostly break at spaces and hyphens, useful for East Asian languages.
+
+/* text overflow and use cases  */
+1. text-overflow Property Values:
+
+The text-overflow property can accept the following values:
+
+clip (default): This value indicates that any overflowing text should be clipped and not displayed.
+ It simply truncates the text, hiding the overflow.
+
+ellipsis: This value indicates that the overflowing text should be replaced with an ellipsis ("...").
+ It is often used to indicate that there is more text hidden.
+
+string: You can provide a custom string to replace the overflowing text. This is particularly 
+useful when you want to show something other than an ellipsis, like "Read more" or "..." based on your 
+design.
+
+/* inheritance  */
+
+Inheritance is a fundamental concept in Cascading Style Sheets (CSS) that determines how styles are
+passed down from parent elements to their child elements in the Document Object Model (DOM).
+Understanding inheritance is crucial for effectively styling web documents and maintaining a consistent 
+design throughout a website. Here's all you need to know about CSS inheritance:
+
+1. Definition of Inheritance:
+
+Inheritance in CSS refers to the process by which property values applied to a parent element
+(the "ancestor" or "parent") are automatically inherited by its child elements (the "descendants").
+This inheritance allows you to define styles at a higher level, reducing the need to specify styles 
+for each individual element in your document.
+
+2. Inherited and Non-Inherited Properties:
+
+Not all CSS properties are inherited. CSS properties are categorized as either inherited or
+ non-inherited:
+
+Inherited Properties: These are properties whose values are passed down from parent elements
+ to their children. For example, font-family, font-size, color, and line-height are inherited properties.
+  If you set a font size on a parent element, child elements will inherit that font size by default.
+
+Non-Inherited Properties: These are properties whose values are not inherited by 
+child elements. For example, background-color, border, and margin are non-inherited properties.
+ Child elements do not automatically inherit these values from their parent.
+
+
+ 3. The inherit Keyword:
+
+In CSS, you can explicitly specify that an element should inherit a property value
+ from its parent by using the inherit keyword. For example:
+
+css
+Copy code
+.child-element {
+  color: inherit; /* Inherit the color property from the parent element */
+}
+
+4. The Cascade:
+
+CSS styles are applied following the cascade, which means that multiple styles from 
+different sources (e.g., user styles, author styles, browser defaults) can influence the
+ final style of an element. The cascade determines the order of importance for conflicting styles
+  and helps resolve conflicts.
+
+5. Specificity and Inheritance:
+
+Specificity, along with the order of the cascade, plays a role in determining which styles are 
+applied when there are conflicting styles for an element. Specificity can override inheritance, 
+allowing you to apply styles more selectively.
+
+6. The initial and unset Keywords:
+The initial keyword sets a property to its initial (default) value, essentially resetting it.
+The unset keyword sets a property to its inherited value if it's an inherited property or 
+its initial value if it's a non-inherited property.
+example : 
+<div class="parent">
+  <p class="child">This is some text.</p>
+</div>
+.parent {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: blue;
+}
+
+.child {
+  font-size: inherit; /* Inherit font size from parent */
+  background-color: initial; /* Reset background color to initial value */
+  border: unset; /* Reset border to inherited value or initial value if not inherited */
+}
+
+The .parent class sets the font-family to Arial, font-size to 16px, and color to 
+blue. These styles 
+will be inherited by the .child element.
+
+In the .child class:
+
+font-size: inherit; explicitly inherits the font-size property from its parent, 
+so the font size 
+of the paragraph (<p>) will be 16px, matching the font size of the parent.
+
+background-color: initial; resets the background color to its initial value, 
+which is typically transparent. This means that any background color applied to 
+the parent will not be 
+inherited.
+
+border: unset; resets the border property. If the border were inherited from the 
+parent, it would be removed. If it's not inherited, it would be set to its initial 
+value, 
+which is typically none.
+
+
+/* typography font family  */ 
+Typography plays a crucial role in web design, and the choice of font family is a key decision in
+ shaping the overall look and feel of a website. 
+Here's a comprehensive guide to understanding font families in CSS:
+
+1. Font Family:
+
+A font family is a group of fonts with similar characteristics, such as style, weight, and design. 
+It provides a set of font options that a 
+web designer can specify for text elements in a web document. Font families ensure that text content
+ is displayed consistently across 
+different devices and browsers.
+
+2. Generic Font Families:
+
+In CSS, you can specify font families using generic font family names, which serve as fallback 
+options in case a specific font is not 
+available on a user's system. Common generic font families include:
+
+serif: Generic fonts with serifs (e.g., Times New Roman, Georgia).
+sans-serif: Generic fonts without serifs (e.g., Arial, Helvetica).
+monospace: Fonts with fixed-width characters (e.g., Courier New, Consolas).
+cursive: Handwriting-style fonts (e.g., Comic Sans MS).
+fantasy: Decorative or fantasy fonts (e.g., Impact).
+
+
+3. Specifying Font Families:
+
+To specify a font family in CSS, you use the font-family property within a CSS rule. You can list 
+multiple font families in order of 
+preference, separated by commas. For example:
+body {
+  font-family: Arial, sans-serif;
+}
+
+In this example, the browser will first attempt to use the Arial font, but if it's not available,
+ it will use a generic sans-serif font.
+
+ 4. Web Safe Fonts:
+
+ Web designers often use "web safe fonts," which are fonts that are widely available across various operating systems
+  and browsers. 
+ These fonts ensure consistent rendering of text. Some common web safe fonts include Arial, Helvetica,
+  Times New Roman, and Georgia.
+
+ 5. Google Fonts and Custom Fonts:
+ In addition to web safe fonts, web designers can use web font services like Google Fonts to include a 
+ wider variety of fonts in their designs.
+  These services provide a link to the font's stylesheet, allowing web pages to load custom fonts.
+example :
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+6. Font Weights and Styles:
+h1 {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-style: italic;
+}
+
+
+/* Typography Font Size & CSS Units  */
+/* 
+CSS Units 
+
+-- px 
+-- 1em => Time from the size of its parent   
+--rem  => root time means that  1rem = font size of html element  => root element is <html>
+--1vw => 1% view port width 
+--percentage => take percentage from parent 100% => font size of parent : 
+
+Read : 
+vmin 
+vh 
+
+*/
+/* Mouse Cursor  */
+
+.button {
+  cursor: pointer;
+}
+CSS provides several predefined cursor styles that you can use by setting the cursor property to one
+ of these values. Some common predefined cursor values include:
+
+auto: The browser determines the cursor style based on the context.
+pointer: A hand icon, typically used for clickable elements like links and buttons.
+crosshair: A crosshair cursor, often used for indicating a selection.
+text: A text cursor, indicating that the text can be selected or edited.
+default: The default arrow cursor.
+
+2. Using URL for Custom Cursors:
+You can also use custom images as cursors by providing a URL to an image file in the url()
+ function within the cursor property. For example:
+ .custom-cursor {
+  cursor: url('custom-cursor.png'), auto;
+}
+In this example, the cursor for elements with the class .custom-cursor will be replaced by the image 
+defined in 'custom-cursor.png'. The auto value is used as a fallback if the custom cursor image is not 
+supported
+
+/* float and clear  */
+The float and clear properties in CSS are used to control the layout and positioning of elements within 
+a webpage, primarily for creating multi-column layouts and controlling how elements interact with floated
+ elements. Here's a comprehensive explanation of both properties:
+
+1. float Property:
+
+The float property is used to specify whether an element should be floated to the left or right within its containing 
+element. When an element is floated, it is removed from the normal document flow, and other elements can flow around 
+it.
+
+Values:
+left: The element is floated to the left, and content flows to the right of it.
+right: The element is floated to the right, and content flows to the left of it.
+none (default): The element is not floated, and it remains in the normal document flow.
+inherit: The element inherits the float value from its parent element.
+
+
+2. clear Property:
+
+The clear property is used to control how elements behave in relation to floated elements
+within the same container. It specifies whether an element should be moved below any preceding 
+floated elements (i.e., clear them) or if it can be positioned alongside them.
+
+Values:
+none (default): The element is not cleared, and it can be positioned alongside floated elements.
+left: The element clears any preceding left-floated elements.
+right: The element clears any preceding right-floated elements.
+both: The element clears both left and right-floated elements.
+inherit: The element inherits the clear value from its parent element.
+
+<div class="parent">
+<div>product 1</div>
+<div>product 2</div>
+<div>product 3</div>
+<div>product 4</div>
+<div>product 5</div>
+<p class="clear"></p>
+</div>
+example : 
+<p>this is p for testing float</p>
+.parent {
+  background-color: rgb(187, 235, 238);
+  padding: 10px;
+}
+.parent div {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  background-color: #eee;
+  width: 20%;
+  float: left;
+}
+.clear {
+  clear: both;
+}
+
+
+/* calc */
+
+/* 
+content width : 100%
+N of spaces  SpaceWidth=spaces*N 
+width of child : (ParentWidth-spaceWidth )/nbrOf element : 
+
+
+example : 
+content width : 100%
+Nbr of Child = 5 ; 
+
+6 spaces 2% * 6 => 12% from content width 
+88% available Space : 
+5 element The width is : 88%/5  
+*/
+
+/* example : */
+<div class="parent">
+<div>product 1</div>
+<div>product 2</div>
+<div>product 3</div>
+<div>product 4</div>
+<div>product 5</div>
+</div>
+
+<style>
+.parent {
+  padding: 10px;
+  background-color: rgb(163, 183, 200);
+  font-size: 1.6rem;
+  width: 90%;
+}
+.parent div {
+  width: calc((100% - 10px * 6) / 5);
+  float: left;
+  background-color: #eee;
+  margin-left: 10px;
+}
+
+
+/* opacity  */
+selector{
+  /* change the opacity of an element :  */
+  opacity: Value ;  0<value<1
+  
+}
+
+/* position */
+
+selector{
+
+  /*default position  */
+position: static; 
+
+/* relative 
+now you can use top and bottom and left and right 
+and element save its palace : 
+
+
+the  position  of element depend on itself :  
+*/
+position: relative;
+
+/* 
+absolute  element get overside the workflow 
+means that like you remove it from the page 
+all element under it take it's place 
+
+if you don't specify the value of top or left ... the element will be control by 
+the next to element  to its 
+
+
+the  position  of element depend on the page 
+
+*/
+position: absolute;
+
+/* 
+
+if you wanna to make a absolute element depend on a parent container 
+you should make the position of the parent element relative  
+
+*/
+
+
+/*the same as absolute but it's still fixed on the page 
+and also it always depends on the page 
+even if  it has a parent with a position  relative :  */
+position:fixed; 
+
+
+/* 
+like relative in Positioning. (move depend on itself )
+it's fixed  on its  container (you should specify the top value )  
+and fixed in the page when you arrive a specific value of top : 
+and you should define a width of its parent to work correctly 
+
+*/
+position :sticky;
+ 
+}
+
+ 
+
+
+/* z-index 
+follows the order of writing in the code ::
+the last one it's the more priority 
+
+element should have a position : 
+*/
+selector{
+z-index: Value; 
+
+}
+
+/* lists styling  */
+
+selector{
+
+  /* type od  style  */
+  list-style-type: disc;
+  
+  /* style inside or outside : the linked element  */
+  list-style-position: Value;
+
+/*  add an img as a style  */
+list-style-image: url("path");
+
+/* shorthand */
+list-style:  type position img ;
+
+}
+
+
+/* table styling  */
+selector{
+
+
+  /* the spacing between tds  */
+  border-spacing: Value;
+}
+
+/* Pesudo classes */
+
+/* when  element hovered  */
+a:hover{
+
+/* styling */
+
+}
+/* when input is checked  change styling of   the next label  */
+input:checked+ label {
+/* styling  */
+  
+}
+/* when link is vested  */
+a:visited{
+  /* styling */
+}
+
+/* add styling for all  empty divs */
+div:empty{
+
+/* styling */
+}
+
+/* any empty element : */
+:empty{
+/* styling  */
+
+}
+
+
+/* when you focus at input  */
+input:focus{
+/* styling  */
+}
+/* pseudo elements First Letter, First Line  */
+
+p::first-letter{
+  background-color: rgb(215, 100, 100);
+  font-size: 50px;
+  font-weight: bold;
+
+  font-variant: small-caps;
+
+}
+
+P::first-line{
+font-weight: bold;
+
+}
+/* when you  select text  */
+p::selection{
+  background-color: black;
+  color: white;
+}
+/* for all website  */
+::selection{
+
+}
+
+/* pseudo elements Before after , Content  */
+
+/* without using after  */
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+Voluptatem dolore neque dolores aperiam temporibus molestiae ipsam itaque odit 
+rerum ut. At alias dignissimos, error maxime fugiat repellat deserunt distinctio eius.
+<span class="After"></span>
+</p>
+
+p{
+  width: 80%;
+  padding: 10px;
+  background-color: #f0ebdd;
+  font-size: 30px;
+  margin: 2px auto;
+  position: relative;
+  }
+  p .After{
+    position: absolute;
+    top:0;
+    right: -5px;
+    width: 10px;
+    height: 100%;
+  background-color: rgb(196, 176, 122);
+  }
+
+
+  
+/* using after and before  */
+p::after{
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 10px;
+  top: 0;
+  right: -5px;
+  background-color: red;
+  
+  
+  }
+  p::before{
+  
+    content: url("avance-rapido.png");
+    position: absolute;
+  
+  transform: scale(0.1);
+  top: -180px;
+  left: -300px;
+  
+  
+  
+  }
+
+  /* or  */
+  p::before{
+
+    content:"";  
+    position: absolute;
+  
+  top: 50%;
+   margin-top: -10px;
+   border-style:solid ;
+   border-width: 20px;
+   border-color: transparent green transparent transparent;
+   left: -50px;
+  
+  }
+    
+
+
+  /* to center an element using margin  */
+selector{
+
+  margin-top:-height/2; 
+  top:50%; 
+
+}
+/* Pseudo Elements Content & Trainings */
+
+/* counter  */
+p {
+  width: 80%;
+  padding: 10px;
+  background-color: #f0ebdd;
+  font-size: 30px;
+  margin: 2px auto;
+  position: relative;
+}
+
+
+.parent {
+  counter-reset: counterINcrement; /* Initialize the counter */
+  background-color: black;
+}
+
+p::before {
+  counter-increment: counterINcrement; /* Increment the counter for each paragraph */
+  content: counter(counterINcrement); /* Display the counter value */
+  font-size: 40px;
+  color: green;
+  position: absolute;
+  left: -50px; /* Adjust this value to position the counter where you want */
+}
+
+/* get data from an attribute :  */
+p::after{
+
+  content: attr(AttributeName);
+color: red;
+
+}
+/* hover at after  */
+p:hover::after{
+  display: block;
+}
+
+
+/* vendor Prefixes */
+developer of  browser : 
+/*
+[1] new css feature appeared 
+[2] browsers tests the feature in version x 
+[3] browsers add prefix to five developers the ability to use it 
+[4] the feature is fully supported in version Y, no need for perfix 
+
+-webkit => chrome ,safari , new opera  version 
+-moz  => firefox 
+-ms =>  Ie , edge 
+-o- => old version of opera 
+
+
+// you use  many website to  check if the feature is fully supported or no :  such as   'CAN I USE'
+*/
+
+/*
+[1] most of users are using modern browsers 
+[2] vs code addon to add the prefix 
+[3] task runner  
+*/
+
+
+/* border Radius */
+selector{
+border-radius:value; 
+}
+
+/*box shadows and examples  */
+selector{
+box-shadow: H-sh V-sh blur spread Color inset ;
+
+}
+
+
+/* the box model and box sizing  */
+The box-sizing property in CSS controls how the total width and height of 
+an element is calculated, 
+including its content, padding, and border. It has three possible values:
+
+content-box (Default):
+
+This is the default value for box-sizing.
+The width and height of the element are calculated based on the content area's dimensions only, 
+excluding padding and border.
+Adding padding or border to the element increases its overall dimensions.
+
+
+padding-box:
+
+The width and height of the element are calculated based on the content area and the padding, but not the border.
+Adding a border increases the overall dimensions of the element.
+
+
+border-box:
+
+The width and height of the element are calculated based on the content area,
+ including padding and border.
+Adding padding or border does not change the overall dimensions of the element,
+ as it deducts the padding and 
+border sizes from the specified width and height.
+
+
+
+
+/* transition  */
+
+CSS transitions allow you to smoothly change the property values of elements over a specified duration. 
+This adds interactivity and visual appeal to web pages and applications. Here's all about transitions in CSS
+
+transition: property duration timing-function delay;
+
+property: The CSS property you want to transition (e.g., width, background-color, transform).
+duration: The time it takes for the transition to complete (e.g., 1s for 1 second, 0.5s for half a second).
+
+timing-function (optional): Describes the transition's acceleration curve (e.g., ease, linear, ease-in, ease-out, 
+cubic-bezier()).
+
+delay (optional): Specifies a delay before the transition starts (e.g., 0.5s).
+
+You can apply transitions to multiple properties simultaneously by separating them with commas. For example:
+transition: width 1s, height 1s, background-color 0.5s;
+
+
+ease => slow speed slow 
+linear =>  the same speed all time 
+ease-in=> slow speed speed 
+ease-out => speed slow slow 
+ease-in-out => slow normal slow
+
+ease (default): Gradual acceleration and deceleration.
+linear: Constant speed.
+ease-in: Gradual acceleration.
+ease-out: Gradual deceleration.
+ease-in-out: Gradual acceleration and deceleration.
+cubic-bezier(): A custom timing function defined using cubic 
+
+
+/* important declaration and use cases  */
+selector{
+// the high priority  : 
+  propriety:value !important
+
+}
+
+
+/* the margin collapse  */
+
+/* 
+[1] only vertical margin collapse 
+[2] bigger margin wins 
+[3] Margin collapsing with elements without anything between 
+[4] Nesting does not prevent collapsing 
+*/
+
+/* css Variables  */
+
+CSS variables, also known as custom properties, allow you to store and reuse values in your 
+stylesheets. They provide a way to make your CSS more maintainable, reusable, and dynamic. 
+Here's all about variables in CSS
+/* 
+Css Variable 
+--Global Variable 
+--local Variable 
+var(Variable Name , Fallback Value); 
+*/
+✨Defining Variables:
+:root {
+  --primary-color: #007bff;
+  --font-size: 16px;
+}
+The :root selector is often used to define global variables, but you can also define 
+variables within specific selectors.
+
+
+✨Using Variables:
+To use a variable, reference it using the var() function and the variable name within the var()
+ function's parentheses. For example:
+ .button {
+  background-color: var(--primary-color);
+  font-size: var(--font-size);
+}
+
+✨Fallback Values:
+You can provide a fallback value inside the var() function in case the variable is undefined
+ or not supported in older browsers. For example:
+ .button {
+  background-color: var(--primary-color, #007bff); /* Fallback to #007bff if the variable is
+   not defined */
+}
+
+Dynamic Variables:
+Variables can be updated dynamically using JavaScript, making it possible to create themes or
+ respond to user interactions. You can change the value of a variable like this:
+
+ const root=document.documentElement; 
+ root.style.setProperty('--mainColor','green'); 
+
+ /* Flex box -Parent Direction,Wrap,Flow */
+
+ for parent 
+ ✨-display flex => to  make the parent a  flexible box 
+ ✨-flex-direction : default: row =>    row,row-reverse , column ,column-reverse
+ 
+✨ -flex-wrap :  control the wrapping of any new element added to the 
+  flexbox   =>  default : nowrap ,wrap 
+  nowrap : means that the new   element will be placed in  the  same line with old  elements   
+  wrap : take new line 
+  wrap-reverse 
+ 
+  shortHand 
+  flex-flow : direction ,wrapping ;
+  
+ ✨float don't effect by the direction of the page :  opposite of Flex that Follows the 
+ direction of the  page
+ 
+ /* flex box parent justify content  */
+ algin-items: default:stretch , flex-start, flex-end, center ...; 
+
+ /* align content  */
+ align-content=> default: stretch , flex-start, flex-end, center,space-around,space-between 
+ space-evenly ;  
+
+
+ /* flex box  ,child grow ,shrink ,order  */
+
+flex-grow : take  if there is empty spaces 
+flex-shrink: when the element  stretched   the element has priority of stretching : 
+order : low  order  => more priority  in Possessing.
+
+/* flex box -child flex-basic ,flex-shorthand  */
+flex : flex-grow:0 flex-shrink:1  flex-basic:auto; 
+
+/* flex box -child align self ,Games ,Task */
+align-self: auto,flex-end,flex-start,center; 
+
+/* game flex-box Froggy ,flexbox zombies ,holy grail   */
+
+/*
+filters 
+grayscale() 0% -> 100% white black color ::
+blur(value) add blur to img
+invent(value) 0% -> 100% invent the color of img 
+*/
+
+/* Gradients  */
+selector{
+
+  linear-gradient(direction || angle ,color stop1 , color stop2 ,... )
+ 
+  direction: to top ,to bottom , to left , to right; 
+
+  example :
+	background-image: linear-gradient(to left,red 70% , green);
+
+
+}
+
+example 2:
+
+div{
+	width: 270px;
+	height: 200px;
+	margin: 0 auto;
+	background-color: #eee;
+ position: relative;
+}
+div::after{
+
+ content: "";
+ position: absolute;
+ top: 0px;
+ left: 0px;
+ width: 100%;
+height: 4px;
+background-image: linear-gradient(to right ,
+#2980b9 20%,
+#27ae60 20%,
+#27ae60 40%,
+#d35400 40%,
+#d35400 60%,
+#8e44ad 60%,
+#8e44ad 80%,
+#d35400 60%
+);
+}
+
+/* pointer events and caret color  */
+ 
+identify the color input cursor 
+
+/* color of writing cursor 
+The caret is the blinking vertical line or underscore in an input field
+ or text area indicating where new text will be inserted. You can change its 
+ color using the caret-color property in CSS.
+
+*/
+caret-color:Color;
+
+
+control  mouse events  at an element
+pointer-events: auto null 
+
+/* grid parent Template Columns  */
+
+/*
+grid 
+
+parent : 
+display : grid | inline-grid
+grid-template-columns => number of columns in  => [px,%,auto,repeat,mix,fraction(fr)]
+you cam use repeat function 
+grid-template-columns: repeat(4 ,auto);
+grid-template-columns: 200px 2fr 1fr 4fr;
+
+grid-template-rows: [px,%,auto,repeat,mix,fraction(fr)]; // auto is the default value 
+row-gap: Value;
+column-gap :Value; 
+gap: row column; 
+/* Grid Parent Justify And Align Content  */
+justify-content: the same to flex; 
+align-content:the same to flex ;
+align-items: the same to flex; 
+
+
+/* Grip Parent -Full layout Width Grid Template Areas  */
+
+you can set  the aria for each row using 
+grid-template-areas:"Dom1 Dom1 Dom1 . Dom2 Dom2 " "row2Prams" "row3Prams"... 
+this line means that dom1 : will take 3 column 
+and . refers  to empty Column 
+and Dom2 will take 2Columns from the row 
+
+// but you need to set the associated  element 
+assume that  : dom1 => h2 
+dom2=> nav; 
+
+h2{
+  grid-area: Dom1;
+}
+nav{
+  grid-area: Dom2;
+}
+*/
+example :
+<div class="page">
+			<h2>logo</h2>
+			<nav>
+				<ul>
+					<li>home</li>
+					<li>about</li>
+					<li>Services</li>
+					<li>Contact</li>
+				</ul>
+			</nav>
+			<section>Content</section>
+			<aside>sideBar</aside>
+			<footer>footer</footer>
+		</div>
+	</body>
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.page {
+    background-color: #eee;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 50px 1fr auto;
+    grid-template-areas: "logo logo logo nav nav nav nav nav nav nav "
+        "cont cont cont cont cont cont cont .   sid sid "
+        "foot foot foot foot foot foot foot foot foot foot "
+
+    ;
+}
+
+h2 {
+    color: red;
+    grid-area: logo;
+    background-color: green;
+}
+
+nav {
+    grid-area: nav;
+    background-color: red;
+}
+
+section {
+    grid-area: cont;
+    background-color: aqua;
+
+}
+
+aside {
+    grid-area: sid;
+    background-color: yellow;
+
+}
+
+footer {
+    background-color: black;
+    grid-area: foot;
+    color: white;
+    padding: 10px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+/* Grid Child Column And Row */
+
+GridChild{
+
+/* setting the Number Of column to taking for  a GridChild */
+grid-column: start/end; /* end not include */ 
+/* or */
+grid-column:  span NumberOfColumn;
+/*  start no equal to 0  */
+grid-column: startPoint / span NumberOfColumn;
+}
+
+/* Grid Child Area And Trainings  */
+grid-area: RStart / CStart /REnd /CEnd  
+
+/* Grid minMax and auto-Fill */
+grid-template-columns:minmax(MinValue,MaxValue);
+
+/* auto fill to add Columns  depends  on the Content (width of page) */
+grid-template-columns:repeat(auto-Fill,ColumnsWidth);
+
+/* do not let an empty space : */
+grid-template-columns:repeat(auto-Fill,minmax(100px,1fr));
+
+/* Finish Grid Garder Game : */
+
+Grid layout is a powerful and flexible CSS layout system that allows you to create two-dimensional 
+grid-based layouts for web pages and user interfaces. It provides a way to arrange elements in rows 
+and columns, making it easier to create complex and responsive layouts.
+ Here are some key concepts and properties related to CSS Grid:
+
+1. **Grid Container**: The element that serves as the parent or container for the grid is 
+referred to as the "grid container." To create a grid, you apply the `display: grid;` 
+property to this container.
+
+   ```css
+   .grid-container {
+     display: grid;
+   }
+   ```
+
+2. **Grid Items**: The elements inside the grid container are called "grid items." 
+These are the elements that you want to position within the grid.
+
+   ```css
+   .grid-item {
+     /* Styles for grid items */
+   }
+   ```
+
+3. **Grid Rows and Columns**: You can define the structure of the grid by specifying 
+the number and size of rows and columns. You can use properties like 
+`grid-template-rows` and `grid-template-columns` to set these dimensions.
+
+   ```css
+   .grid-container {
+     display: grid;
+     grid-template-rows: 1fr 2fr; /* Two rows with different heights */
+     grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+   }
+   ```
+
+4. **Grid Lines**: Grid lines are the horizontal and vertical lines that separate
+ rows and columns in the grid. You can name them or refer to them by their index.
+
+   ```css
+   .grid-container {
+     grid-template-rows: [row1-start] 1fr [row1-end row2-start] 2fr [row2-end];
+     grid-template-columns: [col1-start] 1fr [col1-end col2-start] 2fr [col2-end];
+   }
+   ```
+
+5. **Grid Placement**: You can place grid items into specific rows and columns using 
+the `grid-row` and `grid-column` properties or shorthand `grid-area`.
+
+   ```css
+   .grid-item {
+     grid-row: 1 / 2; /* Starts at row 1 and ends at row 2 */
+     grid-column: 2 / 3; /* Starts at column 2 and ends at column 3 */
+   }
+   ```
+
+6. **Grid Gap**: You can add spacing between grid items and grid lines using 
+the `grid-gap` property. It sets the gap between rows and columns.
+
+   ```css
+   .grid-container {
+     grid-gap: 10px; /* Adds a 10px gap between rows and columns */
+   }
+   ```
+
+7. **Grid Template Areas**: You can create named grid areas and assign 
+them to grid items to create complex layouts easily.
+
+   ```css
+   .grid-container {
+     grid-template-areas:
+       "header header header"
+       "main main sidebar"
+       "footer footer footer";
+   }
+
+   .header {
+     grid-area: header;
+   }
+   ```
+
+8. **Responsive Grids**: CSS Grid is excellent for creating responsive 
+layouts. You can use media queries to change the grid structure and item placement based on screen size.
+
+   ```css
+   @media (max-width: 768px) {
+     .grid-container {
+       grid-template-areas:
+         "header"
+         "main"
+         "sidebar"
+         "footer";
+     }
+   }
+   ```
+
+9. **Alignment and Justification**: You can control the alignment and
+justification of grid items within their grid cells using properties like `justify-items`, `align-items`, `justify-content`, and `align-content`.
+
+   ```css
+   .grid-container {
+     justify-items: center; /* Horizontally centers items */
+     align-items: center; /* Vertically centers items */
+   }
+   ```
+
+CSS Grid is a powerful layout system that simplifies complex layouts,
+ and it's widely supported in modern browsers. It offers a lot of flexibility
+  and control over the positioning and sizing of elements in your web page layout.
+
+  /* 2D Transform */
+
+
+  /* scale  */
+  -scaleX:: default:1  -1  for flip 
+  -scaleY:: default:1  -1  for flip 
+  -scale:: X,Y; 
+  
+  /* rotate */
+   units :  
+  deg => Degrees
+  red => Radians 
+  grad => Gradians
+  turn => Turn
+
+/* example of using scale and rotate  */
+<div class="container"><img src="test img.jpg" alt=""></div>
+	</body>
+
+  .container {
+
+    width: 640px;
+    height: 960px;
+    overflow: hidden;
+  }
+  
+  .container img {
+    transition: 0.6s;
+  }
+  
+  .container:hover img {
+    transform: scale(1.1) rotate(4deg);
+  
+  }
+
+/* 2D Translate */
+
+/* Translate  */
+transform :  Translate(xTranslatePosition,yTranslatePosition); 
+
+/* skew  */
+unit : deg
+skewX:: => skew(xValue);
+SkewY:  => skew(yValue)
+Skew: X Y => skew(Xvalue,Yvalue); 
+/* example of using : */
+<h1>ayoub majid</h1>
+h1 {
+
+  padding: 20px;
+  width: fit-content;
+  position: relative;
+}
+
+h1::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  top: 0;
+  left: 0;
+  transform: skewX(20deg);
+  z-index: -2;
+}
+
+/* matrix */
+transform:matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY()); 
+
+/* if you don't wanna use matrix  you can use functions directly in the 
+transform but you need to start with transform in the first : 
+*/
+transform: translateX() translateY() scaleX() skewY() skewX() scaleY() ; 
+
+/* transform origin : */
+/* 
+using for specify the origin of  transforms  in css 
+*/
+default value 50% 50% 0 
+2D Transform => transform-origin(x,y); 
+3D Transform => transform-origin(x,y,z); 
+x-axis :
+-css Units [px,em,rem]
+-%
+-keyword
+-left =0%
+-center =50%
+-right =100%
+y-axis
+-%
+keyword
+top:0%
+center =50%
+bottom =100%
+
+
+/* 3d transform Rotate + Trainings  */
+rx: A number representing the x-coordinate of the vector around which the element 
+will be rotated.
+
+ry: A number representing the y-coordinate of the vector around which the 
+element will be rotated.
+
+rz: A number representing the z-coordinate of the vector around which the
+ element will be rotated.
+
+angle: A number representing the angle of rotation in degrees.
+
+.transformed-element {
+  transform: rotate3d(1 || 0,1 || 0, 1 || 0 , angle);
+ /*y,x z  */
+ 1: active axis
+ 0: inactive  axis 
+ 
+}
+
+/* 3D transform -Translate Perspective + Origin  */
+
+In CSS, you can apply 3D transformations to elements using the transform property.
+ Here's how you can use translate, perspective, and perspective-origin in CSS:
+
+✨1. Translate:
+
+The translate() function in CSS is used for moving elements along the x, y, and z axes.
+
+.element {
+  transform: translateX(50px) translateY(20px) translateZ(30px);
+}
+In this example, the element will be moved 50 pixels to the right along the x-axis, 
+20 pixels down along the y-axis, and 30 pixels forward along the z-axis.
+
+
+✨2. Perspective:
+The perspective property determines the distance between the user and the z=0 plane, 
+establishing a perspective view for an element. It gives depth to the 3D transformations.
+/* parent container  */
+.container {
+  perspective: 1000px; /* 1000px is just an example value, you can adjust it as needed */
+}
+.element {
+  transform: perspective(1000px) translateZ(50px);
+}
+In this example, the .element is moved 50 pixels forward along the z-axis, 
+and the perspective property defines how strong the perspective effect should be.
+
+✨3. Perspective Origin:
+The perspective-origin property defines the position at which the user is looking 
+at the 3D-transformed element.
+
+In this example, the perspective origin is set to the center of the element. 
+The rotateY(45deg) rotates the element 45 degrees around the y-axis,
+ and the perspective origin determines the center of the 3D effect.
+
+
+ /* example : */
+ .parent {
+  padding: 20px;
+  background-color: rgba(196, 195, 195, 0.781);
+  width: fit-content;
+  margin: 300px auto;
+  perspective: 1000px; /* Add perspective */
+}
+
+.container {
+  width: 240px;
+  height: 160px;
+  overflow: hidden;
+  background-color: red;
+  outline: 5px black solid;
+  opacity: 0.9;
+  transform: perspective(6000px) translate3d(0px, 0px, 30px) rotateY(45deg);
+}
+The transformation effect you're describing, where the element grows and then shrinks
+ back, suggests that the transformation is working as expected. 
+ The translate3d(0px, 0px, 30px) transformation you applied moves
+  the element 30 pixels along the z-axis, creating a perception 
+  of depth in a 3D space. However, the element itself doesn't 
+  change its size; it's just being moved along the depth axis, 
+  which might create a visual effect of growing and shrinking 
+  based on its perspective in relation to the viewer.
+
+To better understand the effect, imagine the element in a 3D space 
+where you're looking at it from a certain viewpoint. When you move 
+it along the z-axis, it appears closer or farther away from you,
+ giving the illusion of size change due to perspective.
+
+If you're looking for a more complex 3D effect, 
+you can combine the translate3d() transformation with other
+ transformations like rotation or scaling. For example:
+
+
+ /* resume transform  */
+
+ Certainly! The `transform` property in CSS is a powerful tool that allows
+  you to apply various transformations to elements. These transformations 
+  can modify the element's size, position, rotation, and skewing. Here's 
+  an explanation of the individual transform functions:
+
+ ### 1. **`translate()` / `translateX()` / `translateY()` / `translateZ()`**
+ 
+ The `translate()` function moves an element along the x and y axes.
+  You can also use `translateX()` and `translateY()` for horizontal
+   and vertical movement respectively. `translateZ()` moves the 
+   element along the z-axis in a 3D space.
+ 
+ Example:
+ ```css
+ transform: translate(50px, 30px); /* Moves 50 pixels right and 30 pixels down */
+ transform: translateX(50px); /* Moves 50 pixels right */
+ transform: translateY(30px); /* Moves 30 pixels down */
+ transform: translateZ(20px); /* Moves 20 pixels forward in 3D space */
+ ```
+ 
+ ### 2. **`rotate()` / `rotateX()` / `rotateY()` / `rotateZ()`
+ 
+ The `rotate()` function rotates an element clockwise around the origin.
+  `rotateX()`, `rotateY()`, and `rotateZ()` allow rotation around specific 
+  axes. Positive values rotate clockwise.
+ 
+ Example:
+ ```css
+ transform: rotate(45deg); /* Rotates 45 degrees clockwise */
+ transform: rotateX(45deg); /* Rotates 45 degrees around the x-axis */
+ transform: rotateY(45deg); /* Rotates 45 degrees around the y-axis */
+ transform: rotateZ(45deg); /* Rotates 45 degrees around the z-axis */
+ ```
+ 
+ ### 3. **`scale()` / `scaleX()` / `scaleY()` / `scaleZ()`
+ 
+ The `scale()` function changes the size of an element. `scaleX()`
+  and `scaleY()` allow scaling along the x and y axes. `scaleZ()`
+   scales along the z-axis in 3D space.
+ 
+ Example:
+ ```css
+ transform: scale(1.2); /* Increases size by 20% */
+ transform: scaleX(1.5); /* Increases width by 50% */
+ transform: scaleY(0.8); /* Decreases height by 20% */
+ transform: scaleZ(2); /* Doubles size along the z-axis in 3D space */
+ ```
+ 
+ ### 4. **`skew()` / `skewX()` / `skewY()`
+ 
+ The `skew()` function skews an element by a given angle along both 
+ the x and y axes. `skewX()` and `skewY()` allow skewing along specific axes.
+ 
+ Example:
+ ```css
+ transform: skew(30deg, 20deg); /* Skews 30 degrees on x-axis and 20 degrees on y-axis */
+ transform: skewX(45deg); /* Skews 45 degrees along the x-axis */
+ transform: skewY(-15deg); /* Skews -15 degrees along the y-axis */
+ ```
+ 
+ ### 5. **`matrix()`**
+ 
+ The `matrix()` function provides a 2D transformation using six 
+ values for scaling, rotation, and translation in a single statement.
+  It's powerful but complex and generally not used directly unless
+   calculated programmatically.
+ 
+ Example:
+ ```css
+ transform: matrix(1, 0.5, -0.5, 1, 30, 20); /* Applies a custom 2D transformation */
+ ```
+ 
+ ### 6. **`matrix3d()`**
+ 
+ The `matrix3d()` function is similar to `matrix()`, but
+  it works in 3D space, allowing more complex 3D transformations.
+ 
+ Example:
+ ```css
+ transform: matrix3d(1, 0, 0, 0, 0, 1.2, 0, 0, 0, 0, 1.5, 0, 0, 0, 0, 1);
+  /* Applies a custom 3D transformation */
+ ```
+ 
+ You can combine these transformation functions to create more
+  intricate effects. Experimentation and understanding how different
+   transformations interact are key to mastering 2D and 3D transformations in CSS.
+
+
+/* 3d transform -Backface Visibility and flip product */
+1. Backface Visibility: hidden when back has a transfrom rotateY more than 90deg
+
+In 3D transformations, every 2D element has two sides: a front face and a back face.
+ When you apply a 3D transformation like rotation, both the front and back 
+ faces can become visible. The backface-visibility property allows you
+  to control whether or not the back face of an element should be visible
+   when it is facing away from the viewer.
+   Visible (Default): The back face is visible.
+  
+   Hidden: The back face is invisible (hidden).
+
+   2. Flip Effect in 3D Space:
+
+  /* example :  */
+  <div class="card">
+  <div class="front">Front</div>
+  <div class="back">Back</div>
+  </div>
+
+.card {
+  width: 200px;
+  height: 300px;
+  /* Perspective to create 3D effect */
+  perspective: 1000px;
+  position: relative;
+}
+
+.card div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+
+  /* Hide the back face initially */
+  backface-visibility: hidden;
+
+  transition: transform 0.6s;
+  /* Add smooth transition for the flip effect */
+}
+
+.back,
+.front {
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(10deg);
+}
+
+.back {
+  background-color: lightgreen;
+
+  /* Rotate initially for the flip effect */
+  transform: rotateY(180deg);
+
+}
+
+.card:hover .front {
+  transform: rotateY(-180deg);
+  /* Flip the front side */
+}
+
+.card:hover .back {
+  transform: rotateY(20deg);
+  /* Flip the back side */
+}
+
+
+
+
+/* animation and keyfrmaes,name,duration  */
+
+/* 
+-- keyframes 
+--animation 
+*/
+
+/* exmaple 1 :  */
+@keyframes changeColor {
+
+  from {
+    background-color: rgb(203, 94, 16);
+
+
+  }
+
+  to {
+    background-color: rgb(0, 255, 76);
+  }
+
+
+}
+
+/* example 2 */
+.parent{
+  animation-name: changeColor;
+  animation-duration: 6s;
+
+}
+@keyframes changeColor {
+
+  0% {
+    background-color: rgb(203, 94, 16);
+  }
+  20% {
+    background-color: rgb(16, 191, 203);
+  }
+  40% {
+    background-color: rgb(81, 132, 146);
+  }
+
+  100%{
+    background-color: rgb(0, 255, 76);
+  }
+
+
+}
+
+/* animation -iteration  count ,timing function  */
+/* example 2 */
+.parent {
+  width: 100%;
+  height: 98vh;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+
+
+}
+
+.parent .loading {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 6px solid #75498d;
+  border-left-color: transparent;
+  animation-name: spile;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  perspective: 1000px;
+}
+
+@keyframes spile {
+
+  from {
+
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+
+}
+
+
+/* animation -direction ,delay fill mode , play state  */
+
+animation-direction : normal , reverse ,alternative,alternative-reverse;
+
+/* 
+normal : normal behavoir 
+reverse : from 100% to 0 
+alternative :  switch between normal and reverse (normal first) 
+alternative-reverse :  switch between normal and reverse (normal second) 
+*/
+animation-delay:DelayValue;
+/* 
+positive value : add a delay 
+negative value : forward  Value second from transition-duration 
+*/
+
+animation-fill-mode:none default; 
+/* 
+forwards : apply the styling  after the animation :
+backwars : take the animation of the first frame : 
+both : take the animation the both first and last frame 
+*/
+
+animation-play-state: running default ;
+/* 
+paused : pause the animation : 
+
+*/
+
+
+/* animation resume  : */
+The `animation` property in CSS is used to control animations applied to elements.
+ It allows you to specify various parameters to define how an animation behaves.
+ Here are the key parameters of the `animation` property and their explanations:
+
+1. **animation-name**:
+   - Specifies the name of the animation, which must be defined using 
+   the `@keyframes` rule. This parameter is mandatory.
+   - Example: `animation-name: slideIn;`
+
+2. **animation-duration**:
+   - Specifies the duration of the animation in seconds or milliseconds.
+   - Example: `animation-duration: 2s;`
+
+3. **animation-timing-function**:
+   - Defines the timing function that determines how the 
+   animation progresses over time. It controls the 
+   acceleration and deceleration of the animation.
+   - Common values include `ease`, `linear`, `ease-in`, `ease-out`, and `ease-in-out`.
+   - Example: `animation-timing-function: ease-in-out;`
+
+4. **animation-delay**:
+   - Specifies a delay before the animation starts.
+    It can be expressed in seconds or milliseconds.
+   - Example: `animation-delay: 1s;`
+
+5. **animation-iteration-count**:
+   - Defines the number of times the animation 
+   should repeat. You can use values like `infinite` 
+   for endless looping or a specific number of repetitions.
+   - Example: `animation-iteration-count: 3;`
+
+6. **animation-direction**:
+   - Determines whether the animation should 
+   play in the forward direction, reverse direction, 
+   alternate between forward and reverse, or alternate-reverse.
+   - Values include `normal`, `reverse`, 
+   `alternate`, and `alternate-reverse`.
+   - Example: `animation-direction: alternate;`
+
+7. **animation-fill-mode**:
+   - Specifies how the animation affects the element
+    before and after it plays. It can be set to `none`, `forwards`, `backwards`, or `both`.
+   - `none` (default): No styles are applied before
+    or after the animation.
+   - `forwards`: The final keyframe's styles
+    are applied after the animation.
+   - `backwards`: The initial keyframe's styles
+    are applied before the animation.
+   - `both`: `forwards` and `backwards` behavior is applied.
+   - Example: `animation-fill-mode: forwards;`
+
+8. **animation-play-state**:
+   - Controls whether an animation is running or paused.
+   - Values include `running` (default) and `paused`.
+   - Example: `animation-play-state: paused;`
+
+9. **animation** (shorthand):
+   - You can use the `animation` shorthand 
+   property to set all animation properties in
+    a single declaration, following the order mentioned above.
+   - Example: `animation: slideIn 2s ease-in-out
+    1s 3 normal alternate-reverse forwards;`
+
+Here's an example of the `animation` property in use:
+
+```css
+.element {
+  animation: slideIn 2s ease-in-out 1s 3 normal alternate-reverse forwards;
+}
+```
+
+In this example, the animation name is `slideIn`, 
+the duration is 2 seconds, the timing function is `ease-in-out`, 
+there's a 1-second delay, it repeats 3 times, plays 
+in an alternate-reverse direction, and the final styles are retained
+ after the animation (`forwards` fill mode).
+
+
+ /* animation -Up and down Animation Trainnings  */
+ <div class="parent">
+ 
+ <div class="point1"></div>
+ <div class="point2"></div>
+ <div class="point3"></div>
+ 
+ </div>
+ .parent {
+position :absolute;
+  width: 100%;
+  height: 98vh;
+
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+  gap: 40px;
+  background-color: rgba(0, 0, 0, 0.83);
+}
+
+.parent div {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: orchid;
+  animation-name: upDown;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.parent .point2 {
+  animation-delay: 0.3s;
+}
+
+.parent .point3 {
+  animation-delay: 0.6s;
+}
+
+@keyframes upDown {
+
+  to {
+    opacity: 0.6;
+    transform: translateY(-40px);
+  }
+}
+
+
+/* selector Reference  part 1  */
+
+/*css selectors  */
+/* 
+
+-- *  select all elements 
+
+- element  Tag => [p,div,...]
+-- element inside element => div p{}
+-- .class name 
+-- #id-name
+-- .parent .child
+-- .class-one.class-two :element that has these two classes 
+-- class-name div ,class-name p{}
+-- element.class-name : specific element that has this class name :
+-- class.name >.child : direct child (son)
+
+*/
+
+/* selector reference part 2   */
+/* 
+
+-- element1 + element2 = direct next element to element1 
+
+-- element ~ other elements =>  all  next siblings in the same parent 
+-- element[attribute] => all elements has this attribute
+-- element[attribute=value] => all elements have this attribute where equal to value 
+-- element[attribute~=value] => contains this word (separated word )  
+
+--element[attribute*=value] => like contains this string (*) 
+element[attribute^=value] => start with value
+*/
+
+/* sectors Reference part  3 */
+
+/* 
+-- Element:first-child : first child in the parent of the element 
+-- last-child : last child in the parent of the element 
+-- first-of-type : first child with the same tag in the parent of the element 
+-- last-of-type : last child with the same tag in the parent of the element
+
+--only-child :  only child in the  parent div 
+element--only-of-type : only child with in the parent with the same Tag 
+
+*/
+
+/* selectors Reference  */
+/* 
+- element:not(selectors) => all element except selectors 
+- element nth-child(n || even || odd) => n th element in his parent ; n+6 from 6 
+to the last
+
+-- element nth-last-child(value) => start counting from   the end 
+
+*/
+
+
+/* Selectors Reference Part 5 */
+/* 
+-:root 
+- :checked => checked elements
+-:empty => empty element 
+-:disabled => disabled input 
+-required => required input 
+-focus => focus at an input 
+-selection => when you select an element 
+-::placeholder => change the placeholder 
+*/
+
+/* Media Queries and Responsive -into  */
+
+/* when user using print  */
+
+@media  condition {
+  /* styling  */
+}
+example 1:
+@media  print {
+  /* styling  */
+}
+
+/* media Queries and Responsive -Standards  */
+
+/* 
+you can specify a  css file for a condition  :
+<link rel="stylesheet" href="style.css" media="condition">
+
+*/
+
+
+ /*
+  1-css battle 
+  2-frontend mentor 
+  3- zero web designs 
+  4- code pen 
+  
+  // learn css by games ::
+  https://playcode.io/learn/learn-html-by-building-a-cat-photo-app/step-3
+   game flex-box Froggy ,
+   flexbox zombies ,
+   holy grail  
+
+
+   
+   https://nikitahl.com/learn-css-by-playing-games
+  */

@@ -1,0 +1,222 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: 0.45s;
+
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 1.07px;
+    font-weight: 650;
+
+}
+
+:root {
+    --UserSideBackColor: #0B0D1D;
+    --PostContainerBgDarkColor: black;
+    --PostContainerBgLightColor: #dedee3;
+
+
+    --userBorderColor: #FD5802;
+    --bodyBackDark: linear-gradient(154deg, rgb(0 0 0) 0%, rgb(222 222 233));
+    --bodyBackLight: linear-gradient(154deg, rgb(243 243 243) 0%, rgb(4 29 35 / 72%));
+
+}
+
+body {
+
+    width: 100%;
+    min-height: 200vh;
+    display: flex;
+    flex-wrap: nowrap;
+    background: var(--bodyBackDark);
+}
+
+/*------- user side Styling----------  */
+
+#UserSide {
+    width: 30%;
+    height: 100vh;
+    background-color: var(--UserSideBackColor);
+    padding: 10px;
+    padding-top: 0;
+    padding-right: 0;
+
+    position: sticky;
+    top: 0px;
+    left: 0;
+    z-index: 1;
+}
+
+/* user article styling :  */
+#UserSide article {
+    width: 85%;
+    background-color: white !important;
+
+    border-radius: 13px;
+    margin: 0 auto;
+    padding: 6px 10px;
+    margin-bottom: 15px;
+    border: 4px solid transparent;
+}
+
+#UserSide article h4 {
+    font-size: 1.2em;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#UserSide article h6 {
+
+    opacity: 0.6;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+
+}
+
+
+#UserSide .isSelected {
+    border: 4px solid var(--userBorderColor);
+
+}
+
+/*----- /user side Styling ------ */
+
+#PostSide {
+    width: 70%;
+    min-height: 100vh;
+    padding: 10px;
+    padding-top: 140px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--PostContainerBgDarkColor);
+
+}
+
+#PostSide article {
+    width: 83%;
+    background-color: white;
+
+    border-radius: 13px;
+    margin: 0 auto;
+    padding: 14px;
+    margin-bottom: 15px;
+
+}
+
+#PostSide article h4 {
+    padding: 5px;
+    padding-bottom: 12px;
+}
+
+#PostSide article p {
+    padding: 5px;
+    padding-bottom: 7px;
+
+}
+
+
+
+img {
+    position: fixed;
+    z-index: 2;
+}
+
+#DropDown {
+
+    width: 3.34%;
+
+    right: 29px;
+    bottom: 36px;
+}
+
+.Moon {
+    right: 10px;
+    top: 5px;
+
+}
+
+.Sun {
+
+    right: 35px;
+    top: 12px;
+    width: 3.5%;
+    opacity: 20;
+
+
+}
+
+#BurgerBar {
+
+    position: relative;
+    margin-left: calc(100% - 64px);
+    margin-bottom: 40px;
+    width: 3.6rem;
+
+}
+
+.BurgerClicked {
+
+    width: 14% !important;
+
+}
+
+/* width  700 */
+@media (max-width:835px) {
+
+    #PostSide {
+        width: 66%;
+
+
+    }
+
+    #UserSide {
+
+        width: 40%;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width:601px) {
+
+    #PostSide,
+    #UserSide {
+
+        font-size: 0.7rem;
+    }
+
+}
+
+
+@media (max-width:498px) {
+
+    #PostSide,
+    #UserSide {
+
+        font-size: 0.5rem;
+    }
+}
+
+@media (max-width:401px) {
+
+    #PostSide,
+    #UserSide {
+        width: 50%;
+        font-size: 0.46rem;
+    }
+
+    #PostSide {
+        width: 70%;
+
+
+    }
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <form  >
+   
+     <h1>welcome</h1>
+
+     
+     <input type="text" name="input" placeholder="entre a string " id="in">
+     <button >clear</button>
+    </form>
+    <div class="result">
+        <h1>result:</h1>
+      <pre id="content">
+       
+    </pre>
+    </div>
+</div>
+
+    <style>
+       *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: black;   
+    }
+
+       .container{
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+         margin-bottom: 10px;
+        border: 1px 1px rgb(51, 38, 98);
+           border:  3px  rgb(37, 20, 75) solid ;
+           
+             box-shadow: 1px 1px 10px rgb(57, 27, 67);
+   height: 50vh;
+       }
+
+       form{
+       
+               margin: 0  auto;
+        margin-top: 2%;
+         width: 400px; 
+         height: 260px;
+        display: flex;
+          flex-direction: column;
+           padding: 10px;
+           justify-content: space-around;
+           
+           align-items: center;
+    
+
+       }
+       form h1 {
+    
+       }
+        h1{
+            
+            font-size: 24px;
+            padding: 7px;
+            /* box-shadow: 1px 5px 10px rgba(58, 27, 63, 0.46); */
+        border-radius: 5px;
+     
+         text-decoration: underline  ; 
+                    
+        
+        } 
+       
+            input{
+                margin-top: 10px;
+            
+                background-color: white;
+            padding: 8px 0px;
+            text-align: center;
+            font-size: 20px;
+            box-shadow: 1px 1px 7px rgb(35, 25, 58);
+             transition: 0.4s;
+        }
+  
+   input:focus{
+    transform: scale(1.05);
+    box-shadow: 1px 1px 17px rgb(37, 20, 75);
+   }
+        button{
+            padding:5px 10px ;
+            font-weight: 600;
+            font-size: 20px;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            margin-left: 10px;
+         transition: all 0.4s;
+        }
+        button:hover{
+
+            color: rgb(176, 17, 194);
+            border-radius: 2px;
+        }
+
+ 
+        .result{
+           
+        box-shadow: -5px -5px 4px rgba(41, 39, 66, 0.482) ;
+            flex-grow: 1;
+            background-color: black;
+            color: white;
+        width: 100%;
+      
+        }     
+        pre{
+            width: 100%;
+            text-align: center;
+            font-size: 32px;
+            font-family:cursive;
+            text-shadow: 1px 1px 5px rgb(255, 0, 195);
+        }
+
+    </style>
+
+    <script>
+    
+
+    
+  
+   
+   let content=document.getElementById("content"); 
+   let input=document.getElementById('in');
+ 
+
+input.onkeyup =function(){
+    var str=input.value; 
+    var strUc=str.toUpperCase(); 
+     var strRep=strUc.replace('O','Y'); 
+    let newStr=""
+    for(let i=strRep.length-1;i>=0;i--)newStr+=strRep[i]; 
+
+    content.innerText=`
+     ${str}
+     ${strUc}
+     ${strRep}
+     ${newStr}
+    `
+
+  }
+    
+    
+    </script>
+    `
+   
+
+    
+</body>
+</html>

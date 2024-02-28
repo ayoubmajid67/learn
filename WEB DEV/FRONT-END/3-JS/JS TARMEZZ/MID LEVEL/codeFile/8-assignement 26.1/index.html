@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   *{
+    box-sizing: border-box;
+    font-family: cursive;
+    font-weight: 600;
+
+   }
+   .container{
+        width: 100%;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+         flex-wrap: nowrap;
+         justify-content: center;
+         gap: 40px;
+         align-items: center;
+     
+ 
+        }
+   
+        input:hover{ 
+
+transform: scale(1.03);
+
+}
+input:focus{
+box-shadow: 1px 1px 12px black ;
+
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>find student</h1>
+     <input type="text" name="" id="input" style="font-size: 20px;    transition: 0.5s;">
+     <button id="submit" style="font-size: 23px;padding: 3px 8px;"  onclick="clickButton();">Search</button>
+
+    </div>
+
+<script>
+
+   function checkExist(arr,SearchElement){
+       SearchElement=SearchElement.replace(/\s+/g, '');
+       SearchElement=SearchElement.toLowerCase(); 
+     let i=0; 
+       while( i<arr.length){ 
+        if(arr[i]==SearchElement) return true; 
+     i++; 
+    }
+
+     return false; 
+
+
+   } 
+ 
+ let students=["ayoub","adam","radnan","karim"]
+ input=document.getElementById('input'); 
+ btn=document.getElementById('submit');
+
+
+console.log(students); 
+
+function clickButton(){
+
+if(input.value==""){
+    alert("entre first the name of student :"); 
+
+}
+else{ 
+    let title=input.value; 
+checkExist(students,title) ? alert("exist student "):alert("not found student"); 
+
+input.value=""; 
+}
+
+ 
+
+
+}
+ 
+
+
+</script>
+</body>
+</html>

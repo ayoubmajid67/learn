@@ -1,0 +1,37 @@
+
+
+.container{
+ 
+box-shadow: 0px -10px 10px var(--containerShadowColor);
+    padding: 40px;
+    margin-top:20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ 
+   gap: 30px;
+}
+button,
+.container > input{
+
+ width: 50%;
+ font-size: 20px;
+border-bottom: 2px solid var(--inputBorderColor);
+border-radius:5px;
+padding: 2px;
+}
+button{
+    border: none;
+    padding: 4px;
+    text-transform: uppercase;
+}
+
+a{
+    text-decoration: none;
+font-size: 20px;
+    text-align: center;
+}
+
+.linkDiv{
+    text-align: center;
+}

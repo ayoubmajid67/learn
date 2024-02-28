@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignment 5.2</title>
+</head>
+<body>
+    <h1  id="main">hello world </h1>
+
+
+    <script>
+        let  x=10;
+        let y=4;
+        document.write("First number is: ",x,"<br>"); 
+        document.write("Second number is:",4,"<br>"); 
+
+         document.write("sum is: ",x+y,"<br>");
+         document.write("sub is: ",x-y,"<br>");
+         document.write("multi is:",x*y,"<br>");
+         document.write("Div is:",x/y,"<br>");
+         document.write("Mod is:",x%y),"<br>";  
+        
+
+         let main=document.getElementById('main'); 
+         main.innerHTML=`----hello world -----<br>
+                         sum is: ${x+y} <br>
+                         sub is:  ${x-y}<br>
+                         multi is: ${x*y} <br>
+                         Div is: ${x/y} <br>
+                         Mod is: ${x%y}
+
+
+         `
+
+    </script>
+</body>
+
+
+</html>

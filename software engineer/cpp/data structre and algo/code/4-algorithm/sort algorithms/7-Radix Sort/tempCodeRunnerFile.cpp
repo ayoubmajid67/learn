@@ -1,0 +1,1 @@
+(inputArr[i]/div)%1

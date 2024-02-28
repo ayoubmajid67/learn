@@ -1,0 +1,60 @@
+<?php
+session_start();
+# controle du droit d'accès
+if (!isset($_SESSION['utilisateur'])) {
+	header("Location: exo13-login.php");
+}
+require_once('exo13.inc.php');
+# récupération de la liste des clients
+$sql = "SELECT * FROM utilisateur";
+$statement = $db->query($sql);
+$utilisateurs = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+
+$nbClients = $statement->rowCount();
+?>
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>TP 1 - Exo 13</title>
+	<meta name="author" content="Mohammed BELATAR">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0">
+	<link rel="stylesheet" href="tp1.css">
+</head>
+
+<body>
+	<h1>
+		<?php
+		#afficher un message de bienvenue
+		?>
+	</h1>
+	<hr>
+
+	<h2>
+		<?php
+		echo "Nous avons $nbClients clients :"
+		?>
+	</h2>
+	<table class="exo6">
+		<tr>
+			<th>Prénom Nom</th>
+			<th>Téléphone</th>
+			<th>E-mail</th>
+		</tr>
+		<?php
+		#afficher les clients dans la table
+		foreach ($utilisateurs as $u) {
+			echo "<tr>";
+			echo "<td>{$u['prenom']} {$u['nom']}</td>";
+			echo "<td>{$u['telephone']} </td>";
+			echo "<td>{$u['email']} </td>";
+			echo "</tr>";
+		}
+		?>
+	</table>
+</body>
+
+</html>
