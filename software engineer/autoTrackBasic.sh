@@ -9,5 +9,9 @@ git fetch upstream
 # Merge changes into the local repository
 git merge upstream/main --no-edit
 
+#add changes : 
+git add  .
+#  commit changes : 
+git commit -m  'update Basic Roadmpa Stat $1'
 # Push changes to the remote repository
-git push origin main
+git push origin
