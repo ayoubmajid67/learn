@@ -88,22 +88,24 @@ main.mainContainer {
   flex-grow: 1;
 
 }
-.tags{
-width: 30%;
-padding: 14px 10px;
-border: 4px solid var(--primaryColor);
-display: flex;
-flex-wrap: wrap;
-gap: 20px;
-justify-content: center;
-flex-wrap: wrap;
-}
-@media(max-width :772px){
-.tags{
-  width: 90%;
-  border-radius: 10px;
 
+.tags {
+  width: 30%;
+  padding: 14px 10px;
+  border: 4px solid var(--primaryColor);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
+
+@media(max-width :772px) {
+  .tags {
+    width: 90%;
+    border-radius: 10px;
+
+  }
 }
 
 /* end main container  */
