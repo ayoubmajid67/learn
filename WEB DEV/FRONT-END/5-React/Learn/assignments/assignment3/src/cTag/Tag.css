@@ -1,0 +1,23 @@
+.tag{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 12px;
+    box-shadow: 1px 2px 10px black;
+}
+button {
+    padding: 14px 12px;
+    border-radius: 12px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.227);
+    font-weight: 600;
+    background-color: var(--primaryColor);
+    font-size: 0.85em;
+    color: white;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+button.tag:hover{
+    background-color:black;
+}

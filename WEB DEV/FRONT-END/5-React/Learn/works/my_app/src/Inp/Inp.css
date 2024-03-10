@@ -1,0 +1,10 @@
+.inputContainer {
+    width: 70%;
+    margin: 40px auto;
+}
+
+input {
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 1rem;
+}

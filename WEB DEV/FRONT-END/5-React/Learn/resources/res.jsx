@@ -77,7 +77,7 @@
 */
 
 // App.js Main Structure  :----------[]
-    import React from 'react';
+    import React, { Component } from 'react';
     import ReactDOM from 'react-dom/client';
     import './index.css';
     import App from './App';
@@ -280,7 +280,7 @@ const reportWebVitals = onPerfEntry => {
         }; 
     ```
 // add attribute : ----------[]
-    // add  event : 
+    // add event : 
     ```
         <element onEvent={functionName} ></element>
     ```
@@ -348,3 +348,329 @@ const reportWebVitals = onPerfEntry => {
                 );
             }
         ```
+
+// props : --[]
+/*
+parameters that you pass when you create or call a component 
+*/
+// in App.js :
+```
+    <ComponentName paremeter1="value" paremeter2="value" paremeterN="value" />
+```
+// in ComponentName.js
+```
+    export default function({paremeter1,paremeter2,paremeterN}){
+    return(
+        // code 
+
+    );
+    }
+```
+
+// example :  
+// App.js :
+```
+    import "./App.css";
+    import Content from "./content";
+    function App() {
+        return (
+            <div className="App">
+                <Content name="ayoub" email="ayoub@gmail.com" phone="05332"></Content>
+                <Content email="nasim@gmail.com" phone="3322"></Content>
+                <Content name="majid" email="majid@gmail.com" phone="2544"></Content>
+            </div>
+        );
+    }
+    export default App;
+```
+//Content.js  :
+```
+    import './content.css'
+    export default function ({name,email,phone}) {
+        return (
+                <div className='content'>
+                    <h1>{name}</h1>
+                    <h3>{email}</h3>
+                    <h4>{phone}</h4>
+                </div>
+        );
+    }
+```
+
+// add xml content : 
+// in App.js :
+```
+    <ComponentName paremeter1="value" paremeter2="value" paremeterN="value" >
+       // xml content 
+    </ComponentName>
+```
+// in ComponentName.js :  the children key contain value the xml content passed to the componentName 
+```
+    export default function({paremeter1,paremeter2,paremeterN,children}){
+    return(
+        // code 
+        {children}
+
+    );
+    }
+```
+
+// example : 
+// App.js : 
+```
+    import "./App.css";
+    import Content from "./content";
+    function App() {
+        return (
+            <div className="App">
+                <Content name="ayoub" email="ayoub@gmail.com" phone="05332" />
+
+                <Content email="nasim@gmail.com" phone="3322" >
+                    <h1 style={{ backgroundColor: "black", color: "white", padding: "10px" }}>nice to meet you</h1>
+                </Content>
+                <Content name="majid" email="majid@gmail.com" phone="2544"></Content>
+            </div>
+        );
+    }
+    export default App;
+```
+// Content.js :
+```
+    import "./content.css";
+    export default function ({ name = "no name", email = "no email", phone = "no phone", children }) {
+        return (
+            <div className="content">
+                <h1>{name}</h1>
+                <h3>{email}</h3>
+                <h4>{phone}</h4>
+                {children}
+            </div>
+        );
+    }
+```
+// conditional Rendering :--[]
+
+// example using ternary operator ? :
+    return (
+        <div className="App">
+            {showChildren ? (
+                <Content email="nasim@gmail.com" phone="3322">
+                    <h1 style={{ backgroundColor: "black", color: "white", padding: "10px" }}>nice to meet you</h1>
+                </Content>
+            ) : null}
+        </div>
+    );
+
+// example using  if statement : 
+    import "./App.css";
+    import Content from "./content";
+    function App() {
+        let showChildren = true;
+
+        return (
+            <div className="App">
+                <Content name="ayoub" email="ayoub@gmail.com" phone="05332" />
+                <Content name="majid" email="majid@gmail.com" phone="2544" />
+                <LoadChildren childrenStatus={showChildren} />
+            </div>
+        );
+    }
+    function LoadChildren({ childrenStatus = true }) {
+        console.log(Boolean(false));
+        if (childrenStatus) {
+            return (
+                <Content email="nasim@gmail.com" phone="3322">
+                    <h1 style={{ backgroundColor: "black", color: "white", padding: "10px" }}>nice to meet you</h1>
+                </Content>
+            );
+        } else {
+            return null;
+        }
+    }
+    // export default App;
+
+// List Rendering : Example 
+    import "./App.css";
+    import Content from "./content";
+    function App() {
+        const tasks = ["eat my breakfast", "take a shower", "do my homeworks", "Pray the Aicha", "watching a  podcast", "Go to  Sleep"];
+        return (
+            <div className="App">
+                <ul>
+                    {/* you need to add key to make react able to differentiate between lis  */}
+                    {tasks.map((task,index) =>  <li key={index} >{task}</li>)}
+                </ul>
+            </div>
+        );
+    }
+    // export default App;
+
+// stat :
+/*
+    state in React allows components to manage and maintain their internal data, enabling
+    them to be dynamic and interactive. Understanding how to effectively use state is 
+    crucial for building robust and scalable React applications.
+*/
+
+// useStat hook : 
+```
+    import { useState } from "react";
+    export default function Btn({ title }) {
+        if (!title) title = "user title";
+        const [name, setName] = useState(title);
+
+        function changeName() {
+            if (name == title) setName("Ayoub");
+            else setName("Majid");
+        }
+        return (
+            <div className="btnContainer">
+                <button onClick={changeName}>Click Me</button>
+                <h1>{name}</h1>
+            </div>
+        );
+    }
+```
+    /*
+        In this code, the `useState` hook plays a crucial role in managing state
+        within the functional component
+        `Btn`. Let's break down its role and how it triggers re-renders 
+        when the state of `title` changes:
+    */
+
+    //* 1. **Initializing State**:
+    ```javascript
+    const [name, setName] = useState(title);
+    ```
+    /*
+            The `useState` hook is used to declare a state variable `name` and its corresponding
+            setter function `setName`. The initial value of the `name` state variable is set to 
+            the value of the `title` prop passed to the component.
+    */
+    
+    //* 2. **Rendering Initial UI**:
+    ```javascript
+    <h1>{name}</h1>
+    ```
+    /*
+            The `<h1>` element in the JSX renders the current value of the `name` state variable. Initially,
+            it displays the value of the `title` prop passed to the component.
+    */
+
+    //* 3. **Updating State on Button Click**:
+    ```javascript
+    function changeName() { 
+        if (name === title) {
+            setName("Ayoub");
+        } else {
+            setName("Majid");
+        }
+    }
+    ```
+    /*
+        The `changeName` function is called when the button is clicked. It checks if 
+        the current value of the `name` state variable is equal to the `title` prop. 
+        If they are equal, it updates the `name` state variable to `"Ayoub"`, otherwise,
+        it updates it to `"Majid"`.
+    */
+
+    //* 4. **Re-rendering on State Change**:
+    /*
+        When the `setName` function is called to update the state variable `name`,
+        React re-renders the component. This is because React detects the change 
+        in state and automatically triggers a re-render of the component to reflect
+        the updated state. Consequently, the `<h1>` element displaying the value of
+        the `name` state variable is re-evaluated and updated with the new value.
+    */
+    
+    //* 5. **Re-rendered UI**:
+    /*
+    After the state is updated, React re-renders the component with the new value of the `name` 
+    state variable. As a result, the UI is updated to display the new name ("Ayoub" or "Majid") 
+    depending on the current state.
+    */
+    /*
+        In summary, the `useState` hook manages the state of the `name` variable in the `Btn` component.
+        When the state changes (due to button click), React automatically triggers a re-render of the 
+        component to reflect the updated state, resulting in the UI being updated accordingly.
+        This mechanism enables React to efficiently handle state changes and keep the UI in sync 
+        with the underlying data.
+    */
+
+// how does react detect  the change of state : -- []
+    /*
+        React detects changes in state using a mechanism called reconciliation. 
+        When a component's state changes, React compares the previous state with 
+        the new state. It then determines which parts of the component's UI need 
+        to be updated to reflect the changes in state.
+    */
+
+    //* 1. **Virtual DOM**:
+    /*
+        React maintains a virtual representation of the DOM (Document Object 
+        Model), known as the Virtual DOM. This virtual representation mirrors 
+        the actual DOM but is lightweight and exists entirely in memory.
+    */
+
+    //* 2. **Rendering**:
+    /*
+        When a component's state changes, React re-renders the component and 
+        updates the Virtual DOM accordingly. React compares the new Virtual DOM 
+        with the previous Virtual DOM to identify the differences.
+    */
+
+    //* 3. **Differential Algorithm**:
+    /*
+        React employs a highly optimized algorithm called the Reconciliation 
+        Algorithm to perform a "diffing" process between the new Virtual DOM 
+        and the previous Virtual DOM. This process involves efficiently 
+        identifying the minimal set of changes needed to update the actual DOM.
+    */
+
+    //* 4. **Identifying Changes**:
+    /*
+        During the diffing process, React identifies which elements in the 
+        Virtual DOM have changed between the previous and new states. It compares 
+        elements based on their type, attributes, and content.
+    */
+
+    //* 5. **Batching Updates**:
+    /*
+        React batches multiple state updates into a single re-render operation 
+        for performance optimization. This means that if multiple state changes 
+        occur within the same event handler or lifecycle method, React combines 
+        them into a single update, reducing unnecessary re-renders.
+    */
+
+    //* 6. **Updating the DOM**:
+    /*
+        Once React identifies the changes needed to update the actual DOM, it 
+        applies these changes in a batched manner to minimize the number of DOM 
+        manipulations. This process ensures that the UI is efficiently updated 
+        to reflect the changes in state.
+    */
+
+    /*
+        In summary, React detects changes in state by comparing the Virtual DOM 
+        before and after a component's re-rendering. It uses an efficient 
+        reconciliation algorithm to identify the minimal set of changes required 
+        to update the actual DOM, ensuring optimal performance and UI responsiveness.
+    */
+
+// example with input : 
+```
+    import "./Inp.css";
+    import { useState } from "react";
+    export default function Inp() {
+        let [content, setContent] = useState("");
+        function changeName(e) {
+            setContent(e.target.value);
+        }
+        return (
+            <div className="inputContainer">
+                <input placeholder="enter your name" onChange={changeName} />
+                <h2>{content}</h2>
+            </div>
+        );
+    }
+```

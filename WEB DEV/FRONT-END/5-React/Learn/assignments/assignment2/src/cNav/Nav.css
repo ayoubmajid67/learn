@@ -1,0 +1,10 @@
+nav{ 
+ padding: 32px 20px;
+ text-align: center;
+ background-color: var(--primaryColor);
+color: white;
+}
+nav h1{
+    font-size: 2.3em;
+}
+
