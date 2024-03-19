@@ -674,3 +674,281 @@ parameters that you pass when you create or call a component
         );
     }
 ```
+
+// From submission : --[]
+// Method 1 :
+```
+    import "./Frm.css";
+    import { useState } from "react";
+    export default function Frm() {
+        let [name, setName] = useState("");
+        let [age, setAge] = useState(0);
+        age = Number(age);
+        return (
+            <form
+                onSubmit={(event) => {
+                    event.preventDefault();
+                    console.log("name :", name);
+                    console.log("age :", age);
+                }}
+            >
+                <label for="name">name:</label>
+                <input
+                    id="name"
+                    onChange={(event) => {
+                        setName(event.target.value);
+                    }}
+                />
+                <label for="age">age:</label>
+                <input
+                    id="age"
+                    type="number"
+                    onChange={(event) => {
+                        setAge(event.target.value);
+                    }}
+                />
+
+                <button>submit</button>
+            </form>
+        );
+    }
+
+```
+// Method 2 : 
+```
+    import "./Frm.css";
+    import { useState } from "react";
+    export default function Frm() {
+        let [formInfo, setFromInfo] = useState({ name: "", age: 0 });
+
+        function setValue(event) {          
+                setFromInfo({...formInfo,[event.target.id]:event.target.value});
+        }
+        return (
+            <form
+                onSubmit={(event) => {
+                    event.preventDefault();
+                    console.log(formInfo);
+                }}
+            >
+                <label >name:</label>
+                <input id="name" onChange={setValue} />
+                <label >age:</label>
+                <input id="age" type="number" onChange={setValue} />
+
+                <button>submit</button>
+            </form>
+        );
+    }
+```
+// advance Example  Form Stat:
+```
+    import "./Frm.css";
+    import { useState } from "react";
+
+    export default function Frm() {
+        const [formInfo, setFormInfo] = useState({ name: "", age: 0, generalInfo: "", isStudent: false, userCountry: "MR", gender: "" });
+
+        function handleChange(event) {
+            const { id, type, value, checked } = event.target;
+            setFormInfo((prevState) => ({
+                ...prevState,
+                [id]: type === "checkbox" ? checked : value,
+            }));
+        }
+
+        return (
+            <form
+                onSubmit={(event) => {
+                    event.preventDefault();
+                    console.log(formInfo);
+                }}
+            >
+                <label htmlFor="name">Name:</label>
+                <input type="text" id="name" onChange={handleChange} />
+
+                <label htmlFor="age">Age:</label>
+                <input id="age" type="number" onChange={handleChange} />
+
+                <label htmlFor="generalInfo">General Info:</label>
+                <textarea id="generalInfo" onChange={handleChange} />
+
+                <div className="checkedBoxes">
+                    <input type="checkbox" id="isStudent" onChange={handleChange} />
+                    <label htmlFor="isStudent">Is Student</label>
+                </div>
+
+                <select id="userCountry" onChange={handleChange}>
+                    <option>MR</option>
+                    <option>KSA</option>
+                    <option>UAI</option>
+                    <option>US</option>
+                </select>
+
+                <label>Gender:</label>
+
+                <div>
+                    <label>Male</label>
+                    <input type="radio" id="gender" name="gender" value="Male" onChange={handleChange} checked={formInfo.gender === "Male"} />
+                </div>
+
+                <div>
+                    <label>Female</label>
+                    <input type="radio" name="Female" id="gender" value="Female" onChange={handleChange} checked={formInfo.gender === "Female"} />
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        );
+    }
+
+```
+
+// Array Stat Example : 
+    import "./App.css";
+    import { useState } from "react";
+
+    function App() {
+        //  const devices=["Iphone","Mac","Samsung","Windows"];
+
+        let [devices, setDevices] = useState([]);
+        let [deviceInput, setDeviceInput] = useState("");
+
+        const devicesList = devices.map((device, index) => {
+            return (
+                <div key={index} style={{ display: "flex", gap: "20px", width: "60%", minWidth: "250px", alignItems: "center", border: "1px solid black", justifyContent: "space-between", padding: "7px 10px", borderRadius: "10px" }}>
+                    <li>{device}</li>
+
+                    <div style={{ display: "flex", gap: "10px" }}>
+                        <button
+                            onClick={() => {
+                                deleteDevice(index);
+                            }}
+                        >
+                            Delete
+                        </button>
+
+                        <button
+                            onClick={() => {
+                                updateDevice(index);
+                            }}
+                        >
+                            update
+                        </button>
+                    </div>
+                </div>
+            );
+        });
+
+        function deleteDevice(deviceIndex) {
+            let newDeviceList = [...devices];
+            newDeviceList.splice(deviceIndex, 1);
+            setDevices(newDeviceList);
+        }
+        function updateDevice(deviceIndex) {
+            let newDevices = [...devices];
+
+            newDevices[deviceIndex] = prompt("enter the new Name : ", newDevices[deviceIndex]);
+
+            if (newDevices[deviceIndex]) setDevices(newDevices);
+        }
+        function changeStat(event) {
+            setDeviceInput(event.target.value);
+        }
+
+        function addDevice() {
+            setDevices((prevState) => [...prevState, deviceInput]);
+            setDeviceInput("");
+        }
+
+        return (
+            <div className="App">
+                <div className="addDeviceContainer" style={{ margin: "30px" }}>
+                    <input placeholder="add new device" style={{ marginRight: "6px" }} onChange={changeStat} value={deviceInput} />
+                    <button onClick={addDevice}>Add</button>
+                </div>
+
+                <ul style={{ marginTop: "20px", display: "flex", flexDirection: "column", gap: "10px", alignItems: "center" }}>{devicesList}</ul>
+            </div>
+        );
+    }
+
+//  updating states several Times :--[]
+    function App() {
+        let [count, setCount] = useState(0);
+    
+        function increaseCounter() {
+            setCount(prevCount => prevCount + 1);
+            setCount(prevCount => prevCount + 1);
+        }
+        
+    
+        return (
+            <div className="App">
+                <h1 >The count is : <span onClick={increaseCounter}  >{count}</span> </h1>
+            </div>
+        );
+    }
+/*
+        The reason the counter doesn't increment by 2 each time you click is because 
+         the `setCount` function in React's `useState` hook doesn't immediately update 
+         the state. Instead, it schedules  an update, and React 
+        may batch multiple `setState` calls together for performance reasons.
+
+        In your `increaseCounter` function, you're calling `setCount` 
+        twice with the same value of `count`. Both calls essentially set the same
+        value. React sees these two calls and batches them together
+        into a single update, resulting in only one increment by 1.
+    
+        If you want to increase the count by 2 each time you click,
+        you should use the functional update form of `setCount`, which 
+        takes the current state as an argument and returns the
+        new state. This ensures that the state updates are applied
+        one after the other:
+*/  
+        ```javascript
+        function increaseCounter() {
+            setCount(prevCount => prevCount + 1);
+            setCount(prevCount => prevCount + 1);
+        }
+        ```
+/*        
+        With this change, the count will indeed increase by 2 
+        each time you click. Each call to  `setCount` is now using
+        the previous state to calculate the new state, so you're  effectively
+        incrementing by 1 twice.
+*/
+/*
+    In JavaScript, code execution generally follows a single-threaded event loop model.
+    This means that JavaScript code is executed in a sequence, and only one operation 
+    can be processed at a time. However, React's reconciliation process and state updates
+    are asynchronous operations, meaning they don't happen immediately when you call
+    `setState` or `useState` setter functions.
+
+    When you call `setState` or `useState` setters in React, React schedules the state
+    updates for processing. React then decides when to apply these updates based on
+    its internal mechanism, which aims to optimize performance by batching updates 
+    and minimizing unnecessary re-renders.
+
+    While you can't precisely determine whether two state updates will be batched 
+    together or not in a given scenario, you can rely on React's behavior that it
+    will batch updates when possible to improve performance.
+
+    Here's a simplified explanation of how React typically handles state updates:
+
+    1. When you call `setState` or `useState` setter functions, React records the
+    state update requests.
+    2. React batches multiple state updates that occur within the same event loop iteration.
+    3. Before the next repaint, React reconciles the state updates and performs 
+    a single re-render of the component.
+
+    In your specific case, calling `setCount` twice within the same event loop iteration
+    is likely to result in React batching these updates together,
+    leading to a single re-render of the component with the combined state update.
+    However, React's exact behavior may vary depending on factors such as the React version,
+        the environment (development vs. production), and the complexity of your component tree.
+
+    While you cannot directly observe the batching behavior of React's state updates
+    , you can rely on React's efficient handling of state updates to optimize performance
+    in your application.
+*/
