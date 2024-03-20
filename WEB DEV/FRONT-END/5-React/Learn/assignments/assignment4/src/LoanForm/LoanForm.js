@@ -51,19 +51,9 @@ export default function Form() {
 	}
 
 	function GeneraleAlterMsg() {
-		return formInfo.isSubmitted && (
-			<>
-				{errors.isValidAge && errors.isValidPhone ? (
-					<Alter msg="The Form Has Been submitted Successfully" />
-				) : !errors.isValidPhone ? (
-					<Alter msg="Phone Number Format is incorrect" msgColor="red" />
-				) : (
-					<Alter msg="Age is Not allowed" msgColor="red" />
-				)}
-			</>
-		);
+		return formInfo.isSubmitted && <>{errors.isValidAge && errors.isValidPhone ? <Alter msg="The Form Has Been submitted Successfully" /> : !errors.isValidPhone ? <Alter msg="Phone Number Format is incorrect" msgColor="red" /> : <Alter msg="Age is Not allowed" msgColor="red" />}</>;
 	}
-	
+
 	return (
 		<>
 			<form onSubmit={handelFormSubmission}>
