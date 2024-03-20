@@ -1,0 +1,29 @@
+.alterDiv {
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  font-size: 1.1rem;
+  background-color: rgba(0, 0, 0, 0.414);
+
+  transition: 0.4s;
+}
+
+.alterDiv h2 {
+  margin-top: -30px;
+  padding: 20px 15px;
+  background-color: white;
+  background-color: black;
+  border: 2px solid white;
+  width: 60%;
+  min-width: 300px;
+  border-radius: 12px;
+  text-align: center;
+  background-color: rgba(1, 13, 16, 0.892);
+
+
+}

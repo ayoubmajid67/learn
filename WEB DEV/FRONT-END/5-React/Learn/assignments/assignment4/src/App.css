@@ -1,0 +1,15 @@
+body{
+    background-image:url('https://ayoubmajid67.github.io/Portfolio/back/webp/contact.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.703);
+    background-blend-mode: color;
+    -webkit-background-blend-mode: color;
+    height: 100vh;
+    overflow: hidden;
+}
+.App{
+    height: 85vh;
+   display: flex;
+   align-items: center; 
+}
