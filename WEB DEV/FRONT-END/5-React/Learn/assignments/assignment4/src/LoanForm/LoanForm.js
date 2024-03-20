@@ -6,7 +6,7 @@ export default function Form() {
 	let initialFormInfo = {
 		name: "",
 		phone: "",
-		age: 0,
+		age: "",
 		salary: "Less Than 500$",
 		isEmployee: false,
 		isSubmitted: false,
@@ -17,7 +17,7 @@ export default function Form() {
 	};
 
 	let [formInfo, setFormInfo] = useState(initialFormInfo);
-	let [Errors, setErrors] = useState(initialErrors);
+	let [errors, setErrors] = useState(initialErrors);
 	document.addEventListener("click", (event) => {
 		if (formInfo.isSubmitted && !event.target.classList.contains("alterDivText")) {
 			setFormInfo((prevState) => ({
@@ -51,16 +51,19 @@ export default function Form() {
 	}
 
 	function GeneraleAlterMsg() {
-		if (formInfo.isSubmitted) {
-			if (Errors.isValidAge && Errors.isValidPhone) 
-			return <Alter msg="The Form Has Been submitted Successfully"></Alter>;
-			else if (!Errors.isValidPhone) 
-			return <Alter msg="Phone Number Format is incorrect" msgColor="red"></Alter>;
-			else return <Alter msg="Age is Not allowed" msgColor="red"></Alter>;
-		} else {
-			return null;
-		}
+		return formInfo.isSubmitted && (
+			<>
+				{errors.isValidAge && errors.isValidPhone ? (
+					<Alter msg="The Form Has Been submitted Successfully" />
+				) : !errors.isValidPhone ? (
+					<Alter msg="Phone Number Format is incorrect" msgColor="red" />
+				) : (
+					<Alter msg="Age is Not allowed" msgColor="red" />
+				)}
+			</>
+		);
 	}
+	
 	return (
 		<>
 			<form onSubmit={handelFormSubmission}>
