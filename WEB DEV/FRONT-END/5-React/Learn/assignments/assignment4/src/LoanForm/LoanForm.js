@@ -41,23 +41,21 @@ export default function Form() {
 			isSubmitted: true,
 		}));
 
-		if (formInfo.phone.length < 10 || formInfo.phone.length > 12) {
-			setErrors((prevState) => ({ ...prevState, isValidPhone: false }));
-		} else {
-			setErrors((prevState) => ({ ...prevState, isValidPhone: true }));
-		}
+		const isValidPhone = formInfo.phone.length >= 10 && formInfo.phone.length <= 12;
+		const isValidAge = formInfo.age >= 18 && formInfo.age <= 100;
 
-		if (formInfo.age > 100 || formInfo.age < 18) {
-			setErrors((prevState) => ({ ...prevState, isValidAge: false }));
-		} else {
-			setErrors((prevState) => ({ ...prevState, isValidAge: true }));
-		}
+		setErrors({
+			isValidPhone,
+			isValidAge,
+		});
 	}
 
 	function GeneraleAlterMsg() {
 		if (formInfo.isSubmitted) {
-			if (Errors.isValidAge && Errors.isValidPhone) return <Alter msg="The Form Has Been submitted Successfully"></Alter>;
-			else if (!Errors.isValidPhone) return <Alter msg="Phone Number Format is incorrect" msgColor="red"></Alter>;
+			if (Errors.isValidAge && Errors.isValidPhone) 
+			return <Alter msg="The Form Has Been submitted Successfully"></Alter>;
+			else if (!Errors.isValidPhone) 
+			return <Alter msg="Phone Number Format is incorrect" msgColor="red"></Alter>;
 			else return <Alter msg="Age is Not allowed" msgColor="red"></Alter>;
 		} else {
 			return null;
