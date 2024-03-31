@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+form {
+  padding: 5px 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 1px 5px 10px rgb(43, 35, 7);
+  border-radius: 17px;
+  width: 60%;
+  position: relative;
+  margin: 0 auto;
+  background-image: url('https://ayoubmajid67.github.io/Portfolio/back/webp/contact.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(12, 9, 1, 0.738);
+  background-blend-mode: color;
+  -webkit-background-blend-mode: color;
+  color: white;
+}
+
+@media (max-width :768px) {
+  form {
+    width: 75%;
+  }
+}
+
+form .header {
+  margin-bottom: 10px;
+
+}
+
+.header hr {
+  border: 2px solid inherit;
+  width: 100%;
+  margin-bottom: 10px;
+
+}
+
+.header h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.inputContainer {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.inputContainer:not(.employeeContainer) {
+
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+.inputContainer label {
+  font-size: 0.8rem;
+  font-weight: 600;
+
+}
+
+form select{
+  padding: 15px 20px;
+  border-radius: 4px 6px;
+  transition: 0.3s;
+  border: none;
+}
+
+.employeeContainer {
+  margin-top: 20px;
+  gap: 11px;
+  padding: 13px 13px;
+  border-radius: 4px 6px;
+  color: black;
+  background-color: white;
+}
+
+.employeeContainer label {
+  color: rgb(53, 53, 54);
+}
+
+input[type='submit'] {
+  align-self: center;
+  width: 30%;
+  min-width: 200px;
+  margin-top: 10px;
+
+}

@@ -1,6 +1,8 @@
 import "./LoanForm.css";
 import { useState } from "react";
 import Alter from "../Alter/Alter";
+import Input from "../Input/Input";
+import { LoanInputsContext } from "../contexts/LoanFormInputsContext";
 
 export default function Form() {
 	let initialFormInfo = {
@@ -51,9 +53,7 @@ export default function Form() {
 	}
 
 	function GeneraleAlterMsg() {
-		return formInfo.isSubmitted && <>{errors.isValidAge && errors.isValidPhone ? <Alter msg="The Form Has Been submitted Successfully" /> 
-		: !errors.isValidPhone ? <Alter msg="Phone Number Format is incorrect" msgColor="red" />
-		 : <Alter msg="Age is Not allowed" msgColor="red" />}</>;
+		return formInfo.isSubmitted && <>{errors.isValidAge && errors.isValidPhone ? <Alter msg="The Form Has Been submitted Successfully" /> : !errors.isValidPhone ? <Alter msg="Phone Number Format is incorrect" msgColor="red" /> : <Alter msg="Age is Not allowed" msgColor="red" />}</>;
 	}
 
 	return (
@@ -65,14 +65,20 @@ export default function Form() {
 				</div>
 
 				<div className="nameContainer inputContainer">
-					<input type="text" placeholder="name" id="name" value={formInfo.name} required onChange={changeFormInfo} />
+					<LoanInputsContext.Provider value={{ value: formInfo.name, id: "name", handelChange: changeFormInfo, placeholder: "Enter Your Name" }}>
+						<Input />
+					</LoanInputsContext.Provider>
 				</div>
 				<div className="phoneContainer inputContainer">
-					<input type="number" placeholder="phone number" id="phone" value={formInfo.phone} required onChange={changeFormInfo} />
+					<LoanInputsContext.Provider value={{ value: formInfo.phone, id: "phone", handelChange: changeFormInfo, placeholder: "Enter Your Phone " }}>
+						<Input />
+					</LoanInputsContext.Provider>
 				</div>
 
 				<div className="ageContainer inputContainer">
-					<input type="number" placeholder="age" id="age" required maxLength="2" value={formInfo.age} onChange={changeFormInfo} />
+					<LoanInputsContext.Provider value={{ type: "number", value: formInfo.age, id: "age", handelChange: changeFormInfo, placeholder: "Enter Your Age " }}>
+						<Input />
+					</LoanInputsContext.Provider>
 				</div>
 
 				<div className="salaryContainer inputContainer">

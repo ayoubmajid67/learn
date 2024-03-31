@@ -857,3 +857,334 @@ dict.fromkeys(iterableVar,value) # defaultValue=None
 
         # Print the formatted result
         print("Result: {:.2f}".format(result))
+
+# membership operators :
+"""
+    in 
+    not in 
+"""
+
+#example : 
+    name = "ayoub"
+
+    print('s' in name)  # False
+    print('y' in name)  # True
+    print('t' in name)  # False
+
+    # List :
+    friends = ["ayoub", "amine", "kamal"]
+
+    print("ayoub" in friends)  # True
+    print("youb" in friends)  # False
+    print("amine" not in friends)  # False
+    print("nice" not in friends)  # True
+
+    # using in and not in with condition :
+    countriesOne = ["Morocco", "KSA", "Kuwait", "Bahrain"]
+    countriesOneDiscount = 80
+
+    countriesTwo = ["Egypt", "Italy", "Irak"]
+    countriesTwoDiscount = 70
+
+    userCountry = "Morocco"
+    if userCountry in countriesOne:
+        print("the discount is : ", countriesOneDiscount)
+    elif userCountry in countriesTwo:
+        print("the discount is : ", countriesTwoDiscount)
+    else:
+        print("no Available Discount For Your country ")
+
+# practical membership control :
+    adminsList = ['Ayoub', 'Osama', "Amine"]
+
+    name = input('Enter Your Name : ').strip().capitalize()
+
+    if name in adminsList:
+        print("You're Admin :")
+        option = input(
+            "Enter Your Option Update/Delete Your Name : ").strip().capitalize()
+        if option == 'Update' or option == 'U':
+            newName = input("Enter Your new Name : ").strip().capitalize()
+            if newName in adminsList:
+                print("The Entered a Name that is Already Exist in the database :")
+            else:
+                adminsList[adminsList.index(name)] = newName
+
+                print(f"Your name updated successfully To {newName}")
+        elif option == 'Delete' or option == 'D':
+            adminsList.remove(name)
+            print("Your Name remove with success : ")
+        else:
+            print("Invalid Option You should Choice either Delete Or Update ")
+    else:
+        print("You're not an Admin ")
+        addAdminStatus = input(
+            "Do You Want To add yourself y/n : ").strip().capitalize()
+        if addAdminStatus == 'Yes' or addAdminStatus == 'Y':
+            adminsList.append(name)
+            print("Your Name added with Success : ")
+        else:
+            print("Good Bye : ")
+
+#loops : -------------[]
+# while loop :
+while condition :
+    #code
+
+#example : print number from 0 to 10
+    a = 0
+    while a < 10:
+        a += 1
+        print(a)
+
+#example List an Array:      
+ls=['ayoub',"amine","ak",'tt']
+a=0
+while a < len(ls) :
+    print(f" [{str(a+1).zfill(2)}] = {ls[a]}")
+    a+=1
+
+#example Bookmark Manager: 
+        myFavoriteWebs=[]
+    maxWebs=5
+    while maxWebs > 0 : 
+        web=input("Enter the websiteName without https:// : ")
+        myFavoriteWebs.append(f'https://{web.strip().lower()}')
+        maxWebs-=1
+        print(f"Website added , {maxWebs} Places left")
+
+    print("Favorite List :")
+    myFavoriteWebs.sort()
+    print(myFavoriteWebs); 
+
+#example password Guess : 
+    tries = 4
+    mainPassword = "osama@123"
+    while tries > 0:
+        inputPassword = input("Write Your Password: ").strip().lower()
+        if inputPassword == mainPassword:
+            print("Correct Password :")
+            break
+        tries -= 1
+        print(f"Wrong Password {'last' if tries == 0 else tries} chance Left ")
+
+    else:
+        print("Your Account Locked : ")
+
+# For Loop :         
+"""
+    # -----------------
+    # -- Loop => For --
+    # -----------------
+    # for item in iterable_object :
+    #   Do Something With Item
+    # -----------------------------
+    # item Is A Vairable You Create and Call Whenever You Want
+    # item refer to the current position and will run and visit 
+      all items to the end
+    # iterable_object => Sequence [ list, tuples, set, dict, string
+      of charcaters, etc ... ]
+"""    
+#syntax : --
+    # iterator an iterator 
+        for iteration in iterator  :
+            # code 
+
+    #Loop range 
+        # the end not included :  
+        for i range(startIndex, endIndex) :
+            # code 
+
+    #examples : 
+    myNumbers = [1, 2, 3, 4, 5, 6, 7, 8]
+
+    print("The first method : ")
+    for number in myNumbers:
+        print(number)
+
+
+    print("The second method : ")
+    for i in range(0, len(myNumbers)):
+        print(f"arr[{i}]= {myNumbers[i]} ")
+
+
+    myName="ayoub"
+
+    for character in  myName : 
+        print(f"{character} ",end="") 
+
+        mySkills={ 
+    "html":"90%",
+    "css":"80%",
+    "js":"94%",
+    "python":"90%",
+    "html":"90%",
+    }
+    print(mySkills['js'])
+
+    for skill in mySkills : 
+        print(skill,end=" ")
+        print(mySkills[skill])
+    #nested Loop :
+    peoples = {
+    "Ayoub": {
+        "html": "70%",
+        "css": "90%",
+        "js": "92%",
+    },
+    "Amine": {
+        "html": "70%",
+        "css": "90%",
+        "js": "92%",
+    },
+    "Kamal": {
+        "html": "70%",
+        "css": "90%",
+        "js": "92%",
+    },
+    }
+    for person in peoples :
+        print("the person is : ",person)
+        for skill in peoples[person] :
+            print(f"{skill} => {peoples[person][skill]}")
+        print("\n")
+
+
+# break : break a Loop 
+    numbers=[1,2,3,4,5,6]
+    for number in numbers :
+        if number== 3 : 
+            continue
+        print(number)     # 1 2  
+# continue : jump to next iteration 
+    numbers=[1,2,3,4,5,6]
+    for number in numbers :
+        if number== 3 : 
+            continue
+        print(number)     # 1 2 4 5 6 
+
+# pass : replace empty blocks 
+    for number in numbers :
+    pass 
+      
+    if 0==0 :
+        pass
+
+# new way to print key value (dict): 
+    skills = {
+        "html": "90%",
+        "css": "95%",
+        "js": "92%",
+    }
+
+    print(skills)
+
+    for key, value in skills.items():
+        print(f"Key : {key} => value : {value}")
+
+#advance example : 
+    skills = {
+        "html": {
+            'Main': "93%",
+            "pagJs": "90%"
+        },
+        "css": {
+            'Sass': "90%",
+            'tailwind': "99%",
+        }
+    }
+
+    for key, value in skills.items():
+        print(f'{key} Progress Is : ')
+        for childKey, childValue in value.items():
+            print(f'  {childKey} => {childValue}')
+
+# functions : 
+"""
+    # [1] A Function is A Reusable Block Of Code Do A Task
+    # [2] A Function Run When You Call It
+    # [3] A Function Accept Element To Deal With Called [Parameters]
+    # [4] A Function Can Do The Task Without Returning Data
+    # [5] A Function Can Return Data After Job is Finished
+    # [6] A Function Create To Prevent DRY
+    # [7] A Function Accept Elements When You Call It Called [Arguments]
+    # [8] There's A Built-In Functions and User Defined Functions
+    # [9] A Function Is For All Team and All Apps
+    # ----------------------------------------
+"""
+def functionName(parameters) :
+    # code
+    [ return value]
+
+# call a function : 
+functionName(parametersValue)
+
+#example 1 : 
+    def functionName() :
+        return 'Hello Python From Inside Function'
+
+    dataFromFunction=functionName()
+    print(dataFromFunction) # Hello Python From Inside Function
+
+# example 2 : 
+    def sayHello(name) :
+        print(f"Hello {name}")
+
+    sayHello("amine")
+    sayHello("Ahmed")
+    sayHello("Kamal")
+
+# Function Packing, Unpacking Arguments *Args
+# example 1 : 
+    def say_hello(*peoples):  # n1, n2, n3, n4
+
+    for name in peoples:
+
+        print(f"Hello {name}")
+
+    say_hello("Osama", "Ahmed", "Sayed", "Mahmoud")
+# example 2 : 
+    def show_details(name, *skills):
+
+    print(f"Hello {name} Your Skills Is: ")
+
+    for skill in skills:
+
+        print(skill)
+
+    show_details("Osama", "Html", "CSS", "JS")
+    show_details("Ahmed", "Html", "CSS", "JS", "Python", "PHP", "MySQL")
+
+# Default function parameters : 
+#example : 
+    def say_hello(name="Unknown", age="Unknown", country="Unknown"):
+
+    print(f"Hello {name} Your Age is {age} and Your Country Is {country}")
+
+    say_hello("Osama", 36, "Egypt")
+    say_hello("Mahmoud", 28, "KSA")
+    say_hello("Sameh", 38)
+    say_hello("Ramy")
+    say_hello()
+# -- Function Packing, Unpacking Arguments **KWArgs --
+# get values as a Dictionary 
+#example 1 : 
+    def printValues(**args):
+        print(args)
+    printValues(first="nice",second="good")
+
+#example 2 : 
+    mySkills = {
+    'Html': "80%",
+    'Css': "70%",
+    'Js': "50%",
+    'Python': "80%",
+    "Go": "40%"
+    }
+
+    def show_skills(**skills):
+    for skill, value in skills.items():
+
+        print(f"{skill} => {value}")
+
+    show_skills(**mySkills)

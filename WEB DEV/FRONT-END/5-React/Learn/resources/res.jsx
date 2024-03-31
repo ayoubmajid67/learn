@@ -878,8 +878,8 @@ parameters that you pass when you create or call a component
         let [count, setCount] = useState(0);
     
         function increaseCounter() {
-            setCount(prevCount => prevCount + 1);
-            setCount(prevCount => prevCount + 1);
+            setCount(count + 1);
+            setCount(count+ 1);
         }
         
     
@@ -952,3 +952,404 @@ parameters that you pass when you create or call a component
     , you can rely on React's efficient handling of state updates to optimize performance
     in your application.
 */
+
+// Prop Drilling : is pass a stat   From parents to a hierarchal  children 
+
+// useContext : 
+/*
+    useContext is a React Hook that allows functional components to consume values from the Context API. 
+    Context provides a way to pass data through the component tree without having to pass props down 
+    manually at every level.
+*/
+
+// How useContext Works:
+/*
+    Create a Context: First, you need to create a context using the React.createContext() 
+    function. This creates a new context object.
+
+    Provide the Context: You then provide the context to the component tree using a Context.Provider 
+    component. This component wraps the part of the tree where you want to make the context available.
+
+    Consume the Context: Finally, you consume the context value in any descendant component using
+    the useContext hook. This hook takes the context object as an argument and returns 
+    its current value.
+*/
+
+// steps : 
+/*
+    1- define the provider  :
+    2- define the consumer  :
+    3- value to pass :
+ */
+
+    // Main Features of useContext:
+ /*   
+    Simplicity: useContext provides a simple way to consume context values in 
+    functional components without the need for render props or higher-order components.
+    
+    Avoids Prop Drilling: It helps in avoiding prop drilling by allowing components
+     to access context values directly, no matter how deeply nested they are in the component tree.
+    
+    Dynamic Context Updates: Components consuming context with useContext will
+     re-render whenever the context value changes.
+    
+    Performance Optimization: React optimizes the context value retrieval with useContext,
+     ensuring that components only re-render when necessary based on changes to the context value.
+    
+    Multiple Contexts: You can consume multiple contexts within a single component by 
+    calling useContext multiple times with different context objects.
+    
+    Static Type Checking: useContext can be easily used with static type checking libraries
+     like TypeScript for type-safe context consumption.
+    
+    In summary, useContext is a powerful tool in React for managing state and sharing data 
+    across components in a more concise and efficient way compared to traditional prop drilling methods.
+*/
+//  Example : ------
+// --------- App.js ------------- :
+```
+    import "./App.css";
+    import Form from "./LoanForm/LoanForm";
+
+    import { UserContext } from "./contexts/UserContext";
+    import { useState } from "react";
+
+    export default function App() {
+        let defaultUser = {
+            username: "",
+            password: "",
+        };
+        let [user, setUser] = useState(defaultUser);
+
+        window.onload = function () {
+            let username = prompt("Enter Your userName : ");
+            let password = prompt("Enter Your password : ");
+
+            setUser({ username: username, password: password });
+        };
+
+        return (
+            <div className="App">
+                <UserContext.Provider value={user}>
+                    <Form />
+                </UserContext.Provider>
+            </div>
+        );
+    }
+```
+// --------- LoanForm.js ------------- :
+```
+    import "./LoanForm.css";
+    import { useState } from "react";
+    import Alter from "../Alter/Alter";
+    import Input from "../Input/Input";
+    import { LoanInputsContext } from "../contexts/LoanFormInputsContext";
+
+    export default function Form() {
+        let initialFormInfo = {
+            name: "",
+            phone: "",
+            age: "",
+            salary: "Less Than 500$",
+            isEmployee: false,
+            isSubmitted: false,
+        };
+        let initialErrors = {
+            isValidPhone: true,
+            isValidAge: true,
+        };
+
+        let [formInfo, setFormInfo] = useState(initialFormInfo);
+        let [errors, setErrors] = useState(initialErrors);
+        document.addEventListener("click", (event) => {
+            if (formInfo.isSubmitted && !event.target.classList.contains("alterDivText")) {
+                setFormInfo((prevState) => ({
+                    ...prevState,
+                    isSubmitted: false,
+                }));
+            }
+        });
+
+        function changeFormInfo(event) {
+            const { id, type, value, checked } = event.target;
+            setFormInfo((prevState) => ({
+                ...prevState,
+                [id]: type === "checkbox" ? checked : value,
+            }));
+        }
+        function handelFormSubmission(event) {
+            event.preventDefault();
+            setFormInfo((prevState) => ({
+                ...prevState,
+                isSubmitted: true,
+            }));
+
+            const isValidPhone = formInfo.phone.length >= 10 && formInfo.phone.length <= 12;
+            const isValidAge = formInfo.age >= 18 && formInfo.age <= 100;
+
+            setErrors({
+                isValidPhone,
+                isValidAge,
+            });
+        }
+
+        function GeneraleAlterMsg() {
+            return formInfo.isSubmitted && <>{errors.isValidAge && errors.isValidPhone ? 
+                <Alter msg="The Form Has Been submitted Successfully" /> : !errors.isValidPhone ?
+                 <Alter msg="Phone Number Format is incorrect" msgColor="red" /> 
+                 : <Alter msg="Age is Not allowed" msgColor="red" />}</>;
+        }
+
+        return (
+            <>
+                <form onSubmit={handelFormSubmission}>
+                    <div className="header">
+                        <h2>Requesting a Loan</h2>
+                        <hr />
+                    </div>
+
+                    <div className="nameContainer inputContainer">
+                        <LoanInputsContext.Provider value={{ value: formInfo.name, id: "name", 
+                        handelChange: changeFormInfo, placeholder: "Enter Your Name" }}>
+                            <Input />
+                        </LoanInputsContext.Provider>
+                    </div>
+                    <div className="phoneContainer inputContainer">
+                        <LoanInputsContext.Provider value={{ value: formInfo.phone, id: "phone", 
+                        handelChange: changeFormInfo, placeholder: "Enter Your Phone " }}>
+                            <Input />
+                        </LoanInputsContext.Provider>
+                    </div>
+
+                    <div className="ageContainer inputContainer">
+                        <LoanInputsContext.Provider value={{ type: "number", value: formInfo.age, id: "age", 
+                        handelChange: changeFormInfo, placeholder: "Enter Your Age " }}>
+                            <Input />
+                        </LoanInputsContext.Provider>
+                    </div>
+
+                    <input type="submit" />
+                </form>
+
+                {GeneraleAlterMsg()}
+            </>
+        );
+    }
+```
+// --------- Input.js ------------- :
+```
+    import "./Input.css";
+
+    import { useContext } from "react";
+
+    import { LoanInputsContext } from "../contexts/LoanFormInputsContext";
+    import { UserContext } from "../contexts/UserContext";
+
+    export default function Input() {
+        const inputContext = useContext(LoanInputsContext);
+        const userContextInfo = useContext(UserContext);
+
+        return (
+            <div className="inputContent">
+                <h1>The User {userContextInfo.username}</h1>
+                <h2>This is the header of the Component</h2>
+                <input type={inputContext.type} placeholder={inputContext.placeholder} 
+                id={inputContext.id} value={inputContext.value} onChange={inputContext.handelChange}
+                 required={inputContext.IsRequired} />
+            </div>
+        );
+    }
+```
+// --------- Alter.js ------------- :
+```
+    import "./Alter.css";
+    import { useContext } from "react";
+    import { UserContext } from "../contexts/UserContext";
+
+    export default function Alter({ msg = "Message To Show", msgColor = "green", children }) {
+    let userData = useContext(UserContext);
+    return (
+        <div className="alterDiv">
+        <h2 style={{ color: msgColor }} className="alterDivText">
+            {msg}
+            {msgColor === "green" && (
+            <h3>Welcome Mes {userData.username}</h3>
+            )}
+        </h2>
+        {children}
+        </div>
+    );
+    }
+```
+
+// Example 2 : 
+// --------- App.js ------------- :
+```
+    import { useState } from 'react';
+    import { places } from './data.js';
+    import { getImageUrl } from './utils.js';
+    import {imgSizeContext,placeContext} from "./Context.js"
+
+    export default function App() {
+    const [isLarge, setIsLarge] = useState(false);
+    const imageSize = isLarge ? 150 : 100;
+    return (
+        <>
+        <label>
+            <input
+            type="checkbox"
+            checked={isLarge}
+            onChange={e => {
+                setIsLarge(e.target.checked);
+            }}
+            />
+            Use large images
+        </label>
+        <hr />
+        <imgSizeContext.Provider value={imageSize}>
+        <List />
+        </imgSizeContext.Provider>
+        
+        </>
+    )
+    }
+
+        function List() {  
+        const listItems = 
+            places.map(place =>
+            <li key={place.id}>
+            <placeContext.Provider value={place}>
+            <Place />
+            </placeContext.Provider>
+            </li>
+        );
+        return (
+            <ul>{listItems}</ul>
+                );
+        
+        }
+
+        import { useContext } from "react";
+        function Place() {
+        let place=useContext(placeContext)
+        return (
+            <>
+            <PlaceImage
+            />
+            <p>
+                <b>{place.name}</b>
+                {': ' + place.description}
+            </p>
+            </>
+        );
+        }
+
+        function PlaceImage() {
+        let imgSize=useContext(imgSizeContext);
+            let place=useContext(placeContext)
+        return (
+            <img
+            src={getImageUrl(place)}
+            alt={place.name}
+            width={imgSize}
+            height={imgSize}
+            />
+        );
+        }
+```
+// --------- context.js ------------- :
+import { createContext } from "react";
+export let imgSizeContext=createContext(0); 
+export let  placeContext=createContext({})
+
+// --------- data.js ------------- :
+export const places = [{
+    id: 0,
+    name: 'Bo-Kaap in Cape Town, South Africa',
+    description: 'The tradition of choosing bright colors for houses began in the late 20th century.',
+    imageId: 'K9HVAGH'
+  }, {
+    id: 1, 
+    name: 'Rainbow Village in Taichung, Taiwan',
+    description: 'To save the houses from demolition, Huang Yung-Fu, a local resident, painted all 1,200 of them in 1924.',
+    imageId: '9EAYZrt'
+  }, {
+    id: 2, 
+    name: 'Macromural de Pachuca, Mexico',
+    description: 'One of the largest murals in the world covering homes in a hillside neighborhood.',
+    imageId: 'DgXHVwu'
+  }, {
+    id: 3, 
+    name: 'Selarón Staircase in Rio de Janeiro, Brazil',
+    description: 'This landmark was created by Jorge Selarón, a Chilean-born artist, as a "tribute to the Brazilian people."',
+    imageId: 'aeO3rpI'
+  }, {
+    id: 4, 
+    name: 'Burano, Italy',
+    description: 'The houses are painted following a specific color system dating back to 16th century.',
+    imageId: 'kxsph5C'
+  }, {
+    id: 5, 
+    name: 'Chefchaouen, Marocco',
+    description: 'There are a few theories on why the houses are painted blue, including that the color repels mosquitos or that it symbolizes sky and heaven.',
+    imageId: 'rTqKo46'
+  }, {
+    id: 6,
+    name: 'Gamcheon Culture Village in Busan, South Korea',
+    description: 'In 2009, the village was converted into a cultural hub by painting the houses and featuring exhibitions and art installations.',
+    imageId: 'ZfQOOzf'
+  }];
+  
+// --------- utils.js ------------- :
+export function getImageUrl(place) {
+    return (
+      'https://i.imgur.com/' +
+      place.imageId +
+      'l.jpg'
+    );
+  }
+
+// React Router :  --- []
+
+// install the react router dom library :
+``` 
+    npm install react-router-dom --save 
+```
+// in the index.html :
+```
+    import React from 'react';
+    import ReactDOM from 'react-dom/client';
+    import './index.css';
+    import App from './App';
+    import reportWebVitals from './reportWebVitals';
+    import {BrowserRouter} from "react-router-dom"
+
+    const root = ReactDOM.createRoot(document.getElementById('root')); 
+    root.render(
+    <React.StrictMode>
+
+        <BrowserRouter>
+        <App />
+        </BrowserRouter>
+    
+    </React.StrictMode>
+    );
+```
+// App.js : create new route Example : 
+```
+    import "./App.css";
+    import { Route, Routes } from "react-router-dom";
+    function App() {
+        return (
+            <>
+                <div className="App">
+                    <Routes>
+                        <Route path="/Home" element={<h1>Hello From Home</h1>} />
+                        <Route path="/" element={<h1>Hello From Home</h1>} />
+                    </Routes>
+                </div>
+            </>
+        );
+    }
+    export default App;
+```

@@ -1,0 +1,19 @@
+.inputContent{
+    margin-bottom: 10px;
+    border: 2px solid rgba(143, 138, 138, 0.69);
+    border-radius: 12px;
+    padding: 10px;
+}
+input{
+    padding: 15px 20px;
+    border-radius: 4px 6px;
+    transition: 0.3s;
+    border: none;
+  transition: 0.3s;
+  }
+input:focus {
+    transform: scale(1.009);
+    box-shadow: 0px 4px 12px rgba(77, 63, 16, 0.262);
+ }
+ 
+  
