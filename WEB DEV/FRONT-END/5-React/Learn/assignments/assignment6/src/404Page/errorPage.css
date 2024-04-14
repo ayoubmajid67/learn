@@ -1,0 +1,33 @@
+.mainContent  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.mainContent {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.mainContent .ErrorContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transform: translateY(-50%);
+}
+
+
+.getBackBtn button{
+    padding: 15px 20px;
+    border: 12px;
+}
+.getBackBtn button{
+    color: white;
+}

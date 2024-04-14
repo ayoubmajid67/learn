@@ -1353,3 +1353,103 @@ export function getImageUrl(place) {
     }
     export default App;
 ```
+
+// create a link Example :
+```
+    import "./navBar.css";
+    import { Link } from "react-router-dom";
+
+    export default function NabBar() {
+        return (
+            <nav>
+                <h1>
+                    <span>M</span>ajid
+                </h1>
+                <ul>
+                    <li>
+                        <Link to="/home">Home</Link>
+                    </li>
+
+                    <li>
+                        <Link to="/services">Services</Link>
+                    </li>
+                    <li>
+                        <Link to="/about">About</Link>
+                    </li>
+                </ul>
+            </nav>
+        );
+    }
+```
+
+//  Dynamic routing :
+```
+<Route path="/pageName/:dynamicEndPoint"  element={<ServiceDetails/>} ></Route>
+```
+
+// group routes  :
+```
+    <Route path="/services" >
+        <Route path=":serviceId" element={<ServiceDetails />} />
+        <Route index element={<services/>}>
+        <Route path="new" element={<NewService />} />
+        <Route path="delete" element={<DeleteService />} />
+    </Route>
+```
+// add layout to grouped route:
+```
+    <Route path="/services" element={<Services />} />
+    <Route path="/services" element={<Layout />}>
+        <Route path=":serviceId" element={<ServiceDetails />} />
+
+        <Route path="new" element={<NewService />} />
+        <Route path="delete" element={<DeleteService />} />
+    </Route>
+```
+// add error page : 
+```
+    <Route path="*" element={<ErrorPage />} />
+```
+
+// download the material ui library : 
+```
+    npm install @mui/material @emotion/react @emotion/styled --save 
+```
+// create a theme example :
+    import React, { useState } from "react";
+    import "./App.css";
+    import Comp from "./material/Material"; // Assuming Comp is a custom component
+    import { createTheme, ThemeProvider } from "@mui/material/styles";
+    import { purple } from "@mui/material/colors";
+
+    const theme = createTheme({
+    palette: {
+        primary: {
+        main: "#000",
+        },
+        secondary: {
+        main: purple[500],
+        },
+    },
+    });
+
+    function App() {
+
+    return (
+        <ThemeProvider theme={theme}>
+        <div className="App">
+            <div className="main">
+            <Comp />
+            <hr />
+            </div>
+
+
+        </div>
+        </ThemeProvider>
+    );
+    }
+    // export default App;
+// install material icons :
+```
+    npm install @mui/icons-material @mui/material @emotion/styled @emotion/react --save
+```

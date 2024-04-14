@@ -1188,3 +1188,54 @@ functionName(parametersValue)
         print(f"{skill} => {value}")
 
     show_skills(**mySkills)
+
+# example 3 :
+    def showSkills(name, *skills, **skillsWithProgress):
+        print("Skills owner : ", name)
+        print("Skills without Progress :")
+        for skill in skills:
+            print("-", skill)
+        print("Skills with Progress :")
+        for skill, value in skillsWithProgress.items():
+            print(f" {skill} => {value} ")
+
+
+    showSkills("Ayoub", "Html", "Css", "Js", Html="90%")
+
+# function Recursion : 
+# example eliminate repetition  :
+    def clearWord(word):
+        if len(word) == 1:
+            return word
+        if word[0] == word[1]:
+            return clearWord(word[1:])
+        return word[0] + clearWord(word[1:])
+
+    x = "wwooorrrldd"
+    print(clearWord(x))
+# Lambda function  | Anonymous Function 
+"""
+    [1] It Has No Name
+    [2] You Can Call It Inline Without Defining It
+    [3] You Can Use It In Return Data From Another Function
+    [4] Lambda Used For Simple Functions and Def Handle The Large Tasks
+    [5] Lambda is One Single Expression not Block Of Code
+    [6] Lambda Type is Function
+"""
+# Example : 
+    # Define a lambda function to calculate the square of a number
+    square = lambda x: x ** 2
+
+    # Use the lambda function
+    print(square(5))  # Output: 25
+
+# file handling :--[]
+"""
+    "a" Append  Open File For Appending Values, Create File If Not Exists
+    "r" Read    [Default Value] Open File For Read and Give Error If File is Not Exists
+    "w" Write   Open File For Writing, Create File If Not Exists
+    "x" Create  Create File, Give Error If File Exists
+"""
+
+#open a file : 
+file=open("filePath,mode=read")
