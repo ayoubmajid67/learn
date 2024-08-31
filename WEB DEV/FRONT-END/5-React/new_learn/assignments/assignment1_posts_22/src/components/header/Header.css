@@ -1,0 +1,12 @@
+header.headerComponentClass {
+    background-color: var(--primaryColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    .title {
+        color: white;
+        text-transform: capitalize;
+    }
+}

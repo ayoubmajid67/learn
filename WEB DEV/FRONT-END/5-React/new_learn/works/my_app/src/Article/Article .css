@@ -1,0 +1,13 @@
+.articleComponentClass {
+    padding: 10px;
+    box-shadow: 1px 5px 10px black;
+  
+    padding: 20px;
+    border-radius: 10px;
+
+    .children{
+        background-color: black;
+        color: white;
+    }
+
+}

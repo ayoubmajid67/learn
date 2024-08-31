@@ -1,0 +1,44 @@
+.homePageMainContentComponentClass {
+    display: flex;
+
+    justify-content: center;
+
+    padding: 20px;
+    align-items: flex-start;
+
+    @media(max-width :1200px) {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .leftSide {
+        width: 70%;
+        min-width: 300px;
+
+        @media(max-width :1200px) {
+            width: 100%;
+        }
+
+    }
+
+
+    .rightSide {
+        padding: 20px;
+        margin-top: 15px;
+        border: 5px solid var(--primaryColor);
+        text-align: center;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 300px;
+
+        @media(max-width :1200px) {
+            width: 90%;
+            border: none;
+        }
+
+    }
+
+}

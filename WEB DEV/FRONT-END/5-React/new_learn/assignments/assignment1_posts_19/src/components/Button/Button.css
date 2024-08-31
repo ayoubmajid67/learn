@@ -1,0 +1,14 @@
+.buttonComponentClass {
+    padding: 5px 10px;
+    border-radius: 6px;
+    background-color: var(--secondaryColor);
+    cursor: pointer;
+
+    color: white;
+    font-size: 1em;
+    transition: 0.3s;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}

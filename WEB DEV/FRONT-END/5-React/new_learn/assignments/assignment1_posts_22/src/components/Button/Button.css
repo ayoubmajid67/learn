@@ -1,0 +1,46 @@
+.buttonComponentClass {
+
+
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--secondaryColor);
+    border-radius: 6px;
+
+
+
+    button {
+
+
+        cursor: pointer;
+
+        color: white;
+        background: transparent;
+        border: none;
+
+
+        transition: 0.3s;
+        font-size: 1em;
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+    }
+
+
+
+
+    .childrenContainer {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+        overflow: hidden;
+
+        img {
+            max-width: 100%;
+        }
+    }
+}

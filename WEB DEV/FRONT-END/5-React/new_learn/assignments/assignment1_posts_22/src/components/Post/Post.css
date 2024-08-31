@@ -1,0 +1,6 @@
+figure.postComponentClass{
+padding: 20px;
+border: 5px solid var(--primaryColor);
+text-align: center;
+}
+
