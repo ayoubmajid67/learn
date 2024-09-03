@@ -14,7 +14,7 @@ export default function HomePageMainContent() {
 			<div className="rightSide">
 				{ButtonsData.map((buttonData, index) => (
 					<Button key={index} text={buttonData.text}>
-						<div dangerouslySetInnerHTML={{ __html: buttonData.children }} />
+						{buttonData.children ? <div>{buttonData.children}</div> : null}
 					</Button>
 				))}
 			</div>
@@ -48,46 +48,22 @@ const postsData = [
 const ButtonsData = [
 	{
 		text: "JavaScript",
-		children: `
-	
-		  <img src='https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png' alt='JavaScript' width='20' height='20'/>
-		`,
-	  },
-	  {
+		children: <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" width="20" height="20" />,
+	},
+	{
 		text: "React",
-		children: `
-	
-		  <img src='https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg' alt='React' width='20' height='20'/>
-		`,
-	  },
-	  {
+		children: <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" width="20" height="20" />,
+	},
+	{
 		text: "CSS",
-		children: `
-
-		  <img src='https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg' alt='CSS' width='20' height='20'/>
-		`,
-	  },
-	  {
+		children: <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="CSS" width="20" height="20" />,
+	},
+	{
 		text: "HTML",
-		children: `
-
-		  <img src='https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg' alt='HTML' width='20' height='20'/>
-		`,
-	  },
-	  {
+		children: <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML" width="20" height="20" />,
+	},
+	{
 		text: "Node.js",
-		children: `
-
-		  <img src='https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg' alt='Node.js' width='20' height='20'/>
-		`,
-	  },
+		
+	},
 ];
-
-function loadPostContent(nbrPosts) {
-	let posts = [];
-	for (let i = 0; i < nbrPosts; i++) {
-		posts.push(<Post key={i}></Post>);
-	}
-
-	return posts;
-}
