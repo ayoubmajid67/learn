@@ -1,0 +1,33 @@
+.AlertComponentClass {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.399);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    top: 0;
+
+
+
+    &>.alertContent {
+        background-color: white;
+        color: black;
+
+        padding: 10px 60px;
+
+        &>.message {
+            
+            &.success {
+                color: green;
+            }
+
+            &.error {
+                color: red;
+            }
+
+        }
+    }
+
+}

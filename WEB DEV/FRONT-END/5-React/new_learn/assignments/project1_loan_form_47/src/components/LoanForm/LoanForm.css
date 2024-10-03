@@ -1,0 +1,32 @@
+form.LoanFormComponentClass {
+
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   width: 80%;
+   margin: 10px auto;
+   text-align: center;
+   align-items: center;
+   padding: 20px;
+   background-color: #330e91;
+   color: white;
+   border-radius: 12px;
+
+   &>hr {
+      width: 100%;
+   }
+
+   &>.inputBox {
+
+
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      input {
+         padding: 5px 12px;
+      }
+
+   }
+}
