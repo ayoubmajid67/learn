@@ -1,0 +1,29 @@
+.formComponentClass {
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.76);
+
+
+    input {
+        padding: 15px 20px;
+        background-color: #eee;
+
+    }
+
+    button {
+        padding: 15px 20px;
+        background-color: aquamarine;
+        color: white;
+    }
+    textarea{
+
+     resize :none; 
+
+
+     height :100px; 
+     overflow-y :auto
+    }
+} 

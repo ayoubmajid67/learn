@@ -16,17 +16,5 @@ form.LoanFormComponentClass {
       width: 100%;
    }
 
-   &>.inputBox {
-
-
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-
-      input {
-         padding: 5px 12px;
-      }
-
-   }
+  
 }

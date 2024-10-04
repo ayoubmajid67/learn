@@ -184,12 +184,74 @@ Overall, this code dynamically imports the `web-vitals` module, retrieves specif
 and invokes them with the provided callback function (`onPerfEntry`). 
 It provides a generic way to collect and report 
 web performance metrics in a React application.
+
+The functions `getCLS`, `getFID`, `getFCP`, `getLCP`, and `getTTFB` are part of a web
+ performance API called [Web Vitals](https://web.dev/vitals/), which provides key metrics 
+ to help measure the performance and user experience of a website. Each of these functions 
+ captures a specific aspect of web performance. Here's an explanation of each:
+
+### 1. **`getCLS(onPerfEntry)` - Cumulative Layout Shift (CLS)**
+   - **CLS** measures **visual stability** and how much the content on the page shifts during loading.
+   - A low CLS score means the elements on the page don’t move around unexpectedly, providing 
+   a better user experience. High CLS often occurs when images, ads, or fonts load asynchronously
+    and cause layout shifts.
+   - **Good CLS score**: A score below 0.1 is considered good.
+   
+   **Example use case**: You visit a page, and suddenly an ad appears, causing text to shift down. 
+   CLS measures this unexpected shift.
+
+### 2. **`getFID(onPerfEntry)` - First Input Delay (FID)**
+   - **FID** measures the **time from when a user first interacts** with your page 
+   (e.g., clicking a button, tapping on a link) to the time when the browser is actually
+    able to begin processing that interaction.
+   - This metric is important for measuring **interactivity** and responsiveness.
+   - **Good FID score**: A score below 100ms is considered good.
+
+   **Example use case**: You click a button, but the page doesn't respond immediately 
+   due to JavaScript tasks or layout calculations. FID measures the delay between your 
+   click and the page responding.
+
+### 3. **`getFCP(onPerfEntry)` - First Contentful Paint (FCP)**
+   - **FCP** measures the time from when the page starts loading to the point when 
+   **any part of the page's content** is rendered on the screen. This can include text, 
+   images, or other DOM elements.
+   - This metric is crucial for measuring **perceived load speed**, giving users a sense
+    that the page is loading.
+   - **Good FCP score**: A score below 1.8 seconds is considered good.
+
+   **Example use case**: When you load a page, FCP is the moment when the first visible
+    part of the webpage (such as text or an image) appears in the viewport.
+
+### 4. **`getLCP(onPerfEntry)` - Largest Contentful Paint (LCP)**
+   - **LCP** measures the **render time of the largest visible content element** 
+   (such as an image or large text block) within the viewport.
+   - It's a critical metric for measuring how long it takes for the main content 
+   to become visible to the user, reflecting **perceived loading performance**.
+   - **Good LCP score**: A score below 2.5 seconds is considered good.
+
+   **Example use case**: On a blog page, the LCP might be an image or large 
+   text header. LCP measures when the largest visible content element is fully loaded.
+
+### 5. **`getTTFB(onPerfEntry)` - Time to First Byte (TTFB)**
+   - **TTFB** measures the time it takes for the browser to receive
+    the **first byte of content** from the server after the user requests the page.
+   - This metric is important for measuring **backend performance** and 
+   the responsiveness of the server.
+   - **Good TTFB score**: A score below 200ms is considered good.
+
+   **Example use case**: When you request a page, TTFB measures how long it takes the server
+    to send the first byte of data to the browser after the request is made.
+
+---
+
+
 */
 
 // React linking index.html with index.js :----------[]
 /*
 When you run a React application using tools like Create React App,
-a development server is launched that handles linking the JavaScript files with the `index.html` file automatically. 
+a development server is launched that handles linking the JavaScript files with the
+ `index.html` file automatically. 
 
 During development:
 
@@ -215,7 +277,8 @@ Create React App generates optimized production-ready files.
 
 2. **Injection Mechanism**:
 - Create React App uses a build script to inject the bundled JavaScript file into the `index.html` file.
-- It replaces a placeholder comment in the `index.html` file with a `<script>` tag linking to the bundled JavaScript file.
+- It replaces a placeholder comment in the `index.html` file with a `<script>` tag linking to the bundled
+ JavaScript file.
 - This ensures that when you open the `index.html` file in a browser or deploy it to a server, the necessary
     JavaScript code is linked and executed properly.
 
@@ -432,8 +495,6 @@ Auto reload (not refresh) the page when you save you work  be caution
         return <button className={styles.button}>Click Me</button>;
     }
     
-
-// next challenge : 18. Components Challenge
 
 //  project structure : 
 /*
@@ -653,3 +714,1134 @@ dangerouslySetInnerHTML: This is used to render the HTML content inside the chil
     );
     }
 
+// conditional Rendering :--[]
+
+// example using ternary operator ? :
+return (
+    <div className="App">
+        {showChildren ? (
+            <Content email="nasim@gmail.com" phone="3322">
+                <h1 style={{ backgroundColor: "black", color: "white", padding: "10px" }}>nice to meet you</h1>
+            </Content>
+        ) : null}
+    </div>
+);
+
+// example using  if statement : 
+    import "./App.css";
+    import Content from "./content";
+    function App() {
+        let showChildren = true;
+
+        return (
+            <div className="App">
+                <Content name="ayoub" email="ayoub@gmail.com" phone="05332" />
+                <Content name="majid" email="majid@gmail.com" phone="2544" />
+                <LoadChildren childrenStatus={showChildren} />
+            </div>
+        );
+    }
+    function LoadChildren({ childrenStatus = true }) {
+        console.log(Boolean(false));
+        if (childrenStatus) {
+            return (
+                <Content email="nasim@gmail.com" phone="3322">
+                    <h1 style={{ backgroundColor: "black", color: "white", padding: "10px" }}>nice to meet you</h1>
+                </Content>
+            );
+        } else {
+            return null;
+        }
+    }
+    export default App;
+
+// stat :
+/*
+    state in React allows components to manage and maintain their internal data, enabling
+    them to be dynamic and interactive. Understanding how to effectively use state is 
+    crucial for building robust and scalable React applications.
+*/
+
+// without using stat : 
+
+    import "./MyButton.css";
+
+    export default function MyButton() {
+        let name = "ayoub";
+        return (
+            <div className="MyButtonComponentClass">
+                <button
+                    onClick={() => {
+                        name = parseInt(Math.random() * 10) +"-amina" ;
+                        console.log(name);
+                    }}
+                >
+                    My button
+                </button>
+                <h1>{name}</h1>
+            </div>
+        );
+    }
+
+/*
+    The UI did not change when you modified the `name` variable because React does not 
+    automatically re-render the component when you directly modify local variables. Here's a
+    detailed explanation of why this happens and how you can fix it:
+
+    ### Why the UI Did Not Update
+
+    1. Local Variables and React Rendering:
+    - React's rendering cycle is based on its state and props. Local variables (like `name` in your example)
+        are not part of React's state management system. React does not track or react to changes in these variables.
+
+    2. State Management:
+    - To trigger a re-render in React, you need to use state. Local variables are not reactive, so changing 
+    them will not cause the component to re-render. React only re-renders components when the state or props
+        change.
+
+    3. Direct Variable Mutation:
+    - The `name` variable is changed on a button click, but since it's not part of React's state, React 
+    is unaware of this change. The component will only re-render if there is a state change.
+
+    ### How to Fix It
+
+    To ensure that changes to `name` trigger a re-render, you should use React's `useState` hook. The `useState`
+    hook allows you to manage state in functional components, and updating the state will automatically trigger 
+    a re-render.
+
+*/
+
+
+// useStat hook : 
+
+    import { useState } from "react";
+    export default function Btn({ title }) {
+        if (!title) title = "user title";
+        const [name, setName] = useState(title);
+
+        function changeName() {
+            if (name == title) setName("Ayoub");
+            else setName("Majid");
+        }
+        return (
+            <div className="btnContainer">
+                <button onClick={changeName}>Click Me</button>
+                <h1>{name}</h1>
+            </div>
+        );
+    }
+
+    /*
+        In this code, the `useState` hook plays a crucial role in managing state
+        within the functional component
+        `Btn`. Let's break down its role and how it triggers re-renders 
+        when the state of `title` changes:
+    */
+
+    //* 1. **Initializing State**:
+    ```javascript
+    const [name, setName] = useState(title);
+    ```
+    /*
+            The `useState` hook is used to declare a state variable `name` and its corresponding
+            setter function `setName`. The initial value of the `name` state variable is set to 
+            the value of the `title` prop passed to the component.
+    */
+    
+    //* 2. **Rendering Initial UI**:
+    ```javascript
+    <h1>{name}</h1>
+    ```
+    /*
+            The `<h1>` element in the JSX renders the current value of the `name` state variable. Initially,
+            it displays the value of the `title` prop passed to the component.
+    */
+
+    //* 3. **Updating State on Button Click**:
+    ```javascript
+    function changeName() { 
+        if (name === title) {
+            setName("Ayoub");
+        } else {
+            setName("Majid");
+        }
+    }
+    ```
+    /*
+        The `changeName` function is called when the button is clicked. It checks if 
+        the current value of the `name` state variable is equal to the `title` prop. 
+        If they are equal, it updates the `name` state variable to `"Ayoub"`, otherwise,
+        it updates it to `"Majid"`.
+    */
+
+    //* 4. **Re-rendering on State Change**:
+    /*
+        When the `setName` function is called to update the state variable `name`,
+        React re-renders the component. This is because React detects the change 
+        in state and automatically triggers a re-render of the component to reflect
+        the updated state. Consequently, the `<h1>` element displaying the value of
+        the `name` state variable is re-evaluated and updated with the new value.
+    */
+    
+    //* 5. **Re-rendered UI**:
+    /*
+    After the state is updated, React re-renders the component with the new value of the `name` 
+    state variable. As a result, the UI is updated to display the new name ("Ayoub" or "Majid") 
+    depending on the current state.
+    */
+    /*
+        In summary, the `useState` hook manages the state of the `name` variable in the `Btn` component.
+        When the state changes (due to button click), React automatically triggers a re-render of the 
+        component to reflect the updated state, resulting in the UI being updated accordingly.
+        This mechanism enables React to efficiently handle state changes and keep the UI in sync 
+        with the underlying data.
+    */
+
+// how does react detect  the change of state : -- []
+    /*
+        React detects changes in state using a mechanism called reconciliation. 
+        When a component's state changes, React compares the previous state with 
+        the new state. It then determines which parts of the component's UI need 
+        to be updated to reflect the changes in state.
+    */
+
+    //* 1. **Virtual DOM**:
+    /*
+        React maintains a virtual representation of the DOM (Document Object 
+        Model), known as the Virtual DOM. This virtual representation mirrors 
+        the actual DOM but is lightweight and exists entirely in memory.
+    */
+
+    //* 2. **Rendering**:
+    /*
+        When a component's state changes, React re-renders the component and 
+        updates the Virtual DOM accordingly. React compares the new Virtual DOM 
+        with the previous Virtual DOM to identify the differences.
+    */
+
+    //* 3. **Differential Algorithm**:
+    /*
+        React employs a highly optimized algorithm called the Reconciliation 
+        Algorithm to perform a "diffing" process between the new Virtual DOM 
+        and the previous Virtual DOM. This process involves efficiently 
+        identifying the minimal set of changes needed to update the actual DOM.
+    */
+
+    //* 4. **Identifying Changes**:
+    /*
+        During the diffing process, React identifies which elements in the 
+        Virtual DOM have changed between the previous and new states. It compares 
+        elements based on their type, attributes, and content.
+    */
+
+    //* 5. **Batching Updates**:
+    /*
+        React batches multiple state updates into a single re-render operation 
+        for performance optimization. This means that if multiple state changes 
+        occur within the same event handler or lifecycle method, React combines 
+        them into a single update, reducing unnecessary re-renders.
+    */
+
+    //* 6. **Updating the DOM**:
+    /*
+        Once React identifies the changes needed to update the actual DOM, it 
+        applies these changes in a batched manner to minimize the number of DOM 
+        manipulations. This process ensures that the UI is efficiently updated 
+        to reflect the changes in state.
+    */
+
+    /*
+        In summary, React detects changes in state by comparing the Virtual DOM 
+        before and after a component's re-rendering. It uses an efficient 
+        reconciliation algorithm to identify the minimal set of changes required 
+        to update the actual DOM, ensuring optimal performance and UI responsiveness.
+    */
+
+
+// example with input : 
+```
+    import "./Inp.css";
+    import { useState } from "react";
+    export default function Inp() {
+        let [content, setContent] = useState("");
+        function changeName(e) {
+            setContent(e.target.value);
+        }
+        return (
+            <div className="inputContainer">
+                <input placeholder="enter your name" onChange={changeName} />
+                <h2>{content}</h2>
+            </div>
+        );
+    }
+```
+
+// From submission : --[]
+// Method 1 :
+```
+    import "./Frm.css";
+    import { useState } from "react";
+    export default function Frm() {
+        let [name, setName] = useState("");
+        let [age, setAge] = useState(0);
+        age = Number(age);
+        return (
+            <form
+                onSubmit={(event) => {
+                    event.preventDefault();
+                    console.log("name :", name);
+                    console.log("age :", age);
+                }}
+            >
+                <label for="name">name:</label>
+                <input
+                    id="name"
+                    onChange={(event) => {
+                        setName(event.target.value);
+                    }}
+                />
+                <label for="age">age:</label>
+                <input
+                    id="age"
+                    type="number"
+                    onChange={(event) => {
+                        setAge(event.target.value);
+                    }}
+                />
+
+                <button>submit</button>
+            </form>
+        );
+    }
+
+```
+// Method 2 : 
+```
+    import "./Frm.css";
+    import { useState } from "react";
+    export default function Frm() {
+        let [formInfo, setFromInfo] = useState({ name: "", age: 0 });
+
+        function setValue(event) {          
+                setFromInfo({...formInfo,[event.target.id]:event.target.value});
+        }
+        return (
+            <form
+                onSubmit={(event) => {
+                    event.preventDefault();
+                    console.log(formInfo);
+                }}
+            >
+                <label >name:</label>
+                <input id="name" onChange={setValue} />
+                <label >age:</label>
+                <input id="age" type="number" onChange={setValue} />
+
+                <button>submit</button>
+            </form>
+        );
+    }
+```
+// advance Example  Form Stat:
+```
+    import "./Frm.css";
+    import { useState } from "react";
+
+    export default function Frm() {
+        const [formInfo, setFormInfo] = useState({ name: "", age: 0, generalInfo: "", isStudent: false, userCountry: "MR", gender: "" });
+
+        function handleChange(event) {
+            const { id, type, value, checked } = event.target;
+            setFormInfo((prevState) => ({
+                ...prevState,
+                [id]: type === "checkbox" ? checked : value,
+            }));
+        }
+
+        return (
+            <form
+                onSubmit={(event) => {
+                    event.preventDefault();
+                    console.log(formInfo);
+                }}
+            >
+                <label htmlFor="name">Name:</label>
+                <input type="text" id="name" onChange={handleChange} />
+
+                <label htmlFor="age">Age:</label>
+                <input id="age" type="number" onChange={handleChange} />
+
+                <label htmlFor="generalInfo">General Info:</label>
+                <textarea id="generalInfo" onChange={handleChange} />
+
+                <div className="checkedBoxes">
+                    <input type="checkbox" id="isStudent" onChange={handleChange} />
+                    <label htmlFor="isStudent">Is Student</label>
+                </div>
+
+                <select id="userCountry" onChange={handleChange}>
+                    <option>MR</option>
+                    <option>KSA</option>
+                    <option>UAI</option>
+                    <option>US</option>
+                </select>
+
+                <label>Gender:</label>
+
+                <div>
+                    <label>Male</label>
+                    <input type="radio" id="gender" name="gender" value="Male" onChange={handleChange} checked={formInfo.gender === "Male"} />
+                </div>
+
+                <div>
+                    <label>Female</label>
+                    <input type="radio" name="Female" id="gender" value="Female" onChange={handleChange} checked={formInfo.gender === "Female"} />
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        );
+    }
+
+```
+// the complete setForm function : 
+    function setFormInput(event) {
+        let { id, value, checked, type, name } = event.target;
+
+        value = id === "age" ? parseInt(value, 10) : value;
+
+        setFormInputs({ ...formInputs, [type === "radio" ? name : id]: type === "checkbox" ? checked : value });
+    }
+
+// Array Stat Example : 
+import "./App.css";
+import { useState } from "react";
+
+function App() {
+    //  const devices=["Iphone","Mac","Samsung","Windows"];
+
+    let [devices, setDevices] = useState([]);
+    let [deviceInput, setDeviceInput] = useState("");
+
+    const devicesList = devices.map((device, index) => {
+        return (
+            <div key={index} style={{ display: "flex", gap: "20px", width: "60%", minWidth: "250px", alignItems: "center", border: "1px solid black", justifyContent: "space-between", padding: "7px 10px", borderRadius: "10px" }}>
+                <li>{device}</li>
+
+                <div style={{ display: "flex", gap: "10px" }}>
+                    <button
+                        onClick={() => {
+                            deleteDevice(index);
+                        }}
+                    >
+                        Delete
+                    </button>
+
+                    <button
+                        onClick={() => {
+                            updateDevice(index);
+                        }}
+                    >
+                        update
+                    </button>
+                </div>
+            </div>
+        );
+    });
+
+    function deleteDevice(deviceIndex) {
+        let newDeviceList = [...devices];
+        newDeviceList.splice(deviceIndex, 1);
+        setDevices(newDeviceList);
+    }
+    function updateDevice(deviceIndex) {
+        let newDevices = [...devices];
+
+        newDevices[deviceIndex] = prompt("enter the new Name : ", newDevices[deviceIndex]);
+
+        if (newDevices[deviceIndex]) setDevices(newDevices);
+    }
+    function changeStat(event) {
+        setDeviceInput(event.target.value);
+    }
+
+    function addDevice() {
+        setDevices((prevState) => [...prevState, deviceInput]);
+        setDeviceInput("");
+    }
+
+    return (
+        <div className="App">
+            <div className="addDeviceContainer" style={{ margin: "30px" }}>
+                <input placeholder="add new device" style={{ marginRight: "6px" }} onChange={changeStat} value={deviceInput} />
+                <button onClick={addDevice}>Add</button>
+            </div>
+
+            <ul style={{ marginTop: "20px", display: "flex", flexDirection: "column", gap: "10px", alignItems: "center" }}>{devicesList}</ul>
+        </div>
+    );
+}
+
+// oop version : -----[]
+import style from "./Test.module.css";
+
+import { useState } from "react";
+export default function TesT() {
+	const [newDeviceFormInfo, setNewDeviceFormInfo] = useState({ deviceName: "", isDisabled: false });
+
+	const [devices, setDevices] = useState([]);
+
+	class utile {
+		static handelChangeFormInputs(event, setStatForm) {
+			let { id, value, checked, type, name } = event.target;
+
+			value = id === "age" ? parseInt(value, 10) : value;
+
+			setStatForm((formInputs) => {
+				return { ...formInputs, [type === "radio" ? name : id]: type === "checkbox" ? checked : value };
+			});
+		}
+	}
+	class clsHandelAddNewDevice {
+		static ChangeFormInputs(event) {
+			utile.handelChangeFormInputs(event, setNewDeviceFormInfo);
+		}
+		static #changeSubmitButtonStat(newStat) {
+			setNewDeviceFormInfo((prevFormInfo) => {
+				return { ...prevFormInfo, isDisabled: newStat };
+			});
+		}
+		static #clearAddFormStat() {
+			setNewDeviceFormInfo((prevFormInfo) => {
+				return { deviceName: "", isDisabled: false };
+			});
+		}
+		static handelFormSubmit(event) {
+			event.preventDefault();
+			// true => disabled = true
+			clsHandelAddNewDevice.#changeSubmitButtonStat(true);
+
+			clsHandelCurdDevices.addDevice(newDeviceFormInfo["deviceName"]);
+
+			clsHandelAddNewDevice.#clearAddFormStat();
+		}
+	}
+	class clsHandelCurdDevices {
+		static addDevice(deviceName) {
+			setDevices((prevDevicesInfo) => [...prevDevicesInfo, deviceName]);
+		}
+		static editDevice(deviceIndex) {
+			let targetDeviceName = devices[deviceIndex];
+
+			let newName = prompt(`Enter the  new name   [index  ${deviceIndex}] : `, targetDeviceName);
+
+			if (newName && newName !== targetDeviceName) {
+				let tempDevices = [...devices];
+				tempDevices[deviceIndex] = newName;
+
+				setDevices(tempDevices);
+			}
+		}
+		static deleteDevice(deviceIndex) {
+			let newDeviceList = [...devices];
+			newDeviceList.splice(deviceIndex, 1);
+			setDevices(newDeviceList);
+		}
+	}
+
+	return (
+		<>
+			<div className="header">
+				<h1>Devices</h1>
+				<form id="addDeviceForm" onSubmit={clsHandelAddNewDevice.handelFormSubmit}>
+					<input type="text" id="deviceName" placeholder="Enter the name of the device" value={newDeviceFormInfo["deviceName"]} onChange={clsHandelAddNewDevice.ChangeFormInputs} required />
+					<button disabled={newDeviceFormInfo["isDisabled"]}>Add device</button>
+				</form>
+			</div>
+			<div className="devicesContainer">
+				{devices.map((deviceName, index) => {
+					return (
+						<div key={index} className="deviceItem">
+							<h1 className="deviceName">
+								{" "}
+								{index}-{deviceName}
+							</h1>
+							<div className="controlSection">
+								<button onClick={() => clsHandelCurdDevices.editDevice(index)}>Edit Device</button>
+								<button onClick={() => clsHandelCurdDevices.deleteDevice(index)}>delete Device</button>
+							</div>
+						</div>
+					);
+				})}
+			</div>
+		</>
+	);
+}
+
+
+//  updating states several Times :--[]
+function App() {
+    let [count, setCount] = useState(0);
+
+    function increaseCounter() {
+        setCount(count + 1);
+        setCount(count+ 1);
+    }
+    
+
+    return (
+        <div className="App">
+            <h1 >The count is : <span onClick={increaseCounter}  >{count}</span> </h1>
+        </div>
+    );
+}
+/*
+    The reason the counter doesn't increment by 2 each time you click is because 
+     the `setCount` function in React's `useState` hook doesn't immediately update 
+     the state. Instead, it schedules  an update, and React 
+    may batch multiple `setState` calls together for performance reasons.
+
+    In your `increaseCounter` function, you're calling `setCount` 
+    twice with the same value of `count`. Both calls essentially set the same
+    value. React sees these two calls and batches them together
+    into a single update, resulting in only one increment by 1.
+
+    If you want to increase the count by 2 each time you click,
+    you should use the functional update form of `setCount`, which 
+    takes the current state as an argument and returns the
+    new state. This ensures that the state updates are applied
+    one after the other:
+*/  
+    ```javascript
+    function increaseCounter() {
+        setCount(prevCount => prevCount + 1);
+        setCount(prevCount => prevCount + 1);
+    }
+    ```
+/*        
+    With this change, the count will indeed increase by 2 
+    each time you click. Each call to  `setCount` is now using
+    the previous state to calculate the new state, so you're  effectively
+    incrementing by 1 twice.
+*/
+/*
+    In JavaScript, code execution generally follows a single-threaded event loop model.
+    This means that JavaScript code is executed in a sequence, and only one operation 
+    can be processed at a time. However, React's reconciliation process and state updates
+    are asynchronous operations, meaning they don't happen immediately when you call
+    `setState` or `useState` setter functions.
+
+    When you call `setState` or `useState` setters in React, React schedules the state
+    updates for processing. React then decides when to apply these updates based on
+    its internal mechanism, which aims to optimize performance by batching updates 
+    and minimizing unnecessary re-renders.
+
+    While you can't precisely determine whether two state updates will be batched 
+    together or not in a given scenario, you can rely on React's behavior that it
+    will batch updates when possible to improve performance.
+
+    Here's a simplified explanation of how React typically handles state updates:
+
+    1. When you call `setState` or `useState` setter functions, React records the
+    state update requests.
+    2. React batches multiple state updates that occur within the same event loop iteration.
+    3. Before the next repaint, React reconciles the state updates and performs 
+    a single re-render of the component.
+
+    In your specific case, calling `setCount` twice within the same event loop iteration
+    is likely to result in React batching these updates together,
+    leading to a single re-render of the component with the combined state update.
+    However, React's exact behavior may vary depending on factors such as the React version,
+        the environment (development vs. production), and the complexity of your component tree.
+
+    While you cannot directly observe the batching behavior of React's state updates
+    , you can rely on React's efficient handling of state updates to optimize performance
+    in your application.
+*/
+
+// Prop Drilling : is pass props From a parents to a hierarchal children List 
+// useContext : 
+/*
+    useContext is a React Hook that allows functional components to consume values from the Context API. 
+    Context provides a way to pass data through the component tree without having to pass props down 
+    manually at every level.
+*/
+// How useContext Works:
+/*
+    Create a Context: First, you need to create a context using the React.createContext() 
+    function. This creates a new context object.
+
+    Provide the Context: You then provide the context to the component tree using a Context.Provider 
+    component. This component wraps the part of the tree where you want to make the context available.
+
+    Consume the Context: Finally, you consume the context value in any descendant component using
+    the useContext hook. This hook takes the context object as an argument and returns 
+    its current value.
+*/
+// steps : 
+/*
+    1- define the provider  :
+    2- define the consumer  :
+    3- value to pass :
+ */
+
+    // Main Features of useContext:
+ /*   
+    Simplicity: useContext provides a simple way to consume context values in 
+    functional components without the need for render props or higher-order components.
+    
+    Avoids Prop Drilling: It helps in avoiding prop drilling by allowing components
+     to access context values directly, no matter how deeply nested they are in the component tree.
+    
+    Dynamic Context Updates: Components consuming context with useContext will
+     re-render whenever the context value changes.
+    
+    Performance Optimization: React optimizes the context value retrieval with useContext,
+     ensuring that components only re-render when necessary based on changes to the context value.
+    
+    Multiple Contexts: You can consume multiple contexts within a single component by 
+    calling useContext multiple times with different context objects.
+    
+    Static Type Checking: useContext can be easily used with static type checking libraries
+     like TypeScript for type-safe context consumption.
+    
+    In summary, useContext is a powerful tool in React for managing state and sharing data 
+    across components in a more concise and efficient way compared to traditional prop drilling methods.
+*/
+//  Example  1: --[]
+
+// --------- App.js ------------- :
+    import "./App.css";
+    import Form from "./LoanForm/LoanForm";
+
+
+
+    export default function App() {
+
+  
+ 
+
+        return (
+            <div className="App">
+                    <Form />
+ 
+            </div>
+        );
+    }
+
+ // ------------- LoanFormInputsContext.js ------------- :
+    import { createContext } from "react";
+    export let LoanInputsContext = createContext({
+        type: "text", 
+        value: "", 
+        id: "", handelChange: null,
+        placeholder: "",
+        IsRequired: true }
+        );
+
+
+// --------- LoanForm.js ------------- :
+    import "./LoanForm.css";
+    import { useState } from "react";
+    import Alter from "../Alter/Alter";
+    import Input from "../Input/Input";
+    import { LoanInputsContext } from "../contexts/LoanFormInputsContext";
+
+    export default function Form() {
+        let initialFormInfo = {
+            name: "",
+            phone: "",
+            age: "",
+            salary: "Less Than 500$",
+            isEmployee: false,
+            isSubmitted: false,
+        };
+        let initialErrors = {
+            isValidPhone: true,
+            isValidAge: true,
+        };
+
+        let [formInfo, setFormInfo] = useState(initialFormInfo);
+        let [errors, setErrors] = useState(initialErrors);
+        document.addEventListener("click", (event) => {
+            if (formInfo.isSubmitted && !event.target.classList.contains("alterDivText")) {
+                setFormInfo((prevState) => ({
+                    ...prevState,
+                    isSubmitted: false,
+                }));
+            }
+        });
+
+        function changeFormInfo(event) {
+            const { id, type, value, checked } = event.target;
+            setFormInfo((prevState) => ({
+                ...prevState,
+                [id]: type === "checkbox" ? checked : value,
+            }));
+        }
+        function handelFormSubmission(event) {
+            event.preventDefault();
+            setFormInfo((prevState) => ({
+                ...prevState,
+                isSubmitted: true,
+            }));
+
+            const isValidPhone = formInfo.phone.length >= 10 && formInfo.phone.length <= 12;
+            const isValidAge = formInfo.age >= 18 && formInfo.age <= 100;
+
+            setErrors({
+                isValidPhone,
+                isValidAge,
+            });
+        }
+
+        function GeneraleAlterMsg() {
+            return formInfo.isSubmitted && <>{errors.isValidAge && errors.isValidPhone ? 
+                <Alter msg="The Form Has Been submitted Successfully" /> : !errors.isValidPhone ?
+                 <Alter msg="Phone Number Format is incorrect" msgColor="red" /> 
+                 : <Alter msg="Age is Not allowed" msgColor="red" />}</>;
+        }
+
+        return (
+            <>
+                <form onSubmit={handelFormSubmission}>
+                    <div className="header">
+                        <h2>Requesting a Loan</h2>
+                        <hr />
+                    </div>
+
+                    <div className="nameContainer inputContainer">
+                        <LoanInputsContext.Provider value={{ value: formInfo.name, id: "name", 
+                        handelChange: changeFormInfo, placeholder: "Enter Your Name" }}>
+                            <Input />
+                        </LoanInputsContext.Provider>
+                    </div>
+                    <div className="phoneContainer inputContainer">
+                        <LoanInputsContext.Provider value={{ value: formInfo.phone, id: "phone", 
+                        handelChange: changeFormInfo, placeholder: "Enter Your Phone " }}>
+                            <Input />
+                        </LoanInputsContext.Provider>
+                    </div>
+
+                    <div className="ageContainer inputContainer">
+                        <LoanInputsContext.Provider value={{ type: "number", value: formInfo.age, id: "age", 
+                        handelChange: changeFormInfo, placeholder: "Enter Your Age " }}>
+                            <Input />
+                        </LoanInputsContext.Provider>
+                    </div>
+
+                    <input type="submit" />
+                </form>
+
+                {GeneraleAlterMsg()}
+            </>
+        );
+    }
+
+// --------- Input.js ------------- :
+    import "./Input.css";
+
+    import { useContext } from "react";
+
+    import { LoanInputsContext } from "../contexts/LoanFormInputsContext";
+    import { UserContext } from "../contexts/UserContext";
+
+    export default function Input() {
+        const inputContext = useContext(LoanInputsContext);
+        const userContextInfo = useContext(UserContext);
+
+        return (
+            <div className="inputContent">
+                <h1>The User {userContextInfo.username}</h1>
+                <h2>This is the header of the Component</h2>
+                <input type={inputContext.type} placeholder={inputContext.placeholder} 
+                id={inputContext.id} value={inputContext.value} onChange={inputContext.handelChange}
+                 required={inputContext.IsRequired} />
+            </div>
+        );
+    }
+
+// --------- Alter.js ------------- :
+    import "./Alter.css";
+    import { useContext } from "react";
+    import { UserContext } from "../contexts/UserContext";
+
+    export default function Alter({ msg = "Message To Show", msgColor = "green", children }) {
+    let userData = useContext(UserContext);
+    return (
+        <div className="alterDiv">
+        <h2 style={{ color: msgColor }} className="alterDivText">
+            {msg}
+            {msgColor === "green" && (
+            <h3>Welcome Mes {userData.username}</h3>
+            )}
+        </h2>
+        {children}
+        </div>
+    );
+    }
+
+
+// Example 2 :  -- []
+
+// --------- context.js ------------- :
+import { createContext } from "react";
+export let imgSizeContext=createContext(0); 
+export let  placeContext=createContext({})
+
+// --------- App.js ------------- :
+    import { useState } from 'react';
+    import { places } from './data.js';
+    import { getImageUrl } from './utils.js';
+    import {imgSizeContext,placeContext} from "./Context.js"
+
+    export default function App() {
+    const [isLarge, setIsLarge] = useState(false);
+    const imageSize = isLarge ? 150 : 100;
+    return (
+        <>
+        <label>
+            <input
+            type="checkbox"
+            checked={isLarge}
+            onChange={e => {
+                setIsLarge(e.target.checked);
+            }}
+            />
+            Use large images
+        </label>
+        <hr />
+        <imgSizeContext.Provider value={imageSize}>
+        <List />
+        </imgSizeContext.Provider>
+        
+        </>
+    )
+    }
+
+        function List() {  
+        const listItems = 
+            places.map(place =>
+            <li key={place.id}>
+            <placeContext.Provider value={place}>
+            <Place />
+            </placeContext.Provider>
+            </li>
+        );
+        return (
+            <ul>{listItems}</ul>
+                );
+        
+        }
+
+        import { useContext } from "react";
+        function Place() {
+        let place=useContext(placeContext)
+        return (
+            <>
+            <PlaceImage
+            />
+            <p>
+                <b>{place.name}</b>
+                {': ' + place.description}
+            </p>
+            </>
+        );
+        }
+
+        function PlaceImage() {
+        let imgSize=useContext(imgSizeContext);
+            let place=useContext(placeContext)
+        return (
+            <img
+            src={getImageUrl(place)}
+            alt={place.name}
+            width={imgSize}
+            height={imgSize}
+            />
+        );
+        }
+
+// --------- data.js ------------- :
+    export const places = [{
+        id: 0,
+        name: 'Bo-Kaap in Cape Town, South Africa',
+        description: 'The tradition of choosing bright colors for houses began in the late 20th century.',
+        imageId: 'K9HVAGH'
+    }, {
+        id: 1, 
+        name: 'Rainbow Village in Taichung, Taiwan',
+        description: 'To save the houses from demolition, Huang Yung-Fu, a local resident, painted all 1,200 of them in 1924.',
+        imageId: '9EAYZrt'
+    }, {
+        id: 2, 
+        name: 'Macromural de Pachuca, Mexico',
+        description: 'One of the largest murals in the world covering homes in a hillside neighborhood.',
+        imageId: 'DgXHVwu'
+    }, {
+        id: 3, 
+        name: 'Selarón Staircase in Rio de Janeiro, Brazil',
+        description: 'This landmark was created by Jorge Selarón, a Chilean-born artist, as a "tribute to the Brazilian people."',
+        imageId: 'aeO3rpI'
+    }, {
+        id: 4, 
+        name: 'Burano, Italy',
+        description: 'The houses are painted following a specific color system dating back to 16th century.',
+        imageId: 'kxsph5C'
+    }, {
+        id: 5, 
+        name: 'Chefchaouen, Marocco',
+        description: 'There are a few theories on why the houses are painted blue, including that the color repels mosquitos or that it symbolizes sky and heaven.',
+        imageId: 'rTqKo46'
+    }, {
+        id: 6,
+        name: 'Gamcheon Culture Village in Busan, South Korea',
+        description: 'In 2009, the village was converted into a cultural hub by painting the houses and featuring exhibitions and art installations.',
+        imageId: 'ZfQOOzf'
+    }];
+    
+    // --------- utils.js ------------- :
+    export function getImageUrl(place) {
+        return (
+        'https://i.imgur.com/' +
+        place.imageId +
+        'l.jpg'
+        );
+    }
+
+//* context management : 
+/*
+    In React, **context** is used to share values across components without having 
+    to pass props manually through every level of the component tree. 
+    However, one of the potential downsides of using context 
+    is that components that consume the context will re-render whenever
+    the value in the context changes.
+
+    Here’s a detailed explanation of how and why this happens,
+    and how it can lead to unnecessary re-renders:
+*/
+//### How Context Works with Re-rendering:
+/*
+    When you use React's `Context.Provider`, it provides a value to all 
+    components that consume it. Any time that the value provided by the 
+    `Provider` changes, all components that are consuming this context 
+    will re-render, even if the part of the value they rely on hasn’t changed.
+*/
+
+//* Example:
+/*
+    - In this example, both `ChildComponentA` and `ChildComponentB` are consuming
+      `MyContext`
+
+    - If `state` changes (e.g., `setState({ value1: 3, value2: 2 })`), **both**
+     `ChildComponentA` and `ChildComponentB` will re-render.
+
+    - Even if `ChildComponentB` is only using `value2` (which hasn’t changed), 
+      it will still re-render because the context object has changed.
+
+    - This is considered an **unnecessary re-render** for `ChildComponentB`.
+*/
+    const MyContext = React.createContext();
+
+    function ParentComponent() {
+    const [state, setState] = useState({ value1: 1, value2: 2 });
+
+    return (
+        <MyContext.Provider value={state}>
+        <ChildComponentA />
+        <ChildComponentB />
+        </MyContext.Provider>
+    );
+    }
+
+    function ChildComponentA() {
+    const context = useContext(MyContext);
+    return <div>{context.value1}</div>;  // Only uses value1
+    }
+
+    function ChildComponentB() {
+    const context = useContext(MyContext);
+    return <div>{context.value2}</div>;  // Only uses value2
+    }
+
+
+
+//###  Why Unnecessary Re-renders Can Be a Problem:
+/*
+    1. Performance Impact: When components re-render unnecessarily, 
+       it can slow down the app, especially if the app is large, or if the 
+       component tree is deep and complex.
+
+    2. **State Synchronization**: If child components perform complex 
+       calculations or side effects on re-render, unnecessary re-renders 
+       might lead to inefficiency, causing redundant work.
+
+    3. **Component Bloat**: If many components are consuming the same 
+       context, it becomes harder to optimize re-renders, especially 
+       when only a small part of the context changes.
+
+*/
+// 1. **Memoizing Context Value**:
+/*
+   - **Problem**: Passing a new object or function as context value on every 
+                  render causes all consuming components to re-render.
+
+   - **Solution**: Use `useMemo` to memoize the context value so that
+                   it only changes when necessary.
+*/ 
+//*    Example:
+/*
+    **Benefit**: With `useMemo`, the context value is only recalculated 
+    and changed when `value1` or `value2` changes, avoiding unnecessary 
+    re-renders of `ChildComponent`.
+*/
+   const MyContext = React.createContext();
+
+   function ParentComponent() {
+     const [value1, setValue1] = useState(1);
+     const [value2, setValue2] = useState(2);
+
+     const contextValue = useMemo(() => ({ value1, value2 }), [value1, value2]);
+
+     return (
+       <MyContext.Provider value={contextValue}>
+         <ChildComponent />
+       </MyContext.Provider>
+     );
+   }
+
+// 3. **Selector Functions**:
+/*
+   - **Problem**: Context consumers might re-render even when they don’t
+                  need all the context data.
+
+   - **Solution**: Create a custom hook or use a selector function to only 
+                   extract the part of the context that the component needs.
+*/
+   Example:
+/*
+   **Benefit**: This allows you to tightly control which parts of the context
+                each component subscribes to, helping reduce unnecessary re-renders.
+
+*/
+   function useValue1() {
+     const context = useContext(MyContext);
+     return context.value1;
+   }
+
+   function ChildComponentA() {
+     const value1 = useValue1();
+     return <div>{value1}</div>;
+   }
+
+
+
+//*  Conclusion:
+/*
+    When using React's context, it’s important to be mindful of how context changes
+    affect re-rendering in consuming components. Splitting contexts, memoizing values, 
+    and using selector functions are effective strategies for avoiding unnecessary
+    re-renders and keeping your application performance optimal.
+*/
+
+// stop 56 

@@ -1,4 +1,6 @@
 import "./LoanForm.css";
+import Input from "../Input/Input";
+import { loanInputContext } from "../../contexts/laonFormContext";
 
 import { useState } from "react";
 export default function LoanForm({ setAlertStat }) {
@@ -52,29 +54,25 @@ export default function LoanForm({ setAlertStat }) {
 		<form className="LoanFormComponentClass" onSubmit={handleValidateLoanForm}>
 			<h1 className="title">Requesting a Loan</h1>
 			<hr />
-			<div className="inputBox">
-				<label htmlFor="name">Name</label>
-				<input type="text" id="name" onChange={setLoanFormInput} value={formInfoStat["name"]} required />
-			</div>
-			<div className="inputBox">
-				<label htmlFor="phone">Phone Number : </label>
-				<input type="number" id="phone" onChange={setLoanFormInput} value={formInfoStat["phone"]} required />
-			</div>
-			<div className="inputBox">
-				<label htmlFor="age">Age</label>
-				<input type="number" id="age" onChange={setLoanFormInput} value={formInfoStat["age"]} required />
-			</div>
+			<loanInputContext.Provider value={{ type: "text", id: "name", text: "Name", changeHandler: setLoanFormInput, value: formInfoStat["name"] }}>
+				<Input id="name" text="Name" changeHandler={setLoanFormInput} value={formInfoStat["name"]}></Input>
+			</loanInputContext.Provider>
 
-			<div className="inputBox">
-				<label htmlFor="isEmployee">Are you an employee?</label>
-				<input type="checkbox" id="isEmployee" onChange={setLoanFormInput} checked={formInfoStat["isEmployee"]} />
-			</div>
+			<loanInputContext.Provider value={{ type: "number", id: "phone", text: "Phone Number", changeHandler: setLoanFormInput, value: formInfoStat["phone"], required: true }}>
+				<Input />
+			</loanInputContext.Provider>
 
-			<div className="inputBox">
-				<label htmlFor="salary">Salary</label>
-				<input type="tel" id="salary" onChange={setLoanFormInput} value={formInfoStat["salary"]} required />
-			</div>
+			<loanInputContext.Provider value={{ type: "number", id: "age", text: "Age", changeHandler: setLoanFormInput, value: formInfoStat["age"], required: true }}>
+				<Input />
+			</loanInputContext.Provider>
 
+			<loanInputContext.Provider value={{ type: "checkbox", id: "isEmployee", text: "Are you an employee?", changeHandler: setLoanFormInput, checked: formInfoStat["isEmployee"], required: false }}>
+				<Input />
+			</loanInputContext.Provider>
+
+			<loanInputContext.Provider value={{ type: "tel", id: "salary", text: "Salary", changeHandler: setLoanFormInput, value: formInfoStat["salary"], required: true }}>
+				<Input />
+			</loanInputContext.Provider>
 			<input type="submit" id="submitLoanFormInput" disabled={!formInfoStat["isAllowToSubmit"]} />
 		</form>
 	);
