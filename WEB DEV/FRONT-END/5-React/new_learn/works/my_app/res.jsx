@@ -1764,8 +1764,6 @@ export let  placeContext=createContext({})
     return <div>{context.value2}</div>;  // Only uses value2
     }
 
-
-
 //###  Why Unnecessary Re-renders Can Be a Problem:
 /*
     1. Performance Impact: When components re-render unnecessarily, 
@@ -1822,7 +1820,6 @@ export let  placeContext=createContext({})
 /*
    **Benefit**: This allows you to tightly control which parts of the context
                 each component subscribes to, helping reduce unnecessary re-renders.
-
 */
    function useValue1() {
      const context = useContext(MyContext);
@@ -1834,8 +1831,6 @@ export let  placeContext=createContext({})
      return <div>{value1}</div>;
    }
 
-
-
 //*  Conclusion:
 /*
     When using React's context, it’s important to be mindful of how context changes
@@ -1844,4 +1839,139 @@ export let  placeContext=createContext({})
     re-renders and keeping your application performance optimal.
 */
 
-// stop 56 
+// React Router :  --- []
+
+// install the react router dom library :
+``` 
+    npm install react-router-dom --save 
+```
+
+// in the index.js :
+    import React from 'react';
+    import ReactDOM from 'react-dom/client';
+    import './index.css';
+    import App from './App';
+    import reportWebVitals from './reportWebVitals';
+    import {BrowserRouter} from "react-router-dom"
+
+    const root = ReactDOM.createRoot(document.getElementById('root')); 
+    root.render(
+    <React.StrictMode>
+
+        <BrowserRouter>
+        <App />
+        </BrowserRouter>
+    
+    </React.StrictMode>
+    );
+
+// App.js : create new route Example : 
+    import "./App.css";
+    import { Route, Routes } from "react-router-dom";
+    function App() {
+        return (
+            <>
+                <div className="App">
+                    <Routes>
+                        <Route path="/Home" element={<h1>Hello From Home</h1>} />
+                        <Route path="/" element={<h1>Hello From Home</h1>} />
+                    </Routes>
+                </div>
+            </>
+        );
+    }
+    export default App;
+
+// create a link Example :
+    import "./navBar.css";
+    import { Link } from "react-router-dom";
+
+    export default function NabBar() {
+        return (
+            <nav>
+                <h1>
+                    <span>M</span>ajid
+                </h1>
+                <ul>
+                    <li>
+                        <Link to="/home">Home</Link>
+                    </li>
+
+                    <li>
+                        <Link to="/services">Services</Link>
+                    </li>
+                    <li>
+                        <Link to="/about">About</Link>
+                    </li>
+                </ul>
+            </nav>
+        );
+    }
+
+//  Dynamic routing :
+// ----App.js :----
+```
+    <Route path="/pageName/:dynamicEndPoint"  element={<ServiceDetails/>} ></Route>
+```
+
+// ----ServiceDetails.js :----
+import { useParams } from "react-router-dom";
+
+import Service from "../../Service/Service";
+import { servicesListContext } from "../../../contexts/ServicesContext";
+import { useContext } from "react";
+import ErrorPage from "./../ErrorPage/ErrorPage";
+export default function ServiceDetails({ title, description }) {
+	const { serviceId } = useParams();
+	const servicesList = useContext(servicesListContext);
+
+	const targetService = servicesList.find((serviceItem) => {
+		return serviceItem.id == serviceId;
+	});
+
+	return (
+		<>
+			<h1>Welcome to the service details page </h1>;<h1> Service id : {serviceId}</h1>
+			{targetService ? <Service id={targetService.id} name={targetService.name} description={targetService.description}></Service> : <ErrorPage />}
+		</>
+	);
+}
+
+// add error page : 
+```
+     <Route path="*" element={<ErrorPage />} />
+```
+
+// routes group:
+```
+    <Route path="/services" >
+        <Route path=":serviceId" element={<ServiceDetails />} />
+        <Route index element={<services/>}>
+        <Route path="new" element={<NewService />} />
+        <Route path="delete" element={<DeleteService />} />
+    </Route>
+```
+
+// add layout to a  routes group 
+// ----App.js :----
+```
+<Route path="/services" element={<ServiceLayout />}>
+        <Route index element={<services/>}>
+        <Route path="new" element={<NewService />} />
+        <Route path="delete" element={<DeleteService />} />
+    </Route>
+```
+// ----ServicesLayout.js:----
+    import { Outlet } from "react-router-dom";
+    export default function ServiceLayout() {
+        return (
+            <div>
+                <h1 style={{ width: "100vw", background: "red", color: "white" }}>Services</h1>
+
+                <Outlet />
+            </div>
+        );
+    }
+
+
+//to start : 66 
