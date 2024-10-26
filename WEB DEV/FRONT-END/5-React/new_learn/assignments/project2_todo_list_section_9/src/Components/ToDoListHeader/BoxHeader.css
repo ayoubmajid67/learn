@@ -1,0 +1,19 @@
+.boxHeaderComponentClass {
+
+    padding: 10px;
+
+
+    &>.title {
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+
+    }
+
+    &>hr {
+        opacity: 0.8;
+
+    }
+
+
+}

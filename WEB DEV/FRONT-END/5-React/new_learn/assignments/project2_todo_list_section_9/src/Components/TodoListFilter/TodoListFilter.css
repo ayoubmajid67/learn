@@ -1,0 +1,20 @@
+.TodoListFilterClass {
+
+    &>button {
+        border-radius: 0;
+        border-color: #ed6c02;
+
+        color: #ed6c02;
+
+
+        &.disabled {
+
+
+
+            border-color: rgba(0, 0, 0, 0.394);
+            color: rgba(0, 0, 0, 0.604);
+            opacity: 0.7;
+        }
+    }
+
+}

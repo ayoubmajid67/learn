@@ -12,7 +12,7 @@
     git branch -a 
 ```
 
-// create new react app :  (app_name) can not contain capital letters :----------[]
+// create new react app :  (app_name) can not contain capital letters or spaces :----------[]
 ```
     npx create-react-app app_name; 
 ```
@@ -1315,7 +1315,7 @@ export function getImageUrl(place) {
 ``` 
     npm install react-router-dom --save 
 ```
-// in the index.html :
+// in the index.js :
 ```
     import React from 'react';
     import ReactDOM from 'react-dom/client';
@@ -1396,16 +1396,28 @@ export function getImageUrl(place) {
         <Route path="delete" element={<DeleteService />} />
     </Route>
 ```
-// add layout to grouped route:
+// add layout to a  routes group 
+// ----App.js :----
 ```
-    <Route path="/services" element={<Services />} />
-    <Route path="/services" element={<Layout />}>
-        <Route path=":serviceId" element={<ServiceDetails />} />
-
+<Route path="/services" element={<ServiceLayout />}>
+        <Route index element={<services/>}>
         <Route path="new" element={<NewService />} />
         <Route path="delete" element={<DeleteService />} />
     </Route>
 ```
+// ----ServicesLayout.js:----
+    import { Outlet } from "react-router-dom";
+    export default function ServiceLayout() {
+        return (
+            <div>
+                <h1 style={{ width: "100vw", background: "red", color: "white" }}>Services</h1>
+
+                <Outlet />
+            </div>
+        );
+    }
+
+
 // add error page : 
 ```
     <Route path="*" element={<ErrorPage />} />
@@ -1451,5 +1463,39 @@ export function getImageUrl(place) {
     // export default App;
 // install material icons :
 ```
-    npm install @mui/icons-material @mui/material @emotion/styled @emotion/react --save
+    npm install @mui/icons-material  --save
 ```
+// Example : 
+    import "./App.css";
+    import Button from '@mui/material/Button';
+    import DeleteIcon from '@mui/icons-material/Delete';
+    import SendIcon from '@mui/icons-material/Send';
+    import Stack from '@mui/material/Stack';
+    import { createTheme, ThemeProvider } from "@mui/material/styles";
+    import { purple } from '@mui/material/colors';
+     theme = createTheme({
+        palette: {
+            primary: {
+            main: "#000",
+            },
+            secondary: {
+            main: purple[500],
+            },
+        },
+        });
+    function App() {
+        return (
+            <ThemeProvider theme={theme}>
+            <Stack direction="row" spacing={2} >
+        <Button variant="outlined" startIcon={<DeleteIcon />}>
+            Delete
+        </Button>
+        <Button variant="contained" endIcon={<SendIcon />}>
+            Send
+        </Button>
+        </Stack>
+        </ThemeProvider >
+        );
+    }
+
+    // export default App;

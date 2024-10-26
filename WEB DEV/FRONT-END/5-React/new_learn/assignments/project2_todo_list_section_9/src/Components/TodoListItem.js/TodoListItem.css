@@ -1,0 +1,67 @@
+.TodoListItemComponentClass {
+    padding: 14px 10px;
+    background-color: hsla(71, 24%, 52%, 0.809);
+    color: white;
+    border-radius: 5px;
+    transition: 0.3s;
+
+
+    &>.leftSide {
+        flex-grow: 1;
+
+    }
+
+    &>.rightSide {
+
+
+        .controlIcon {
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 50%;
+
+            background-color: white;
+
+            svg {
+                font-size: 15.2px;
+            }
+
+        }
+
+    }
+
+    &.completeMode {
+
+        background-color: hsl(71, 85%, 41%);
+        &>.leftSide {
+            &>.name{
+             text-decoration: line-through;
+            }
+    
+        }
+
+        &>.rightSide {
+            .controlIcon {
+                &.checkIcon {
+                    background-color: hsla(71, 91%, 21%, 0.931);
+                    color: white !important;
+                    border-color: white !important;
+
+                }
+            }
+        }
+
+    }
+
+    &.deleteMode {
+        background-color: #ee6f05;
+        border-left: 10px solid #e62e05;
+        transform: scale(1.03);
+    }
+    &.editMode {
+        background-color: #1a68bf;
+        border-left: 10px solid #174d8b;
+        transform: scale(1.03);
+    }
+    
+    
+}

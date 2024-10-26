@@ -1,0 +1,25 @@
+"filename", "language", "JavaScript", "CSS", "JSON", "Markdown", "HTML", "comment", "blank", "total"
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project2_todo_list_section_9\README.md", "Markdown", 0, 0, 0, 38, 0, 0, 33, 71
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project2_todo_list_section_9\package-lock.json", "JSON", 0, 0, 21592, 0, 0, 0, 1, 21593
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project2_todo_list_section_9\package.json", "JSON", 0, 0, 46, 0, 0, 0, 1, 47
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project2_todo_list_section_9\public\index.html", "HTML", 0, 0, 0, 0, 18, 23, 2, 43
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project2_todo_list_section_9\src\App.css", "CSS", 0, 29, 0, 0, 0, 0, 11, 40
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project2_todo_list_section_9\src\App.js", "JavaScript", 108, 0, 0, 0, 0, 0, 21, 129
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project2_todo_list_section_9\src\Components\AddTaskForm\AddTaskForm.css", "CSS", 0, 12, 0, 0, 0, 0, 3, 15
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project2_todo_list_section_9\src\Components\AddTaskForm\AddTaskForm.js", "JavaScript", 28, 0, 0, 0, 0, 0, 4, 32
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project2_todo_list_section_9\src\Components\DeleteTaskModal\DeleteTaskModal.css", "CSS", 0, 5, 0, 0, 0, 0, 2, 7
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project2_todo_list_section_9\src\Components\DeleteTaskModal\DeleteTaskModal.js", "JavaScript", 30, 0, 0, 0, 0, 0, 2, 32
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project2_todo_list_section_9\src\Components\EditTaskModal\EditTaskModal.css", "CSS", 0, 0, 0, 0, 0, 0, 1, 1
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project2_todo_list_section_9\src\Components\EditTaskModal\EditTaskModal.js", "JavaScript", 36, 0, 0, 0, 0, 0, 6, 42
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project2_todo_list_section_9\src\Components\ToDoListHeader\BoxHeader.css", "CSS", 0, 11, 0, 0, 0, 0, 8, 19
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project2_todo_list_section_9\src\Components\ToDoListHeader\BoxHeader.js", "JavaScript", 12, 0, 0, 0, 0, 0, 5, 17
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project2_todo_list_section_9\src\Components\TodoListFilter\TodoListFilter.css", "CSS", 0, 12, 0, 0, 0, 0, 8, 20
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project2_todo_list_section_9\src\Components\TodoListFilter\TodoListFilter.js", "JavaScript", 36, 0, 0, 0, 0, 0, 6, 42
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project2_todo_list_section_9\src\Components\TodoListItem.js\TodoListItem.css", "CSS", 0, 48, 0, 0, 0, 0, 19, 67
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project2_todo_list_section_9\src\Components\TodoListItem.js\TodoListItem.js", "JavaScript", 71, 0, 0, 0, 0, 2, 10, 83
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project2_todo_list_section_9\src\Components\TodoList\TodoList.css", "CSS", 0, 8, 0, 0, 0, 0, 0, 8
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project2_todo_list_section_9\src\Components\TodoList\TodoList.js", "JavaScript", 15, 0, 0, 0, 0, 0, 3, 18
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project2_todo_list_section_9\src\index.css", "CSS", 0, 19, 0, 0, 0, 0, 6, 25
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project2_todo_list_section_9\src\index.js", "JavaScript", 10, 0, 0, 0, 0, 0, 3, 13
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project2_todo_list_section_9\src\utils\localStorage.js", "JavaScript", 6, 0, 0, 0, 0, 0, 2, 8
+"Total", "-", 352, 144, 21638, 38, 18, 25, 157, 22372

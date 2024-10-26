@@ -1,56 +1,52 @@
 import "./App.css";
 
-import { Route, Routes } from "react-router-dom";
-import { useState } from "react";
-import { usernameContext } from "./contexts/textContext";
+import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 
-import { useContext } from "react";
-import Button from "./componentrs/Button/Button";
-import { Link } from "react-router-dom";
-import Services from "./componentrs/Pages/Services/Services";
-import ServiceDetails from "./componentrs/Pages/ServiceDetails/ServiceDetails";
+import Button from "@mui/material/Button";
 
-import ErrorPage from "./componentrs/Pages/ErrorPage/ErrorPage";
-import ServiceLayout from "./componentrs/Pages/ServicesLayout/ServicesLayout";
+import { orange, green } from "@mui/material/colors";
 
+import { Stack } from "@mui/material";
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+
+import DeleteIcon from '@mui/icons-material/Delete';
+import SendIcon from '@mui/icons-material/Send';
+const Item = styled(Paper)(({ theme }) => ({
+	backgroundColor: '#fff',
+	...theme.typography.body2,
+	padding: theme.spacing(1),
+	textAlign: 'center',
+	color: theme.palette.text.secondary,
+	...theme.applyStyles('dark', {
+	  backgroundColor: '#1A2027',
+	}),
+  }));
+  
+const theme = createTheme({
+	palette: {
+		primary: {
+			main: orange[500],
+		},
+		secondary: {
+			main: green[500],
+		},
+	},
+});
 function App() {
 	return (
-		<div className="App">
-			<header>
-				<h1>Majjid</h1>
-				<nav>
-					<li>
-						<Link to="./">Home</Link>
-					</li>
-					<li>
-						<Link to="./about">About</Link>
-					</li>
-					<li>
-						<Link to="services">Services</Link>
-					</li>
-				</nav>
-			</header>
-			<Routes>
-				<Route path="/About" element={<h1>About page</h1>}></Route>
-				<Route
-					path="/"
-					element={
-						<>
-							<h1>Home page</h1>
-							<Button></Button>
-						</>
-					}
-				></Route>
-
-				<Route path="/services" element={<ServiceLayout />}>
-					<Route index element={<Services />}></Route>
-					<Route path=":serviceId" element={<ServiceDetails />}></Route>
-				</Route>
-
-				<Route path="*" element={<ErrorPage />}></Route>
-			</Routes>
-		</div>
+		<ThemeProvider theme={theme}>
+			<div className="App">
+			<Button variant="outlined" startIcon={<DeleteIcon />}>
+        Delete
+      </Button>
+      <Button variant="contained" endIcon={<SendIcon />}>
+        Send
+      </Button>
+			
+			</div>
+		</ThemeProvider>
 	);
-}
+}  
 
 export default App;

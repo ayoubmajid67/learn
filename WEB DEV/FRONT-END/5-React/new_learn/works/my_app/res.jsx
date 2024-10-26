@@ -1973,5 +1973,68 @@ export default function ServiceDetails({ title, description }) {
         );
     }
 
+// download the material ui library : 
+```
+    npm install @mui/material @emotion/react @emotion/styled --save 
+```
+// create a theme example :
+    import "./App.css";
 
-//to start : 66 
+    import { createTheme, ThemeProvider} from "@mui/material/styles";
+
+    import Button from "@mui/material/Button";
+
+    import { orange, green } from "@mui/material/colors";
+
+    import { Chip } from "@mui/material";
+    const theme = createTheme({
+        palette: {
+            primary: {
+                main: orange[500],
+            },
+            secondary: {
+                main: green[500],
+            },
+        },
+    });
+    function App() {
+        return (
+            <ThemeProvider theme={theme}>
+                <div className="App">
+                    <Button color="primary" variant="outlined">
+                        Click me
+                    </Button>
+                    <Chip label="primary" color="primary" variant="outlined" />
+                    
+                </div>
+            </ThemeProvider>
+        );
+    }  
+
+    export default App;
+
+// install material icons :
+```
+    npm install @mui/icons-material  --save
+```
+
+// using uuid library to generate unique ids ---[] :
+    // install the library :  
+    ```
+    npm install uuid --save  
+    ```
+    
+    // use the library to generate a unique id :    
+    import { v4 as uuidv4 } from 'uuid';
+    uuidv4(); // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
+
+
+// Run React project in production environment:
+/*
+This command will:
+1. Convert your React project to pure HTML, CSS, and JavaScript code (compiling).
+2. Bundling: Collect all code and libraries into one directory for production.
+*/
+```
+    npm run build
+```

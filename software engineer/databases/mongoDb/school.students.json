@@ -1,0 +1,68 @@
+[{
+  "_id": {
+    "$oid": "662d4cf8290f576a7a985632"
+  },
+  "lastname": "Kamal",
+  "name": "Ayoub"
+},
+{
+  "_id": {
+    "$oid": "662d4cf8290f576a7a985633"
+  },
+  "name": "Amina",
+  "lastname": "Atoub"
+},
+{
+  "_id": {
+    "$oid": "662d624437d856b49646b79f"
+  },
+  "name": "defualtName"
+},
+{
+  "_id": {
+    "$oid": "662d627337d856b49646b7a0"
+  },
+  "startDate": {
+    "$date": "2024-04-27T20:39:15.794Z"
+  },
+  "courses": [
+    "English",
+    "cpp",
+    "js"
+  ],
+  "name": "kamal"
+},
+{
+  "_id": {
+    "$oid": "662d628a37d856b49646b7a1"
+  },
+  "username": "kk",
+  "startDate": {
+    "$date": "2024-04-27T20:39:38.880Z"
+  },
+  "name": "defualtName"
+},
+{
+  "_id": {
+    "$oid": "662f8d81524dc13bab46b79f"
+  },
+  "age": 40
+},
+{
+  "_id": {
+    "$oid": "662f8d9c524dc13bab46b7a0"
+  },
+  "age": 20
+},
+{
+  "_id": {
+    "$oid": "662f8d9c524dc13bab46b7a1"
+  },
+  "age": 50
+},
+{
+  "_id": {
+    "$oid": "662f8d9c524dc13bab46b7a2"
+  },
+  "age": 40
+}]

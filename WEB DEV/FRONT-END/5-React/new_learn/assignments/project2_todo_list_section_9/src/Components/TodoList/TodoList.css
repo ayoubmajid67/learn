@@ -1,0 +1,8 @@
+.TodoListComponentClass {
+    max-height: 60vh;
+    overflow-y: auto;
+    scrollbar-width: none;
+    @media(max-width :768px){
+        max-height: 50vh;
+    }
+}

@@ -1239,3 +1239,298 @@ functionName(parametersValue)
 
 #open a file : 
 file=open("filePath,mode=read")
+
+# get the absolute path of the current  working directory  :
+import os 
+print(os.getcwd())
+
+# get the absolute path of the current working file : 
+import os;
+print(os.path.abspath(__file__))
+
+# get the absolute path of parent dir of a file : 
+import os
+print(os.path.dirname("absPathOfFile"))
+#example :
+import os
+print(os.path.dirname(os.path.abspath(__file__)))
+
+#get data object : 
+
+myFile = open("fileName")
+print(myFile) # example : <_io.TextIOWrapper name='nice.txt' mode='r' encoding='cp65001'>
+
+#read from a file : 
+print(myFile.read(numberOfCharacterToRead=All))
+
+# read one line : 
+print(myFile.readline())
+
+# read arr lines : 
+print(myFile.readlines())
+
+# iterate of a file  Example : 
+myFile = open("nice.txt")
+for line in myFile :
+    print(line)
+    if line.startswith('3') : 
+        break;
+
+# close the file :
+myFile.close()
+
+# write content in a file  :
+myFile.write("str");
+
+#write list in a file :
+myFile.writelines(myList)
+
+#cut the content of a file 
+myFile.truncate(nbrCharactersToTake)
+
+#give the position of the cursor : 
+myFile.tell() 
+
+#change the position of the cursor : 
+myFile.seek(position)
+
+#Build in functions : ---- []
+ 
+#all : check if all element is true : 
+all(iterable)
+
+#any : check if there  is at least one true element : 
+any(iterable)
+#example : 
+x=[1,[]]
+if any(x) :
+    print("yes")
+else :
+    print("no")
+
+#bin : get the binary of a number : 
+bin(number)
+
+#get the address of a variable : 
+id(varName)
+
+#get sum of a iterable : 
+sum(iterable,startAddedValue=0)
+#example : 
+print(sum([1,2,3,4,5,False,True],15)) # 31 
+
+#rounding a number 
+round(number,numberOfDigitToShowAfterComma)
+
+#range : using with loops 
+range(start=0,end,steps=1)
+# example :
+range(4) # start=0 , end=4 ,steps=1
+print(list(range(0,10,2))) # [0, 2, 4, 6, 8]
+
+#change the default separator :
+print("str1","str2",sep="newSep") # str1newSepstr2
+#change the default end of print function  :
+print("text",end=newEnd) # default '\n'
+
+#get the absolute value of a number :
+abs(number)
+
+#get the power of a number : 
+pow(base,exp,mod) # (base^exp) % mod
+#example : 
+pow(2,5,2) # (2^5) %2 = 32%2 = 0 
+
+#get the min value : 
+min(item1,item2,itemN, or iterator)
+
+#get the max value 
+max(item1,item2,itemN, or iterator)
+
+#  slice an iterable : 
+a=[v1,v2,v3,vN]
+a[slice(start=0,end)]
+
+# -- Built In Functions => Map --
+# -------------------------------
+# [1] Map Take A Function + Iterator
+# [2] Map Called Map Because It Map The Function On Every Element
+# [3] The Function Can Be Pre-Defined Function or Lambda Function
+# ---------------------------------------------------------------
+map(callbackFunction,iterable)
+
+# example :
+def formatText(text):
+    return f"- {text} -"
+
+textList = ["ayoub", "amine", "Osama", "kamal"]
+newList = list(map(formatText, textList))
+print(newList)
+
+for name in map(lambda text: f'/{text}/', textList):
+    print(name)
+
+# -- Built In Functions => Filter --
+# -------------------------------
+# [1] Filter Take A Function + Iterator
+# [2] Filter Run A Function On Every Element
+# [3] The Function Can Be Pre-Defined Function or Lambda Function
+# [4] Filter Out All Elements For Which The Function Return True
+# [5] The Function Need To Return Boolean Value
+# ---------------------------------------------------------------
+
+#example 1 : 
+def checkNumber(num):
+    return num > 10
+
+myNumbers = [5, 10, 12, 4, 16]
+
+myResult = list(filter(checkNumber, myNumbers))
+
+print("the Result : ", myResult)
+
+#example 2 : 
+def checkNumber(num):
+    return num > 10
+
+
+myNumbers = [5, 10, 12, 4, 16]
+
+myResult = list(filter(checkNumber, myNumbers))
+
+print("the Number Result : ", myResult)
+
+
+def checkNameStartWithO(name):
+    return name.startswith("O")
+
+
+myNames = ["amine", "Kamal", "Omaa", "onahi", "Oryan"]
+
+myNamesResult = list(filter(checkNameStartWithO, myNames))
+
+print("the names start with O : ", myNamesResult)
+
+
+# check name with lampda function :
+myNamesResultLambda = list(filter(lambda name: name.startswith("O"), myNames))
+
+print("the names start with O lambda :", myNamesResultLambda)
+
+# -- Built In Functions => Reduce ---[]
+# ----------------------------------
+# [1] Reduce Take A Function + Iterator
+# [2] Reduce Run A Function On FIrst and Second Element And Give Result
+# [3] Then Run Function On Result And Third Element
+# [4] Then Run Function On Rsult And Fourth Element And So On
+# [5] Till One ELement is Left And This is The Result of The Reduce
+# [6] The Function Can Be Pre-Defined Function or Lambda Function
+# ---------------------------------------------------------------
+
+#example : 
+from     import reduce
+
+def sumAll(num1, num2):
+    return num1 + num2
+
+numbers = [1, 2, 3, 4, 5, 6, 7]
+result = reduce(sumAll, numbers)
+
+print("the sum of the list is : ", result)
+
+resultLambda = reduce(lambda num1, num2: num1 + num2, numbers)
+print("the sum of the list (lambda) is : ", resultLambda)
+
+
+#enumerate : add a counter to an iterable 
+enumerate(iterable,start)
+#example : 
+l = ["A", "B", "C", "d"]
+
+for index, item in enumerate(l,start=1):
+    print(index, "-", item)
+
+#help : get information about a function : 
+print(help(functionName))
+
+#example : 
+print(help(print))
+
+#reversed : reverse an iterable : 
+reversed(iterable)
+#example : 
+myString="Elzero" 
+print(list(reversed(myString))) # ['o', 'r', 'e', 'z', 'l', 'E']
+l = ["A", "B", "C", "d"]
+print(list(reversed(l)))   # ['d', 'C', 'B', 'A']
+
+#Modules : --[]
+#----------------------------------------------------
+#[1] Module is A File Contain A Set Of Functions
+#[2] You Can Import Module in Your App To Help You
+#[3] You Can Import Multiple Modules
+#[4] You Can Create Your Own Modules
+#[5] Modules Saves Your Time
+#----------------------------------------------------
+
+#radom module :
+import random 
+print(random) # <module 'random' from 'C:\\Python312\\Lib\\random.py'>
+#get random number 
+random.random()  # 0,1 
+
+#show all functions inside a module : 
+print(dir(moduleName))
+
+#import number of function from a module : 
+from moduleName import functionName1,functionName2,functionNameN 
+
+#get random integer number 
+from random import randint 
+print(randint(min,max))
+#example : 
+from random import randint
+print(f'print random integer number : {randint(1,20)} ')
+
+#import all function in a module :
+from moduleName import *  
+
+#create your own module : 
+# 1- new file :
+# 2- define functions into it  
+# 3- import the fileName 
+#example :
+#myModule :
+"""
+def sayHello(str):
+    print("Hello ", str)
+
+def getSum(a, b):
+    return a+b
+
+
+def readInput(msg):
+    return input(msg)
+"""
+#main :
+"""
+import myModule 
+name=myModule.readInput("Enter your name :")
+print(name)
+"""
+#get module possible paths :
+import sys 
+print(sys.path)
+
+#add new paths :
+import sys 
+sys.path.append(r"c:\Games")
+print(sys.path)
+
+#give an alias to a module :
+import moduleName as aliasName 
+#example : 
+import myModule  as m
+name=m.readInput("Enter your name :")
+print(name)
+

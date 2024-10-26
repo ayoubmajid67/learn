@@ -1,0 +1,15 @@
+.AddTaskFormComponentClass{
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+     
+    button{
+      padding: 10px 20px;
+      background-color: hsl(71, 85%, 41%);
+     &:disabled{
+      background-color: hsla(71, 24%, 52%, 0.809);
+     }
+    }
+
+}

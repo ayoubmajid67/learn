@@ -1,0 +1,7 @@
+.DeleteTaskModalComponentClass {
+    &>.box {
+
+
+        width: 400px;
+    }
+}

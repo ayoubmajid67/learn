@@ -1,11 +1,3 @@
-.container {
-    --padd: 20px;
-     padding-left:var(--padd);
-    padding-right: var(--padd);
-
-
-}
-.main{
-    margin-top: 50px;
-    padding: 10px 20px;
+body{
+    font-family: 'Times New Roman', Times, serif;
 }
