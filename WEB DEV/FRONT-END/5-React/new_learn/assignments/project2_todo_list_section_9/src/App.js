@@ -21,6 +21,10 @@ import DeleteTaskModal from "./Components/DeleteTaskModal/DeleteTaskModal";
 
 import EditTaskModal from "./Components/EditTaskModal/EditTaskModal";
 
+import Toast from "./Components/Toast/Toast";
+import { ToastContext } from "./Contexts/ToastContext";
+import { TodoListContext } from "./Contexts/TodoListContext";
+
 function App() {
 	const theme = createTheme({
 		palette: {
@@ -50,6 +54,7 @@ function App() {
 		}
 
 		setArrTasksStat((prev) => prev.map((task) => (task.id === editModalStat.taskId ? { ...task, name: editModalStat.name, description: editModalStat.description } : task)));
+		setOpenToastStat({ message: "The Tasks edited with success", open: true });
 	}
 	function getNewTaskJson(taskName) {
 		return {
@@ -64,13 +69,9 @@ function App() {
 			console.log("You can not add an empty task [task name = '']");
 			return;
 		}
-		const newTaskJson = getNewTaskJson(taskName);
+		setArrTasksStat((prev) => [...prev, getNewTaskJson(taskName)]);
 
-		setArrTasksStat((prev) => {
-			let newArrTaskStat = [...prev];
-			newArrTaskStat.push(newTaskJson);
-			return newArrTaskStat;
-		});
+		setOpenToastStat({ message: "The Tasks added with success", open: true });
 	}
 
 	function completeTask(taskId) {
@@ -79,6 +80,7 @@ function App() {
 
 	function deleteTask(taskId) {
 		setArrTasksStat((prev) => prev.filter((item) => item.id != taskId));
+		setOpenToastStat({ message: "The Tasks deleted with success", open: true });
 	}
 
 	let [deleteModalStat, setDeleteModalStat] = useState({
@@ -104,23 +106,32 @@ function App() {
 
 	const [filterStat, setFilterStat] = useState("all");
 
+	const [openToastStat, setOpenToastStat] = useState({
+		open: false,
+		message: "This is a success Alert inside a Snackbar!",
+	});
 	return (
 		<ThemeProvider theme={theme}>
-			<div className="App">
-				<Container maxWidth="md">
-					<div spacing={2} className="ToDoListParent">
-						<BoxHeader />
-						<TodoListFilter filterStat={filterStat} setFilterStat={setFilterStat} />
+			<ToastContext.Provider value={{ openToastStat, setOpenToastStat }}>
+				<div className="App">
+					<Container maxWidth="md">
+						<div spacing={2} className="ToDoListParent">
+							<BoxHeader />
+							<TodoListFilter filterStat={filterStat} setFilterStat={setFilterStat} />
 
-						<TodoList arrTasksStat={arrTasksStat} filterStat={filterStat} setEditModalStat={setEditModalStat} editModalStat={editModalStat} setDeleteModalStat={setDeleteModalStat} deleteModalStat={deleteModalStat} completeTask={completeTask}></TodoList>
+							<TodoListContext.Provider value={{ setEditModalStat, editModalStat, setDeleteModalStat, deleteModalStat, completeTask }}>
+								<TodoList arrTasksStat={arrTasksStat} filterStat={filterStat}></TodoList>
+							</TodoListContext.Provider>
+							<AddTaskForm addTask={addTask}></AddTaskForm>
+						</div>
 
-						<AddTaskForm addTask={addTask}></AddTaskForm>
-					</div>
+						<DeleteTaskModal taskId={deleteModalStat.taskId} deleteTask={deleteTask} deleteModalStat={deleteModalStat} setDeleteMOdalStat={setDeleteModalStat} closeDeleteModal={closeDeleteModal} />
+						<EditTaskModal taskId={deleteModalStat.taskId} editTask={editTask} editModalStat={editModalStat} setEditModalStat={setEditModalStat} closeEditModal={closeEditModal} />
+					</Container>
 
-					<DeleteTaskModal taskId={deleteModalStat.taskId} deleteTask={deleteTask} deleteModalStat={deleteModalStat} setDeleteMOdalStat={setDeleteModalStat} closeDeleteModal={closeDeleteModal} />
-					<EditTaskModal taskId={deleteModalStat.taskId} editTask={editTask} editModalStat={editModalStat} setEditModalStat={setEditModalStat} closeEditModal={closeEditModal} />
-				</Container>
-			</div>
+					<Toast />
+				</div>
+			</ToastContext.Provider>
 		</ThemeProvider>
 	);
 }

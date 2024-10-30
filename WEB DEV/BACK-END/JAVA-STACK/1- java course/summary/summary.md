@@ -800,5 +800,428 @@ class code {
     } 
 }
 ```
-## Stop
-[link ](https://youtu.be/gu6Agiy2xBg?si=LpcdruRZm-JgBFJz)
+### for loop 
+```
+ for(int i =start , conditionToStop,stepsPerCycle){
+  //instructions 
+ }
+```
+#### Example :
+```java
+class code {
+    public static void main(String[] args) {
+
+        for (int i = 4; i >= 0; i--) {
+            System.out.println(i);
+        }
+
+    }
+}
+```
+### object-oriented-programming (OOP):
+object is a set of Properties and behaviors
+
+#### class :
+it's a blueprint of an object 
+
+```java
+class className{
+    int attr1; 
+    int attr2; 
+    // empty constructor : 
+    public  className(){
+        
+    }
+    // parametrized constructor : 
+    public className(int attr1,int attr2){
+        this.attr1=attr1;
+        this.attr2=attr2;
+    }
+}
+```
+
+### Array 
+```java
+class code{
+    public static void main(String[] args) {
+        
+        // define an array of fore instances 
+        int[] nums = {1,2,3,4};
+        int[] nums2= new int[4]; // default values :{0,0,0,0}
+
+        // access an element of an array : 
+        nums[1]=10;
+        
+        // get array size : 
+        int size=nums.length; 
+        
+        // iterate over an array : 
+        // using enhanced for loop  :
+        for( int item : nums){
+            System.out.println(item);
+        }
+        
+        // using for loop : 
+        for( int i =0 ; i < nums.length ; i++ ){
+            System.out.println(nums[i]);
+        }
+        
+        
+    }
+}
+```
+### Multi Dimensional Array 
+
+```java
+class code {
+    public static void main(String[] args) {
+       //declare a multi dimensional array :  
+        int nums[][] = new int[3][4];
+
+      // iterate over a 2d array : 
+         for(int i = 0 ; i <nums.length ;i++){
+            System.out.print("{");
+            for(int j = 0 ; j <nums[i].length ; j++){
+                // access an element of a 2d array : 
+                 System.out.print(nums[i][j] + ",");
+
+            }
+            System.out.print("}");
+            System.out.println();
+        }
+
+        // using enhanced for loop  :
+        for(int[] line :nums){
+            System.out.print("{");
+            for(int column : line){
+                System.out.print(column + ",");
+
+            }
+            System.out.print("}");
+            System.out.println();
+        }
+        
+         
+    }
+}
+```
+### Array of object in java : 
+Example : 
+```java
+class Student {
+    int rollno;
+    String name;
+    int marks;
+
+}
+class code {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        s1.marks = 10;
+        s1.name = "John";
+        s1.rollno = 10;
+
+        Student[] arrStudents = new Student[2];
+        arrStudents[0] = s1;
+        arrStudents[1] = new Student();
+        for (Student item : arrStudents) {
+            System.out.println(item.name);
+        }
+
+    }
+}
+
+```
+Here's a structured and organized version of your content:
+
+---
+
+### Differences Between `String` and `StringBuffer` in Java
+
+In Java, `String` and `StringBuffer` both represent sequences of characters but have distinct characteristics and use cases.
+
+---
+
+#### 1. Immutability vs. Mutability
+- **`String`**: Immutable, meaning once a `String` object is created, it cannot be changed. Any operation that modifies a `String` (e.g., concatenation) creates a new `String` object.
+- **`StringBuffer`**: Mutable, allowing modifications to the existing sequence of characters without creating a new object. This makes it ideal for frequent changes like appending or deleting characters.
+
+#### 2. Performance
+- **`String`**: Due to immutability, each modification (e.g., concatenation) creates a new `String` object, which can impact memory and performance, especially when repeated.
+- **`StringBuffer`**: More efficient for operations that involve repeated modifications, as it modifies the original object directly. Methods like `append()` add characters to the existing sequence, which conserves memory.
+
+#### 3. Thread Safety
+- **`String`**: Since it’s immutable, `String` is inherently thread-safe.
+- **`StringBuffer`**: Synchronized, making it thread-safe for concurrent access, though with a slight performance cost due to synchronization.
+
+#### 4. Usage Scenarios
+- **`String`**: Suitable for text that doesn’t change frequently or requires minimal modifications.
+- **`StringBuffer`**: Suitable for scenarios where strings undergo frequent changes, like in loops or dynamic concatenations.
+
+#### 5. StringBuilder vs. StringBuffer
+- **`StringBuilder`**: Similar to `StringBuffer` but without synchronization, making it faster in single-threaded contexts.
+
+---
+
+### Code Examples
+
+##### Using `String`
+```java
+String str = "Hello";
+str += " World";  // Creates a new String object each time you modify it.
+System.out.println(str); // Output: Hello World
+
+String s1 = "Hello";
+String s2 = s1 + " World";  // Creates a new String in the heap, not in the constant pool
+/*
+ String Concatenation Creates a New Object:
+ In Java, s1 + " World" triggers the creation of a new String object because String objects are immutable.
+ The + operator internally uses a StringBuilder to concatenate, then converts the result back into a String, 
+ resulting in a new String object in the heap.
+ */
+
+```
+
+##### Using `StringBuffer`
+```java
+StringBuffer buffer = new StringBuffer("Hello");
+buffer.append(" World"); // Modifies the same StringBuffer object.
+System.out.println(buffer); // Output: Hello World
+```
+
+---
+
+### Memory Management and the String Constant Pool
+
+The `StringBuffer` class does **not** use the **String Constant Pool**. Instead, it creates a separate object in the **heap memory**.
+
+#### 1. String Constant Pool
+- The String Constant Pool is a special area within the heap to optimize memory usage for `String` literals.
+- When a `String` literal (e.g., `String str = "Hello";`) is created, Java checks the pool to see if an identical string already exists. If it does, Java reuses the reference instead of creating a new object.
+- This optimization only applies to `String` literals or strings interned with the `.intern()` method.
+
+#### 2. StringBuffer in Heap Memory
+- Each `StringBuffer` object is allocated memory directly in the **heap** and doesn’t interact with the String Constant Pool.
+- Since each `StringBuffer` object is mutable and distinct, pooling would be ineffective, as modifying one reference would impact all other references to that pooled object.
+
+#### 3. StringBuffer and Internal Strings
+- When performing operations, `StringBuffer` may contain a `String` internally.
+- For instance, calling `toString()` on a `StringBuffer` creates a new `String` object based on the buffer’s content. This `String` resides in the heap and can enter the constant pool if interned.
+
+---
+
+### Memory Example
+
+```java
+StringBuffer sb1 = new StringBuffer("Hello");
+StringBuffer sb2 = new StringBuffer("Hello");
+
+// sb1 and sb2 are distinct objects in the heap
+System.out.println(sb1 == sb2);  // false
+
+String str1 = sb1.toString();
+String str2 = sb2.toString();
+
+// str1 and str2 are new, separate `String` objects in the heap
+System.out.println(str1 == str2); // false
+
+// Interning the strings
+String internedStr1 = str1.intern();
+String internedStr2 = str2.intern();
+
+// Now they refer to the same constant in the pool
+System.out.println(internedStr1 == internedStr2); // true
+```
+
+---
+
+### Summary
+- **`String`**: Use for immutable sequences.
+- **`StringBuffer`**: Use for mutable, thread-safe sequences with frequent modifications.
+- **`StringBuilder`**: Use for mutable strings in single-threaded contexts.
+
+## Static members :
+Example :
+```java
+
+class Mobile{
+     String brand;
+     int price;
+     String network;
+     static String name="Smartphone";
+
+
+     Mobile(String brand, int price, String network){
+         this.brand = brand;
+         this.price = price;
+         this.network = network;
+         String name;
+         name="Smartphone";
+         // access name using class to prevent shadowing by the local variable `name
+         Mobile.name=name;
+
+     }
+
+final void show(){
+    System.out.println("\n"+ brand);
+    System.out.println(price);
+    System.out.println(network);
+
+
+    }
+    public static  void printName(){
+         System.out.println( "\nname : "+name);
+    }
+
+}
+class code {
+    public static void main(String[] args) {
+
+        Mobile obj1 = new Mobile("iphone",50,"nice");
+        Mobile obj2 = new Mobile("Summsung",50,"nice");
+        Mobile obj3 = new Mobile("iphone",50,"nice");
+         obj1.show();
+         obj2.show();
+         obj3.show();
+         Mobile.printName();
+
+    }
+}
+
+```
+
+### Static block :
+It's an area that you can use to initialize your static variables in a class :
+
+#### Example : 
+```java
+class Mobile {
+    static String name;
+
+    static {
+        name = "Smartphone";
+    }
+
+    String brand;
+    int price;
+    String network;
+    
+    Mobile(String brand, int price, String network) {
+        this.brand = brand;
+        this.price = price;
+        this.network = network;
+        String name;
+        name = "Smartphone";
+        // access name using class to prevent shadowing by the local variable `name
+        Mobile.name = name;
+
+    }
+
+    public static void printName() {
+        System.out.println("\nname : " + name);
+    }
+
+   
+
+}
+```
+### load a class : 
+```java
+    Class.forName("packageName.className");
+```
+
+### The levels of access of the class members [Access Modifiers] : 
+1. **public**: Accessible from anywhere.
+2. **protected**: Accessible in the same package and by subclasses.
+3. **package-private** (default): Accessible in the same package (no modifier needed).
+4. **private**: Accessible only within its own class.
+
+### Naming convention :
+1. using camelCase 
+2. class should always start with a capital letter 
+3. constants should be all capital with the using of snake casing 
+4. variables[not constant] and methods should always start with a small letter
+
+### Anonymous object :
+it's an object without a name 
+Example : 
+```java
+class A {
+    public A() {
+        System.out.println("\nobject created");
+    }
+
+    public void show() {
+        System.out.println("show object");
+    }
+}
+
+class code {
+    public static void main(String[] args) {
+        new A().show();
+    }
+}
+
+```
+### Inheritance 
+Example :
+```java
+ class Calc{
+    public  int add(int a,int b){
+        return a+b;
+    }
+    public  int sub(int a,int b){
+        return a-b;
+
+    }
+    public  int mul(int a,int b){
+        return a*b;
+    }
+    public  int div(int a,int b){
+        return a/b;
+    }
+
+}
+
+public class AdvCalc  extends Calc{
+
+    public int mod(int a, int b) {
+        return a % b;
+    }
+
+}
+class Main {
+    public static void main(String[] args) {
+        // base/super/parent class
+        Calc cal = new Calc();
+        int sum = cal.add(5,4);
+        System.out.println( "5 + 4 = "+ sum);
+
+        int mul = cal.mul(5,4);
+        System.out.println( "5 * 4 = "+  mul);
+
+        int div = cal.div(5,4);
+        System.out.println("5 / 4 = "+  div);
+
+        // sub/derived/child class
+        AdvCalc advCalc = new AdvCalc();
+        int mod = advCalc.mod(5,4);
+        System.out.println( "5 % 4 = "+ mod);
+
+
+    }
+}
+```
+#### Types of inheritance :
+1. **Single level Inheritance** : class [B] inherit from class [A]
+2. **Multi level Inheritance**  : class [B] inherit from class [A]. class [c] inherit from class [B]
+2. **Multiple Inheritance**  : class [c] inherit from class [A] and [B].
+
+
+
+
+
+
+
+### Stop video :
+[Link](https://www.youtube.com/watch?v=u2oT-qogaFI&list=PLsyeobzWxl7pe_IiTfNyr55kwJPWbgxB5&index=53&pp=iAQB)

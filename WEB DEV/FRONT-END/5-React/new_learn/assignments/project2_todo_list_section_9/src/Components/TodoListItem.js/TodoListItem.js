@@ -6,8 +6,11 @@ import { orange, green, blue } from "@mui/material/colors";
 
 import "./TodoListItem.css";
 
-import { useState, useEffect } from "react";
-export default function TodoListItem({ taskItem, completeTask, setDeleteModalStat, deleteModalStat, editModalStat, setEditModalStat }) {
+
+import { useState, useEffect ,useContext } from "react";
+import { TodoListContext } from "../../Contexts/TodoListContext";
+export default function TodoListItem({ taskItem }) {
+ let {setEditModalStat,editModalStat,setDeleteModalStat,deleteModalStat,completeTask} = useContext(TodoListContext);  
 	const [taskStat, setTaskStat] = useState({
 		isEditStat: false,
 		isDeleteStat: false,
@@ -80,3 +83,9 @@ export default function TodoListItem({ taskItem, completeTask, setDeleteModalSta
 		</Stack>
 	);
 }
+
+// use memo : ---[]
+/* 
+memo : caching , memoizing 
+
+*/

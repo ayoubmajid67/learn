@@ -2029,6 +2029,199 @@ export default function ServiceDetails({ title, description }) {
     uuidv4(); // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
 
 
+    
+// use effect :-- [-]
+/*
+    `useEffect` is one of React's most powerful hooks. It allows you to perform side effects 
+    in functional components. Side effects are operations like data fetching, manual
+    DOM manipulation, subscribing to services, timers, etc. The `useEffect`
+    hook is React's way of handling such operations in a declarative, clean way,
+    while also supporting lifecycle management (like mounting, updating, and unmounting).
+*/
+
+//  Basic Syntax
+useEffect(() => {
+    // side effect logic (e.g., data fetching, setting up event listeners)
+    return () => {
+        // cleanup logic (e.g., removing event listeners)
+    };
+    }, [dependencies]);
+
+// Key Concepts of `useEffect`
+/*
+1. **Side Effects**: These are operations that are not purely related to rendering 
+the UI (like API calls, updating the document title, setting up listeners, etc.).
+
+2. **Dependencies Array**: This controls when the effect runs. `useEffect`
+    runs whenever the component renders, but you can control when it re-runs
+    by specifying certain dependencies in the array. These dependencies are 
+    the variables or states that the effect depends on.
+
+   - No dependency array: If you don’t pass any array, the effect runs
+     after every render (mount and every update).
+   - Empty array `[]`: If you pass an empty array, the effect runs only once,
+     after the initial render (componentDidMount behavior).
+   - With dependencies `[dep1, dep2]`: The effect runs only when any of the values
+     in the array change. It acts as a watcher for those dependencies 
+     (componentDidUpdate behavior).
+
+3. **Cleanup Function**: Sometimes, side effects need to be cleaned up 
+    (e.g., removing an event listener, clearing a timer, aborting an API request).
+    You return a function inside `useEffect` that will be executed when the component
+    is unmounted or before the effect is re-executed (if the dependencies change).
+*/
+
+//  Example 1: Basic Use Case (Data Fetching)
+/*
+    - This example fetches user data when the component mounts. 
+    The empty array `[]` ensures the effect runs only once.
+*/
+    import { useState, useEffect } from "react";
+
+    function UserList() {
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        // Side effect: fetch data
+        fetch('https://jsonplaceholder.typicode.com/users')
+        .then((response) => response.json())
+        .then((data) => setUsers(data));
+    }, []); // Empty array: effect runs only once after initial render
+
+    return (
+        <ul>
+        {users.map((user) => (
+            <li key={user.id}>{user.name}</li>
+        ))}
+        </ul>
+    );
+    }
+
+    export default UserList;
+
+//  Example 2: Effect with Dependencies
+/* 
+    - This effect updates the document's title every time `count` changes.
+    The dependency array `[count]` ensures the effect only runs when `count`
+    is updated.
+*/
+    import { useState, useEffect } from "react";
+
+    function Counter() {
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        document.title = `You clicked ${count} times`;
+
+        // Cleanup is not required here
+    }, [count]); // Effect runs every time the 'count' value changes
+
+    return (
+        <div>
+        <p>You clicked {count} times</p>
+        <button onClick={() => setCount(count + 1)}>Click me</button>
+        </div>
+    );
+    }
+
+//  Example 3: Cleanup Effect (Event Listener)
+/*
+    In this example, the event listener for `mousemove` is added when
+    the component mounts. The cleanup function removes the event listener 
+    when the component unmounts to prevent memory leaks.
+*/
+    import { useState, useEffect } from "react";
+
+    function MouseTracker() {
+    const [position, setPosition] = useState({ x: 0, y: 0 });
+
+    useEffect(() => {
+        const updateMousePosition = (e) => {
+        setPosition({ x: e.clientX, y: e.clientY });
+        };
+
+        window.addEventListener("mousemove", updateMousePosition);
+
+        // Cleanup function to remove event listener
+        return () => {
+        window.removeEventListener("mousemove", updateMousePosition);
+        };
+    }, []); // Empty array: effect runs only on mount and cleanup on unmount
+
+    return (
+        <div>
+        Mouse position: {position.x}, {position.y}
+        </div>
+    );
+    }
+
+// When Does `useEffect` Run?
+/*
+- On Mount: If you pass an empty array `[]`, it behaves like `componentDidMount` 
+                and runs only once after the component renders for the first time.
+  
+- On Update: If you pass a list of dependencies `[dep1, dep2]`, the effect
+                 runs again whenever any of those dependencies change, similar 
+                 to `componentDidUpdate`.
+
+- On Unmount: The cleanup function returned by `useEffect` behaves like 
+              `componentWillUnmount`, executing just before the component is removed
+               from the DOM or before the effect is rerun due to changes in dependencies.
+*/
+
+//  Example 4: Conditional Side Effects
+/*
+    You can conditionally run effects based on state or props:
+*/
+
+    function FetchDataOnToggle({ shouldFetch }) {
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        if (!shouldFetch) return;
+
+        fetch('https://jsonplaceholder.typicode.com/posts')
+        .then((res) => res.json())
+        .then((data) => setData(data));
+    }, [shouldFetch]); // Effect only runs if 'shouldFetch' changes
+
+    return (
+        <div>
+        {shouldFetch ? <p>Fetched data!</p> : <p>No fetch initiated.</p>}
+        </div>
+    );
+    }
+
+//  Common Mistakes with `useEffect`
+/*
+1. **Forget to pass the dependency array**: Without the array, 
+    the effect will run on every render, which can cause performance issues.
+  
+2. **Using state setters inside effects without dependency**: 
+     If you’re setting state in an effect and don't include it in the
+     dependencies, it can lead to stale closures or infinite loops.
+
+3. **Wrong dependencies**: Always ensure that any external values used inside 
+    `useEffect` are listed in the dependency array. This includes props, states, 
+     or any other variables. Omitting necessary dependencies may cause bugs or
+     stale values to be used.
+*/
+
+// Conclusion
+/*
+- Mounting, Updating, and Unmounting: `useEffect` can handle all phases
+                                       of the component lifecycle.
+
+- Dependency management: React automatically handles when the effect
+                         should run by observing the values in the dependency array.
+
+- Cleanup: You can ensure proper memory management by using the 
+           cleanup function.
+
+By understanding `useEffect`, you can manage side effects efficiently
+in React functional components!
+*/
+    
 // Run React project in production environment:
 /*
 This command will:
@@ -2038,3 +2231,52 @@ This command will:
 ```
     npm run build
 ```
+
+//  2. useMemo:
+/*
+    - The `useMemo` hook allows you to memoize expensive calculations, preventing
+    them from being recalculated  on every re-render.
+*/
+/*
+    - This ensures that the `computeHeavyTask` function is only recalculated when 
+     `input` changes, reducing unnecessary work.
+*/
+const expensiveCalculation = useMemo(() => {
+	return computeHeavyTask(input);
+}, [input]);
+
+// Example : 
+    import { Stack } from "@mui/material";
+    import TodoListItem from "../TodoListItem.js/TodoListItem";
+    import "./TodoList.css";
+    import { useMemo } from "react";
+    export default function TodoList({ arrTasksStat, setDeleteModalStat, deleteModalStat, editModalStat, setEditModalStat, completeTask, filterStat }) {
+        let filteredTasks = useMemo(() => {
+            return arrTasksStat.filter((taskItem) => {
+                if (filterStat == "completed") return taskItem.isCompleted;
+                if (filterStat == "not completed") return !taskItem.isCompleted;
+
+                return true;
+            });
+        }, [arrTasksStat, filterStat]);
+
+        const memoizedTasks = useMemo(() => {
+            return filteredTasks.map((taskItem) => <TodoListItem key={taskItem.id} taskItem={taskItem} deleteModalStat={deleteModalStat} setDeleteModalStat={setDeleteModalStat} editModalStat={editModalStat} setEditModalStat={setEditModalStat} completeTask={completeTask} />);
+        }, [filteredTasks,deleteModalStat,editModalStat]);
+        return (
+            <Stack spacing={1} className="TodoListComponentClass">
+                {memoizedTasks}
+            </Stack>
+        );
+    }
+
+// #### 3. useCallback:
+/*
+    - The `useCallback` hook memoizes callback functions, which is useful for avoiding
+    re-creating functions every time a component re-renders.
+*/
+const handleClick = useCallback(() => {
+	console.log("Button clicked");
+}, []);
+
+
