@@ -1,11 +1,13 @@
 import { Title } from "@mui/icons-material";
 import "./EditTaskModal.css";
 import { Button, Typography, Box, Modal, Stack, TextField } from "@mui/material";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { useToast } from "../../Contexts/ToastContext";
 
 export default function EditTaskModal({ taskId, editTask, editModalStat, setEditModalStat, closeEditModal }) {
+	const {setOpenToastStat} = useToast(); 
 	function handelEditTask() {
-		editTask();
+		editTask(setOpenToastStat);
 		closeEditModal();
 	}
 

@@ -3,8 +3,11 @@ import TodoListItem from "../TodoListItem.js/TodoListItem";
 import "./TodoList.css";
 import { useMemo ,useContext} from "react";
 import { TodoListContext } from "../../Contexts/TodoListContext";
+import { ToastContext } from "../../Contexts/ToastContext";
 export default function TodoList({ arrTasksStat,filterStat }) {
- 
+  
+
+
 	let filteredTasks = useMemo(() => {
 		
 		return arrTasksStat.filter((taskItem) => {
@@ -16,7 +19,6 @@ export default function TodoList({ arrTasksStat,filterStat }) {
 	}, [arrTasksStat, filterStat]);
 
 	const memoizedTasks = useMemo(() => {
-		console.log("hi"); 
 		
 		return filteredTasks.map((taskItem) => <TodoListItem key={taskItem.id} taskItem={taskItem}  />);
 	}, [filteredTasks]);

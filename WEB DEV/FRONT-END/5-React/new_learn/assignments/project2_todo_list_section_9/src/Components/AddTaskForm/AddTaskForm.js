@@ -1,8 +1,13 @@
 import { Box, TextField, Button } from "@mui/material";
 import "./AddTaskForm.css";
-import { useState } from "react";
+import { useState ,useContext } from "react";
+import { useToast } from "../../Contexts/ToastContext";
+
 export default function AddTaskForm({ addTask }) {
 	const [addTaskFormStat, setAddTaskFormStat] = useState({ name: "" });
+    const {setOpenToastStat} = useToast(); 
+	
+
 
 	return (
 		<Box component="form" className="AddTaskFormComponentClass" onSubmit={submitAddTaskForm}>
@@ -24,7 +29,7 @@ export default function AddTaskForm({ addTask }) {
 		const taskName = addTaskFormStat["name"].trim();
 
 		if (taskName) {
-			addTask(taskName);
+			addTask(taskName,setOpenToastStat);
 			clearTaskName();
 		}
 	}

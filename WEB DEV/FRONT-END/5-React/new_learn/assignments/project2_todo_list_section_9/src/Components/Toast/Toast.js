@@ -3,9 +3,9 @@ import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 import { useState, useContext } from "react";
 
-import { ToastContext } from "../../Contexts/ToastContext";
+import { useToast } from "../../Contexts/ToastContext";
 export default function Toast() {
-	let { openToastStat, setOpenToastStat } = useContext(ToastContext);
+	let { openToastStat, setOpenToastStat } = useToast();
 
 	const handleClick = () => {
 		setOpenToastStat((prev) => {

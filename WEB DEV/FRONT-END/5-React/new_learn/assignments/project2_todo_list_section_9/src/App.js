@@ -21,8 +21,7 @@ import DeleteTaskModal from "./Components/DeleteTaskModal/DeleteTaskModal";
 
 import EditTaskModal from "./Components/EditTaskModal/EditTaskModal";
 
-import Toast from "./Components/Toast/Toast";
-import { ToastContext } from "./Contexts/ToastContext";
+import { ToastProvider } from "./Contexts/ToastContext";
 import { TodoListContext } from "./Contexts/TodoListContext";
 
 function App() {
@@ -41,13 +40,23 @@ function App() {
 		},
 	});
 	let [arrTasksStat, setArrTasksStat] = useState(getTasksFromLs());
+	const [filterStat, setFilterStat] = useState("all");
+	let [deleteModalStat, setDeleteModalStat] = useState({
+		taskId: "",
+		isVisible: false,
+	});
+	let [editModalStat, setEditModalStat] = useState({
+		taskId: "",
+		name: "",
+		description: "",
+		isVisible: false,
+	});
 
 	useEffect(() => {
 		saveTasksToLs(arrTasksStat);
 	}, [arrTasksStat]);
 
-	function editTask() {
-		console.log(editModalStat);
+	function editTask(setOpenToastStat) {
 		if (!editModalStat.name.trim() || !editModalStat.description.trim()) {
 			console.log("The title and the description are required");
 			return;
@@ -64,7 +73,7 @@ function App() {
 			isCompleted: false,
 		};
 	}
-	function addTask(taskName) {
+	function addTask(taskName, setOpenToastStat) {
 		if (!taskName) {
 			console.log("You can not add an empty task [task name = '']");
 			return;
@@ -78,41 +87,22 @@ function App() {
 		setArrTasksStat((prev) => prev.map((task) => (task.id === taskId ? { ...task, isCompleted: !task.isCompleted } : task)));
 	}
 
-	function deleteTask(taskId) {
+	function deleteTask(taskId, setOpenToastStat) {
 		setArrTasksStat((prev) => prev.filter((item) => item.id != taskId));
 		setOpenToastStat({ message: "The Tasks deleted with success", open: true });
 	}
 
-	let [deleteModalStat, setDeleteModalStat] = useState({
-		taskId: "",
-		isVisible: false,
-	});
 	function closeDeleteModal() {
-		setDeleteModalStat((prev) => {
-			return { taskId: "", isVisible: false };
-		});
+		setDeleteModalStat({ taskId: "", isVisible: false });
 	}
-	let [editModalStat, setEditModalStat] = useState({
-		taskId: "",
-		name: "",
-		description: "",
-		isVisible: false,
-	});
+
 	function closeEditModal() {
-		setEditModalStat((prev) => {
-			return { taskId: "", name: "", description: "", isVisible: false };
-		});
+		setEditModalStat({ taskId: "", name: "", description: "", isVisible: false });
 	}
 
-	const [filterStat, setFilterStat] = useState("all");
-
-	const [openToastStat, setOpenToastStat] = useState({
-		open: false,
-		message: "This is a success Alert inside a Snackbar!",
-	});
 	return (
 		<ThemeProvider theme={theme}>
-			<ToastContext.Provider value={{ openToastStat, setOpenToastStat }}>
+			<ToastProvider>
 				<div className="App">
 					<Container maxWidth="md">
 						<div spacing={2} className="ToDoListParent">
@@ -125,13 +115,11 @@ function App() {
 							<AddTaskForm addTask={addTask}></AddTaskForm>
 						</div>
 
-						<DeleteTaskModal taskId={deleteModalStat.taskId} deleteTask={deleteTask} deleteModalStat={deleteModalStat} setDeleteMOdalStat={setDeleteModalStat} closeDeleteModal={closeDeleteModal} />
+						<DeleteTaskModal taskId={deleteModalStat.taskId} deleteTask={deleteTask} deleteModalStat={deleteModalStat} closeDeleteModal={closeDeleteModal} />
 						<EditTaskModal taskId={deleteModalStat.taskId} editTask={editTask} editModalStat={editModalStat} setEditModalStat={setEditModalStat} closeEditModal={closeEditModal} />
 					</Container>
-
-					<Toast />
 				</div>
-			</ToastContext.Provider>
+			</ToastProvider>
 		</ThemeProvider>
 	);
 }

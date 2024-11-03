@@ -1,9 +1,13 @@
 import "./DeleteTaskModal.css";
 import { Button, Typography, Box, Modal, Stack } from "@mui/material";
-
+import { useContext } from "react";
+import { useToast } from "../../Contexts/ToastContext";
 export default function BasicModal({ taskId, deleteTask, deleteModalStat, closeDeleteModal }) {
+	
+
+	const {setOpenToastStat} = useToast(); 
 	function handelDeleteTask() {
-		deleteTask(taskId);
+		deleteTask(taskId,setOpenToastStat);
 		closeDeleteModal();
 	}
 	return (
