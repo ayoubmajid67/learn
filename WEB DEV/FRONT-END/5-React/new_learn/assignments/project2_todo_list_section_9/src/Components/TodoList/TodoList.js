@@ -1,26 +1,20 @@
 import { Stack } from "@mui/material";
 import TodoListItem from "../TodoListItem.js/TodoListItem";
 import "./TodoList.css";
-import { useMemo ,useContext} from "react";
-import { TodoListContext } from "../../Contexts/TodoListContext";
-import { ToastContext } from "../../Contexts/ToastContext";
-export default function TodoList({ arrTasksStat,filterStat }) {
-  
+import { useMemo } from "react";
 
-
+export default function TodoList({ filterStat, tasksReducer }) {
 	let filteredTasks = useMemo(() => {
-		
-		return arrTasksStat.filter((taskItem) => {
+		return tasksReducer.filter((taskItem) => {
 			if (filterStat == "completed") return taskItem.isCompleted;
 			if (filterStat == "not completed") return !taskItem.isCompleted;
 
 			return true;
 		});
-	}, [arrTasksStat, filterStat]);
+	}, [filterStat, tasksReducer]);
 
 	const memoizedTasks = useMemo(() => {
-		
-		return filteredTasks.map((taskItem) => <TodoListItem key={taskItem.id} taskItem={taskItem}  />);
+		return filteredTasks.map((taskItem) => <TodoListItem key={taskItem.id} taskItem={taskItem} />);
 	}, [filteredTasks]);
 	return (
 		<Stack spacing={1} className="TodoListComponentClass">

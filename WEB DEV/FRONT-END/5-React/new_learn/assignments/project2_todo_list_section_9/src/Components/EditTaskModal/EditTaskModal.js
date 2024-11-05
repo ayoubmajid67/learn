@@ -5,7 +5,7 @@ import { useState, useContext } from "react";
 import { useToast } from "../../Contexts/ToastContext";
 
 export default function EditTaskModal({ taskId, editTask, editModalStat, setEditModalStat, closeEditModal }) {
-	const {setOpenToastStat} = useToast(); 
+	const { setOpenToastStat } = useToast();
 	function handelEditTask() {
 		editTask(setOpenToastStat);
 		closeEditModal();

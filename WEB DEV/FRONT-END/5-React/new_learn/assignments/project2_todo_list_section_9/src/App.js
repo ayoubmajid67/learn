@@ -14,7 +14,7 @@ import TodoList from "./Components/TodoList/TodoList";
 
 import { saveTasksToLs, getTasksFromLs } from "./utils/localStorage";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useReducer } from "react";
 
 import { v4 as generateUniqueId } from "uuid";
 import DeleteTaskModal from "./Components/DeleteTaskModal/DeleteTaskModal";
@@ -24,6 +24,7 @@ import EditTaskModal from "./Components/EditTaskModal/EditTaskModal";
 import { ToastProvider } from "./Contexts/ToastContext";
 import { TodoListContext } from "./Contexts/TodoListContext";
 
+import { reduceTasks } from "./reducers/reduceTasks";
 function App() {
 	const theme = createTheme({
 		palette: {
@@ -39,8 +40,11 @@ function App() {
 			},
 		},
 	});
-	let [arrTasksStat, setArrTasksStat] = useState(getTasksFromLs());
+
 	const [filterStat, setFilterStat] = useState("all");
+
+	const [tasksReducer, dispatchReducer] = useReducer(reduceTasks, getTasksFromLs());
+
 	let [deleteModalStat, setDeleteModalStat] = useState({
 		taskId: "",
 		isVisible: false,
@@ -53,18 +57,9 @@ function App() {
 	});
 
 	useEffect(() => {
-		saveTasksToLs(arrTasksStat);
-	}, [arrTasksStat]);
+		saveTasksToLs(tasksReducer);
+	}, [tasksReducer]);
 
-	function editTask(setOpenToastStat) {
-		if (!editModalStat.name.trim() || !editModalStat.description.trim()) {
-			console.log("The title and the description are required");
-			return;
-		}
-
-		setArrTasksStat((prev) => prev.map((task) => (task.id === editModalStat.taskId ? { ...task, name: editModalStat.name, description: editModalStat.description } : task)));
-		setOpenToastStat({ message: "The Tasks edited with success", open: true });
-	}
 	function getNewTaskJson(taskName) {
 		return {
 			id: generateUniqueId(),
@@ -78,17 +73,28 @@ function App() {
 			console.log("You can not add an empty task [task name = '']");
 			return;
 		}
-		setArrTasksStat((prev) => [...prev, getNewTaskJson(taskName)]);
+
+		dispatchReducer({ type: "addTask", payload: getNewTaskJson(taskName) });
 
 		setOpenToastStat({ message: "The Tasks added with success", open: true });
 	}
+	function editTask(setOpenToastStat) {
+		if (!editModalStat.name.trim() || !editModalStat.description.trim()) {
+			console.log("The title and the description are required");
+			return;
+		}
+
+		dispatchReducer({ type: "editTask", payload: editModalStat  });
+		// setArrTasksStat((prev) => prev.map((task) => (task.id === editModalStat.taskId ? { ...task, name: editModalStat.name, description: editModalStat.description } : task)));
+		setOpenToastStat({ message: "The Tasks edited with success", open: true });
+	}
 
 	function completeTask(taskId) {
-		setArrTasksStat((prev) => prev.map((task) => (task.id === taskId ? { ...task, isCompleted: !task.isCompleted } : task)));
+		dispatchReducer({ type: "completeTask", payload: { taskId } });
 	}
 
 	function deleteTask(taskId, setOpenToastStat) {
-		setArrTasksStat((prev) => prev.filter((item) => item.id != taskId));
+		dispatchReducer({ type: "deleteTask", payload: { taskId } });
 		setOpenToastStat({ message: "The Tasks deleted with success", open: true });
 	}
 
@@ -110,7 +116,7 @@ function App() {
 							<TodoListFilter filterStat={filterStat} setFilterStat={setFilterStat} />
 
 							<TodoListContext.Provider value={{ setEditModalStat, editModalStat, setDeleteModalStat, deleteModalStat, completeTask }}>
-								<TodoList arrTasksStat={arrTasksStat} filterStat={filterStat}></TodoList>
+								<TodoList tasksReducer={tasksReducer} filterStat={filterStat}></TodoList>
 							</TodoListContext.Provider>
 							<AddTaskForm addTask={addTask}></AddTaskForm>
 						</div>
