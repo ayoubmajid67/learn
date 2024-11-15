@@ -6,25 +6,25 @@
 
 
    .bodyContent {
-     .textContent{
-       text-align: center;
-      h1{
-         font-size: 100px;
-      }
-      h4{
-          font-size: 20px;
-      }
-      p{
-         font-size: 15px;
-         text-wrap: nowrap;
-         span{
-          
+      .textContent {
+         text-align: center;
+
+         h1 {
+            font-size: 100px;
+         }
+
+         h4 {
+            font-size: 20px;
+         }
+
+         p {
+            font-size: 15px;
+            text-wrap: nowrap;
          }
       }
-     }
 
       &>.leftSide {
- padding-left: 10px;
+         padding-left: 10px;
          flex-grow: 1;
 
       }

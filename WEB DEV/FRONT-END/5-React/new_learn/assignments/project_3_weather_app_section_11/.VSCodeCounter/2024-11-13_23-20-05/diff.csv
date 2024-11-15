@@ -1,0 +1,15 @@
+"filename", "language", "JavaScript", "JSON", "CSS", "comment", "blank", "total"
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project_3_weather_app_section_11\package-lock.json", "JSON", 0, 99, 0, 0, 0, 99
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project_3_weather_app_section_11\package.json", "JSON", 0, 4, 0, 0, 0, 4
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project_3_weather_app_section_11\src\App.css", "CSS", 0, 0, 33, 1, 6, 40
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project_3_weather_app_section_11\src\App.js", "JavaScript", 32, 0, 0, 1, -1, 32
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project_3_weather_app_section_11\src\Utils\Utils.js", "JavaScript", 1162, 0, 0, 1, 9, 1172
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project_3_weather_app_section_11\src\components\CityForm\CityForm.css", "CSS", 0, 0, 5, 0, 2, 7
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project_3_weather_app_section_11\src\components\CityForm\CityForm.js", "JavaScript", 44, 0, 0, 1, 5, 50
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project_3_weather_app_section_11\src\components\WeatherCardHeader\WeatherCardHeader.js", "JavaScript", 7, 0, 0, 6, 5, 18
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project_3_weather_app_section_11\src\components\WeatherCard\WeatherCard.css", "CSS", 0, 0, 27, 0, 12, 39
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project_3_weather_app_section_11\src\components\WeatherCard\WeatherCard.js", "JavaScript", 72, 0, 0, 2, 11, 85
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project_3_weather_app_section_11\src\i18n.js", "JavaScript", 24, 0, 0, 5, 4, 33
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project_3_weather_app_section_11\src\index.css", "CSS", 0, 0, 9, 5, 1, 15
+"c:\vs code\GitHub\learn\WEB DEV\FRONT-END\5-React\new_learn\assignments\project_3_weather_app_section_11\src\index.js", "JavaScript", 1, 0, 0, 0, 0, 1
+"Total", "-", 1342, 103, 74, 22, 54, 1595

@@ -6,16 +6,18 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
+    /* font-family: 'Rubik'; */
+    font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background-color: #172237; */
   background-color: #172237ba;
   backdrop-filter: blur(4px);
 
-  background-image: url("./static/homeBack.jpg");
+  background-image: url("./static/homeBack.webp");
   background-size: cover;
   background-position: bottom center;
   background-blend-mode: color;

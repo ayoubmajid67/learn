@@ -1,37 +1,40 @@
-import * as React from "react";
-import { useTheme } from "@mui/material/styles";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import "./CityForm.css";
+import Typography from "@mui/material/Typography";
+// logic :
+import { enCitiesList, arCitiesList } from "../../Utils/Utils";
+import { useState } from "react";
+import { useAppContext } from "../../contexts/appContext";
 
-const cityNames = ["Casablanca", "Rabat", "Marrakech", "Fes", "Tangier", "Agadir", "Meknes", "Oujda", "Kenitra", "Tetouan", "Safi", "El Jadida", "Nador", "Khemisset", "Khouribga", "Beni Mellal", "Taza", "Mohammedia", "Laayoune", "Errachidia"];
+export default function CityForm({ handelChangeWeatherDataStat }) {
+	const [cityName, setCityName] = useState("");
+	const { t, transStat } = useAppContext();
 
-export default function CityForm() {
-	const [cityName, setCityName] = React.useState([]);
+	let citiesList = transStat.lang == "en" ? enCitiesList : arCitiesList;
 
-	const handleChange = (event) => {
-		const { value } = event.target;
+	const handleChange = (cityName, index) => {
+		setCityName(cityName);
 
-		setCityName(value);
+		const { lat, lng } = citiesList[index];
+
+		handelChangeWeatherDataStat(lat, lng, cityName);
 	};
 
 	return (
 		<FormControl sx={{ m: 1, width: 300 }} className="CityFormComponentClass">
 			<InputLabel sx={{ color: "white" }} className="selectCityLabel">
-				City
+				{t("City")}
 			</InputLabel>
 			<Select
-				labelId="demo-multiple-name-label"
-				id="demo-multiple-name"
 				value={cityName}
-				onChange={handleChange}
 				input={<OutlinedInput label="City" />}
 				color="danger"
 				sx={{
-					color: "white", // Text color
+					color: "white",
 					"& .MuiOutlinedInput-notchedOutline": {
 						borderColor: "white",
 					},
@@ -40,9 +43,9 @@ export default function CityForm() {
 					},
 				}}
 			>
-				{cityNames.map((name) => (
-					<MenuItem key={name} value={name}>
-						{name}
+				{citiesList.map((city, index) => (
+					<MenuItem key={city.city} value={city.city} onClick={() => handleChange(city.city, index)}>
+						<Typography>{city.city}</Typography>
 					</MenuItem>
 				))}
 			</Select>
