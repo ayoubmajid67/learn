@@ -1,0 +1,38 @@
+.weatherCardComponentClass {
+
+   background-color: #6c6c6c7d !important;
+   backdrop-filter: blur(7px) !important;
+   color: white !important;
+
+
+   .bodyContent {
+      .textContent {
+         text-align: center;
+
+         h1 {
+            font-size: 100px;
+         }
+
+         h4 {
+            font-size: 20px;
+         }
+
+         p {
+            font-size: 15px;
+            text-wrap: nowrap;
+         }
+      }
+
+      &>.leftSide {
+         padding-left: 10px;
+         flex-grow: 1;
+
+      }
+
+      &>.rightSide {
+         width: 50%;
+      }
+
+   }
+
+}

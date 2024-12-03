@@ -1,0 +1,45 @@
+.App {
+
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+
+}
+/* Rubik font-face */
+@font-face {
+    font-family: "Rubik";
+    src: url("./../public/fonts/Rubik/Rubik-Light.ttf");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Rubik";
+    src: url("./../public/fonts/Rubik/Rubik-Regular.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Rubik";
+    src: url("./../public/fonts/Rubik/Rubik-Medium.ttf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Rubik";
+    src: url("./../public/fonts/Rubik/Rubik-SemiBold.ttf");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Rubik";
+    src: url("./../public/fonts/Rubik/Rubik-Bold.ttf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Rubik";
+    src: url("./../public/fonts/Rubik/Rubik-ExtraBold.ttf");
+    font-weight: 600;
+}
