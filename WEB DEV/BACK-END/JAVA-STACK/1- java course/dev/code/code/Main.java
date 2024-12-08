@@ -1,17 +1,25 @@
-package  code;
+package code;
+
+
+import java.util.*;
+import java.util.function.Consumer;
+import java.util.stream.Stream;
+
+interface Shape {
+    double area();
+}
+
+ record Circle(double radius) implements Shape {
+    @Override
+    public double area() {
+        return Math.PI * radius * radius;
+    }
+}
+
 
 public class Main {
-
     public static void main(String[] args) {
-
-        try{
-            int result =  5/1;
-
-            // create a custom exception :
-             if(result==0 ) throw new MyException();
-             System.out.println(result);
-        }catch (ArithmeticException e){
-            System.out.println(e.getMessage());
-        }
+        Circle circle = new Circle(5);
+        System.out.println(circle.area()); // 78.53981633974483
     }
 }
