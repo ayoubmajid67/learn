@@ -1,0 +1,185 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\vs code\\GitHub\\learn\\WEB DEV\\BACK-END\\.Net-STACK\\code\\WebApplication2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E6CC6A04-718E-454F-940A-CCB2C10D84A1}|WebApplication2.csproj|c:\\vs code\\github\\learn\\web dev\\back-end\\.net-stack\\code\\webapplication2\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E6CC6A04-718E-454F-940A-CCB2C10D84A1}|WebApplication2.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6CC6A04-718E-454F-940A-CCB2C10D84A1}|WebApplication2.csproj|c:\\vs code\\github\\learn\\web dev\\back-end\\.net-stack\\code\\webapplication2\\webapplication2.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{E6CC6A04-718E-454F-940A-CCB2C10D84A1}|WebApplication2.csproj|solutionrelative:webapplication2.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6CC6A04-718E-454F-940A-CCB2C10D84A1}|WebApplication2.csproj|c:\\vs code\\github\\learn\\web dev\\back-end\\.net-stack\\code\\webapplication2\\migrations\\20241225220336_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6CC6A04-718E-454F-940A-CCB2C10D84A1}|WebApplication2.csproj|solutionrelative:migrations\\20241225220336_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6CC6A04-718E-454F-940A-CCB2C10D84A1}|WebApplication2.csproj|c:\\vs code\\github\\learn\\web dev\\back-end\\.net-stack\\code\\webapplication2\\migrations\\datacontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6CC6A04-718E-454F-940A-CCB2C10D84A1}|WebApplication2.csproj|solutionrelative:migrations\\datacontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6CC6A04-718E-454F-940A-CCB2C10D84A1}|WebApplication2.csproj|c:\\vs code\\github\\learn\\web dev\\back-end\\.net-stack\\code\\webapplication2\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6CC6A04-718E-454F-940A-CCB2C10D84A1}|WebApplication2.csproj|solutionrelative:data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6CC6A04-718E-454F-940A-CCB2C10D84A1}|WebApplication2.csproj|c:\\vs code\\github\\learn\\web dev\\back-end\\.net-stack\\code\\webapplication2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6CC6A04-718E-454F-940A-CCB2C10D84A1}|WebApplication2.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6CC6A04-718E-454F-940A-CCB2C10D84A1}|WebApplication2.csproj|c:\\vs code\\github\\learn\\web dev\\back-end\\.net-stack\\code\\webapplication2\\models\\superhero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6CC6A04-718E-454F-940A-CCB2C10D84A1}|WebApplication2.csproj|solutionrelative:models\\superhero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6CC6A04-718E-454F-940A-CCB2C10D84A1}|WebApplication2.csproj|c:\\vs code\\github\\learn\\web dev\\back-end\\.net-stack\\code\\webapplication2\\webapplication2.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{E6CC6A04-718E-454F-940A-CCB2C10D84A1}|WebApplication2.csproj|solutionrelative:webapplication2.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6CC6A04-718E-454F-940A-CCB2C10D84A1}|WebApplication2.csproj|c:\\vs code\\github\\learn\\web dev\\back-end\\.net-stack\\code\\webapplication2\\controllers\\superherocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6CC6A04-718E-454F-940A-CCB2C10D84A1}|WebApplication2.csproj|solutionrelative:controllers\\superherocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WebApplication2.http",
+              "DocumentMoniker": "C:\\vs code\\GitHub\\learn\\WEB DEV\\BACK-END\\.Net-STACK\\code\\WebApplication2\\WebApplication2.http",
+              "RelativeDocumentMoniker": "WebApplication2.http",
+              "ToolTip": "C:\\vs code\\GitHub\\learn\\WEB DEV\\BACK-END\\.Net-STACK\\code\\WebApplication2\\WebApplication2.http",
+              "RelativeToolTip": "WebApplication2.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-12-25T22:08:40.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DataContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\vs code\\GitHub\\learn\\WEB DEV\\BACK-END\\.Net-STACK\\code\\WebApplication2\\Migrations\\DataContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Migrations\\DataContextModelSnapshot.cs",
+              "ToolTip": "C:\\vs code\\GitHub\\learn\\WEB DEV\\BACK-END\\.Net-STACK\\code\\WebApplication2\\Migrations\\DataContextModelSnapshot.cs",
+              "RelativeToolTip": "Migrations\\DataContextModelSnapshot.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T22:04:16.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "20241225220336_Initial.cs",
+              "DocumentMoniker": "C:\\vs code\\GitHub\\learn\\WEB DEV\\BACK-END\\.Net-STACK\\code\\WebApplication2\\Migrations\\20241225220336_Initial.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241225220336_Initial.cs",
+              "ToolTip": "C:\\vs code\\GitHub\\learn\\WEB DEV\\BACK-END\\.Net-STACK\\code\\WebApplication2\\Migrations\\20241225220336_Initial.cs",
+              "RelativeToolTip": "Migrations\\20241225220336_Initial.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T22:03:37.081Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\vs code\\GitHub\\learn\\WEB DEV\\BACK-END\\.Net-STACK\\code\\WebApplication2\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\vs code\\GitHub\\learn\\WEB DEV\\BACK-END\\.Net-STACK\\code\\WebApplication2\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T21:46:31.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\vs code\\GitHub\\learn\\WEB DEV\\BACK-END\\.Net-STACK\\code\\WebApplication2\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\vs code\\GitHub\\learn\\WEB DEV\\BACK-END\\.Net-STACK\\code\\WebApplication2\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-25T21:41:03.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "C:\\vs code\\GitHub\\learn\\WEB DEV\\BACK-END\\.Net-STACK\\code\\WebApplication2\\Data\\DataContext.cs",
+              "RelativeDocumentMoniker": "Data\\DataContext.cs",
+              "ToolTip": "C:\\vs code\\GitHub\\learn\\WEB DEV\\BACK-END\\.Net-STACK\\code\\WebApplication2\\Data\\DataContext.cs",
+              "RelativeToolTip": "Data\\DataContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T21:30:15.667Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SuperHeroController.cs",
+              "DocumentMoniker": "C:\\vs code\\GitHub\\learn\\WEB DEV\\BACK-END\\.Net-STACK\\code\\WebApplication2\\Controllers\\SuperHeroController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SuperHeroController.cs",
+              "ToolTip": "C:\\vs code\\GitHub\\learn\\WEB DEV\\BACK-END\\.Net-STACK\\code\\WebApplication2\\Controllers\\SuperHeroController.cs",
+              "RelativeToolTip": "Controllers\\SuperHeroController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwA4AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T20:51:24.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SuperHero.cs",
+              "DocumentMoniker": "C:\\vs code\\GitHub\\learn\\WEB DEV\\BACK-END\\.Net-STACK\\code\\WebApplication2\\Models\\SuperHero.cs",
+              "RelativeDocumentMoniker": "Models\\SuperHero.cs",
+              "ToolTip": "C:\\vs code\\GitHub\\learn\\WEB DEV\\BACK-END\\.Net-STACK\\code\\WebApplication2\\Models\\SuperHero.cs",
+              "RelativeToolTip": "Models\\SuperHero.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T20:49:53.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "WebApplication2",
+              "DocumentMoniker": "C:\\vs code\\GitHub\\learn\\WEB DEV\\BACK-END\\.Net-STACK\\code\\WebApplication2\\WebApplication2.csproj",
+              "RelativeDocumentMoniker": "WebApplication2.csproj",
+              "ToolTip": "C:\\vs code\\GitHub\\learn\\WEB DEV\\BACK-END\\.Net-STACK\\code\\WebApplication2\\WebApplication2.csproj",
+              "RelativeToolTip": "WebApplication2.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-12-25T20:49:24.192Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
