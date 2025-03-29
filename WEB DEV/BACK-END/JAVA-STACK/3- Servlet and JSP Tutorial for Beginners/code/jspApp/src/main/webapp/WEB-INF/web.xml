@@ -4,4 +4,13 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+    <servlet-name>AdditionServlet</servlet-name>
+    <servlet-class>controller.AdditionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdditionServlet</servlet-name>
+    <url-pattern>/add</url-pattern>
+  </servlet-mapping>
+
 </web-app>
