@@ -1,23 +1,27 @@
-package com.majjid.demoApp;
+package org.example;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
-
-@Component
-@Qualifier("laptop")
 public class Dev {
 
-    @Autowired
-    @Qualifier("laptop")
-    Computer computer;
+Computer com;
 
+   public void setCom(Computer com) {
+        this.com = com;
+    }
 
-
-    public void build(){
-         System.out.println("working on a awesome project");
-         computer.compile();
+    public Dev(){
 
 
     }
+  public   Dev(Computer com) {
+    this.com = com;
+
+    }
+
+//  constructor injection :
+    public void build(){
+         System.out.println("working on a awesome project");
+         com.compile();
+
+    }
+
 }
