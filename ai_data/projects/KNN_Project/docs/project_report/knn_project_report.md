@@ -4,7 +4,9 @@
 **Author:** Ayoub Majjid
 **Email:** [ayoub@majjid.com](mailto:ayoub@majjid.com)
 **Portfolio:** [majjid.com](https://majjid.com)
-**Repository:** [https://github.com/ayoubmajid67/learn.git](https://github.com/ayoubmajid67/learn.git)
+**📂 Repository:** **Repository:** [https://github.com/ayoubmajid67/learn/tree/main/ai_data/projects/KNN_Project](https://github.com/ayoubmajid67/learn/tree/main/ai_data/projects/KNN_Project)
+
+
 
 ---
 
@@ -378,8 +380,69 @@ plt.show()
 KNN works by looking at the **K nearest neighbors** of a point and letting them “vote” on its class.
 
 ```python
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.model_selection import cross_val_score
+import numpy as np
+import pickle
+
+def train_knn(X_train, y_train, n_neighbors=5, cv_folds=5, verbose=True):
+    """
+    Train a K-Nearest Neighbors classifier and perform cross-validation.
+    
+    Parameters:
+    - X_train: Training features
+    - y_train: Training labels
+    - n_neighbors: Number of neighbors for KNN
+    - cv_folds: Number of folds for cross-validation
+    - verbose: Whether to print cross-validation results
+    
+    Returns:
+    - classifier: Trained KNN model
+    - cv_scores: Array of cross-validation scores
+    - mean_cv_score: Average accuracy across folds
+    """
+    
+    # Initialize KNN classifier
+    classifier = KNeighborsClassifier(n_neighbors=n_neighbors)
+    
+    # Perform cross-validation
+    cv_scores = cross_val_score(classifier, X_train, y_train, cv=cv_folds, scoring='accuracy')
+    mean_cv_score = np.mean(cv_scores)
+    
+    if verbose:
+        print(f"Cross-validation scores ({cv_folds} folds): {cv_scores}")
+        print(f"Average CV accuracy: {mean_cv_score:.2f}")
+    
+    # Train KNN on full training set
+    classifier.fit(X_train, y_train)
+    
+    return classifier, cv_scores, mean_cv_score
+```
+
+## ⚙️ Why Use Cross-Validation?
+![1760857030671](image/knn_project_report/1760857030671.png)
+
+**Cross-validation** is a method to **evaluate model performance more reliably**.
+
+Instead of using a single train-test split:
+
+* We **split the data multiple times** into training and validation sets.
+* Train the model on each split and record the performance.
+* Calculate the **average performance** → more robust and less biased estimate of accuracy.
+
+**Benefits:**
+
+* Reduces risk of overfitting to a single train-test split
+* Gives insight into **model stability**
+* Helps choose the **best K** for KNN
+
+---
+
+
+```python
 model = train_knn(X_train, y_train)
 ```
+
 
 ### 💬 Example:
 
@@ -399,9 +462,77 @@ save_model(model, '../models/knn_model.pkl')
 
 ## 🧪 Step 7: Evaluate the Model
 
-![1760812789527](../image/knn_project/1760812789527.png)
+## 1. Visualize accuracy for each fold in cross-validation.
+
+```python
+from src.model_train import train_knn
+from src.visualize import plot_cv_folds
+
+# Train KNN with cross-validation
+model, cv_scores, mean_score = train_knn(X_train, y_train, n_neighbors=5, cv_folds=5)
+
+# Visualize fold accuracies
+plot_cv_folds(cv_scores, title="KNN 5-Fold Cross-Validation")
+
+```
+
+![1760857181152](image/knn_project_report/1760857181152.png)
+
+## cross validation :interpretation 
+
+| Fold | Accuracy |
+| ---- | -------- |
+| 1    | 0.8833   |
+| 2    | 0.8833   |
+| 3    | 0.8500   |
+| 4    | 0.9167   |
+| 5    | 0.9667   |
+
+**Mean CV Accuracy:** 0.90
+
+---
+
+### 🔹 Step 1: Examine Each Fold
+
+* **Folds 1 & 2 (0.8833):** Very similar accuracy → model performs consistently on these splits.
+* **Fold 3 (0.85):** Slight drop → some harder-to-classify samples present in this fold.
+* **Fold 4 (0.9167) & Fold 5 (0.9667):** Excellent performance → these splits were easier for the model.
+
+---
+
+### 🔹 Step 2: Overall Model Assessment
+
+* **Average accuracy = 0.90** → The model is strong and generalizes well across unseen data.
+* **Variance across folds:**
+
+  * Maximum: 0.9667
+  * Minimum: 0.85
+  * Range = 0.1167 → small variability, indicating **stable performance**.
+
+---
+
+### 🔹 Step 3: Insights
+
+1. **Consistent performance across most folds** → KNN is capturing the underlying patterns.
+2. **Fold 3 slightly lower (0.85)** → could be due to a few borderline samples or overlap in feature space.
+3. **High folds (0.9167 & 0.9667)** → confirms that when clusters are well-separated, KNN performs extremely well.
+4. **Decision boundaries** can visually show why some points (Fold 3) are harder to classify — overlapping regions in Age/Salary space.
+
+---
+
+### 🔹 Step 4: Summary Interpretation
+
+> The KNN model achieves a solid average accuracy of 90% with low variability across folds, demonstrating good generalization while highlighting that a few samples in overlapping feature regions may be misclassified.
+
+
+
+## 2.  evaluate accuracy and confusion matrix.
 
 We test our model on unseen data and calculate performance metrics.
+
+
+![1760812789527](../image/knn_project/1760812789527.png)
+
 
 ```python
 acc, cm = evaluate_model(model, X_test, y_test)
@@ -488,6 +619,4 @@ plot_decision_boundary_train_test(model, X_train, y_train, X_test, y_test)
 **👨‍💻 Author:** Ayoub Majjid
 **📧 Email:** [ayoub@majjid.com](mailto:ayoub@majjid.com)
 **🌍 Portfolio:** [majjid.com](https://majjid.com)
-**📂 Repository:** *[Insert repo link here]*
-**🏢 Company:** INTELLCAP
-
+**📂 Repository:** **Repository:** [https://github.com/ayoubmajid67/learn/tree/main/ai_data/projects/KNN_Project](https://github.com/ayoubmajid67/learn/tree/main/ai_data/projects/KNN_Project)
