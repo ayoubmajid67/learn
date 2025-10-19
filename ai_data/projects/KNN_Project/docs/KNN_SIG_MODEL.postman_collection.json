@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "94415845-7725-4943-84ab-ee4f1857f0db",
+		"name": "KNN_SIG_MODEL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29407117",
+		"_collection_link": "https://safar-tourist.postman.co/workspace/Ayoub%26Ayman%26MRbooking~bf2f7e34-0ba3-4717-9073-0e60abd643e9/collection/29407117-94415845-7725-4943-84ab-ee4f1857f0db?action=share&source=collection_link&creator=29407117"
+	},
+	"item": [
+		{
+			"name": "health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/health",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "predict",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"Age\": 30,\r\n    \"EstimatedSalary\": 50000,\r\n    \"Gender\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/predict",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"predict"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

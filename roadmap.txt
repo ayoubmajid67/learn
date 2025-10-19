@@ -1,0 +1,120 @@
+________Basic of software engineering : ________
+24 courses 
+https://programmingadvices.com/  [cpp ,algorithms ,data structure, problem solving ,OOP c#, Sql server , .net framework for desktop , .net framework api ]
+
+cpp course : -----------
+course 1 : --
+1- basics :
+https://www.youtube.com/watch?v=z1FdInL8sjg&list=PLCInYL3l2AajFAiw4s1U4QbGszcQ-rAb3
+2- oop : 
+https://www.youtube.com/watch?v=YMXUxKDziaA&list=PLCInYL3l2Aaiq1oLvi9TlWtArJyAuCVow 
+
+course 2 : https://youtu.be/-TkoO8Z07hI?si=3TvOw2mzeh0jQlDm
+
+
+data structure:  -----------
+ course 1 : https://www.youtube.com/playlist?list=PLCInYL3l2AajqOUW_2SwjWeMwf4vL4RSp
+ course 2 : https://www.youtube.com/watch?v=SbDUW7_G3Xc&list=PLsGJzJ8SQXTcsXRVviurGei0lf_t_I4D8
+ course 3 : https://www.youtube.com/watch?v=xLetJpcjHS0&list=PLBlnK6fEyqRj9lld8sWIUNwlKfdUoPd1Y
+
+
+
+_______________front end roadmap _____________
+What's front end 
+https://youtu.be/CeUivh_Kqg4?si=96T9bQlk-qWJOeov
+
+How does websites work 
+https://youtu.be/JSAn4ZEobL8?si=uistDISQcV5XY8aF
+
+The difference between
+Http and https
+
+https://youtu.be/2wH6c4HQDcA?si=3Igjrb6ltGy-ihgw
+
+Vscode 
+https://youtu.be/B-s71n0dHUk?si=DbKyi5WrCI9wDXjg
+
+Live sever
+https://youtube.com/shorts/Eav6jOTYYqQ?si=KokalvR5OpEXnqn1
+
+HTML :
+https://youtu.be/qfPUMV9J5yw?si=R8fL5wcEPEWpk0Tn
+Git: 
+https://youtube.com/playlist?list=PLYyqC4bNbCIeCHLTRtwdLpQvle_zIavZ-&si=m7kyeOUhB87ndVRx
+Css : 
+https://youtu.be/qyVkLebgfzY?si=sbZfS2GmSnaNqQs8
+
+Template 1 : 
+https://youtu.be/_-eh8cwGGwg?si=UpGc5BEoeYqMokJK
+
+Template 2 :
+https://youtu.be/heuDmrEAgUA?si=NEP3PXuVRc8Dt5FY
+
+Template 3:
+https://youtu.be/vkc99WHcDTk?si=oF-nlDZSITpp_---
+
+Template 4:
+https://youtu.be/DflEcuzjsyA?si=u-i1aw_cuZosgSlT
+
+
+
+
+Tailwind :
+https://youtu.be/Pk3hhCJG2Dk?si=cMdSZERdHwwGavrG
+
+Js : 
+https://youtube.com/playlist?list=PLYyqC4bNbCIeLEjcSPO61bsGPKEvYceb0&si=aFmyTmGUSO1BhZm_
+
+Js advance : 
+https://youtube.com/playlist?list=PLYyqC4bNbCIdvviLNbvYKfvHqszFPnUkj&si=1Kl9Yan9retwheiv
+
+Js architecture :
+https://www.youtube.com/playlist?list=PLxADqpeFWjH2h-CxhyXN2OZEVDkXeuckn
+
+TypeScript  :
+https://youtu.be/fIkRHc2plxE?si=pEhohvphme0VC6fA
+
+React :
+https://www.udemy.com/course/tarmeezacademy-react/?referralCode=EAB51D0FC2BD03633F47
+
+Next js :
+https://youtu.be/_t4c-vxalp4?si=9VkThdsUwbjPDRVt
+
+Projects ;
+https://youtube.com/playlist?list=PLYyqC4bNbCIdbwZVeXL4635fAFnWukkqi&si=be-CHrQ-Jv87PUMa
+
+figma : design 
+https://www.youtube.com/watch?v=kbZejnPXyLM&list=PLttcEXjN1UcHu4tCUSNhhuQ4riGARGeap
+
+_______________back end roadmap _____________
+
+
+
+1-Java && Spring  -----------
+1-1 :java course : https://youtu.be/bm0OyhwFDuY?si=TXorsR-HohCuNrbp
+1-2 : spring & spring boot :  https://www.youtube.com/watch?v=Zxwq3aW9ctU&list=PLsyeobzWxl7qbKoSgR5ub6jolI8-ocxCF
+1-3 : microservices  : https://www.youtube.com/watch?v=3WqDbU_Xnu4&list=PLsyeobzWxl7rRyGcqgZ3MP5pWGPwUvprI
+
+
+2- Python && flask : ----------
+1-1 : python course :  https://youtube.com/playlist?list=PL8q8h6vqfkSX4zuCoVctDBTUxf3aanAza&si=IWjzlp8LuOivmZ
+1-2 flask : https://www.youtube.com/playlist?list=PLMOobVGrchXN5tKYdyx-d2OwwgxJuqDVH
+
+3- node js && express : -----------
+https://www.youtube.com/watch?v=CIYujbGpXZ8&list=PL5gCk5NdNx586mk_JOhe30dd59IgrFG_U&pp=0gcJCXcEOCosWNin 
+
+
+3- php && Laravel : 
+1-php : https://youtu.be/zZ6vybT1HQs?si=2aRHj7B2nT3FylUq
+2- Laravel : https://youtu.be/v6Vtn84gvzU?si=Ltijvf57aMd_AZKP
+
+_______________databases _____________
+
+1- mongodb : https://www.youtube.com/watch?v=c2M-rlkkT5o
+2- MySQL : https://youtu.be/5OdVJbNCSso?si=edelVbDuRuLc0Xbn
+3- oracle : https://www.youtube.com/watch?v=mt6Go-VGL0A&list=PLTChhmU8tbQzrdP79gFX6h4TXu-gOUDvp
+4- sql server 
+ 
+
+_______________devops _____________
+1- docker :https://www.youtube.com/playlist?list=PLzNfs-3kBUJnY7Cy1XovLaAkgfjim05RR
