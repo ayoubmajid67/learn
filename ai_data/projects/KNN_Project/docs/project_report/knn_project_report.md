@@ -1,12 +1,9 @@
-
 ## 🧠 K-Nearest Neighbors (KNN) Classification Project
 
 **Author:** Ayoub Majjid
 **Email:** [ayoub@majjid.com](mailto:ayoub@majjid.com)
 **Portfolio:** [majjid.com](https://majjid.com)
 **📂 Repository:** **Repository:** [https://github.com/ayoubmajid67/learn/tree/main/ai_data/projects/KNN_Project](https://github.com/ayoubmajid67/learn/tree/main/ai_data/projects/KNN_Project)
-
-
 
 ---
 
@@ -64,7 +61,7 @@ Now, suppose we meet a **new user** and want to predict if they will buy the pro
 
 Here’s what KNN does:
 
-![1760812080110]( ../image/knn_project/1760812080110.png)
+![1760812080110](../image/knn_project/1760812080110.png)
 
 1️⃣ **Compute Distances:**
 
@@ -139,8 +136,8 @@ Now that you understand the concept, let’s move on to **data loading and prepr
 
 ---
 
-
 ## 🏗️ Step 0.5: Understanding the Project Structure
+
 ```
 KNN_Project/
 │
@@ -179,7 +176,6 @@ KNN_Project/
 
 ### 🔍 Explanation of Each Component
 
-
 - **data/** → Stores all raw or processed datasets used by the model.
 - **models/** → Keeps trained model files so they can be reused in APIs or other applications.
 - **src/** → Contains all modularized Python scripts for each process: loading, preprocessing, training, evaluation, and visualization.
@@ -187,8 +183,6 @@ KNN_Project/
 - **requirements.txt** → Lists all Python dependencies to replicate the environment easily.
 
 ---
-
-
 
 This modular design follows the principle of **separation of concerns**, ensuring that each part of the system has a single responsibility.
 
@@ -252,9 +246,7 @@ python main.py
 7. **Test the API**:
 
 * **Check API documentation**: Open `docs/api_documentation.pdf`.
-
 * **Postman testing**: Import `docs/KNN_SIG_MODEL.postman_collection.json` into Postman and run the endpoints directly.
-
 * Example request :
 
 ![1760814126146](../image/knn_project/1760814126146.png)
@@ -388,38 +380,39 @@ import pickle
 def train_knn(X_train, y_train, n_neighbors=5, cv_folds=5, verbose=True):
     """
     Train a K-Nearest Neighbors classifier and perform cross-validation.
-    
+  
     Parameters:
     - X_train: Training features
     - y_train: Training labels
     - n_neighbors: Number of neighbors for KNN
     - cv_folds: Number of folds for cross-validation
     - verbose: Whether to print cross-validation results
-    
+  
     Returns:
     - classifier: Trained KNN model
     - cv_scores: Array of cross-validation scores
     - mean_cv_score: Average accuracy across folds
     """
-    
+  
     # Initialize KNN classifier
     classifier = KNeighborsClassifier(n_neighbors=n_neighbors)
-    
+  
     # Perform cross-validation
     cv_scores = cross_val_score(classifier, X_train, y_train, cv=cv_folds, scoring='accuracy')
     mean_cv_score = np.mean(cv_scores)
-    
+  
     if verbose:
         print(f"Cross-validation scores ({cv_folds} folds): {cv_scores}")
         print(f"Average CV accuracy: {mean_cv_score:.2f}")
-    
+  
     # Train KNN on full training set
     classifier.fit(X_train, y_train)
-    
+  
     return classifier, cv_scores, mean_cv_score
 ```
 
 ## ⚙️ Why Use Cross-Validation?
+
 ![1760857030671](image/knn_project_report/1760857030671.png)
 
 **Cross-validation** is a method to **evaluate model performance more reliably**.
@@ -438,11 +431,9 @@ Instead of using a single train-test split:
 
 ---
 
-
 ```python
 model = train_knn(X_train, y_train)
 ```
-
 
 ### 💬 Example:
 
@@ -478,7 +469,7 @@ plot_cv_folds(cv_scores, title="KNN 5-Fold Cross-Validation")
 
 ![1760857181152](image/knn_project_report/1760857181152.png)
 
-## cross validation :interpretation 
+## cross validation :interpretation
 
 | Fold | Accuracy |
 | ---- | -------- |
@@ -524,15 +515,11 @@ plot_cv_folds(cv_scores, title="KNN 5-Fold Cross-Validation")
 
 > The KNN model achieves a solid average accuracy of 90% with low variability across folds, demonstrating good generalization while highlighting that a few samples in overlapping feature regions may be misclassified.
 
-
-
 ## 2.  evaluate accuracy and confusion matrix.
 
 We test our model on unseen data and calculate performance metrics.
 
-
 ![1760812789527](../image/knn_project/1760812789527.png)
-
 
 ```python
 acc, cm = evaluate_model(model, X_test, y_test)
@@ -557,8 +544,8 @@ From your documentation:
  [ 3 29]]
 ```
 
-| Term                    | Meaning                        | Count |
-| ----------------------- | ------------------------------ | ----- |
+| Term                          | Meaning                        | Count |
+| ----------------------------- | ------------------------------ | ----- |
 | **TN (True Negative)**  | Correctly predicted non-buyers | 64    |
 | **FP (False Positive)** | Incorrectly predicted buyers   | 4     |
 | **FN (False Negative)** | Missed actual buyers           | 3     |
