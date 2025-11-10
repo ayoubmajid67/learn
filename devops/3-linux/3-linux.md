@@ -465,3 +465,11 @@ grep [options] pattern [file...]
 
 - search for all 'aws' keyword in the current dir : 
 ![1762170588748](image/3-linux/1762170588748.png)
+
+* `wc <fileName>` : count the number of (lines ,  
+                    words , characters) in the file 
+
+* `diff <fileName> <fileName>` : check the difference between two files 
+
+# Text editors in Linux : 
+
