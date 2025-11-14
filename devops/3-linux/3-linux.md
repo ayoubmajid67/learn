@@ -1,140 +1,57 @@
 # Introduction to Linux
 Linux is a powerful and versatile open-source operating system kernel. It serves as the foundation for a wide variety of operating systems, known as Linux distributions (or distros), such as Ubuntu, Fedora, and Debian. Originally created by Linus Torvalds in 1991, Linux has grown through the contributions of a massive global community. It is renowned for its stability, security, and flexibility, making it a popular choice for everything from web servers and supercomputers to desktops and mobile devices.
+## SED (Stream editor)
+A short, practical SED reference. Use sed when you want quick, scriptable edits without opening an editor.
 
-### what's an operating system?
-An operating system (OS) is a software that manages computer hardware and software resources. It acts as an intermediary between the user and the computer hardware, providing a user interface and services to run applications and manage data. Operating systems can be categorized into different types based on their architecture, functionality, and use cases. Some common types of operating systems include:
-- **Windows**: Developed by Microsoft, Windows is a popular operating system for desktops and laptops. It offers a graphical user interface (GUI) and supports a wide range of applications.
-    - support user based os 
-    -  paid 
-    - less security feature compare to linux 
-    - windows is more preferred for personal usage 
+Basic form:
 
-- **macOS**: Developed by Apple, macOS is a proprietary operating system for Apple's Macintosh computers. It is known for its sleek design, ease of use, and integration with other Apple products.
-- **Linux**: An open-source operating system kernel, Linux serves as the foundation for various Linux distributions. It is known for its stability, security, and flexibility, making it popular for servers, supercomputers, and embedded systems.
-- **Android**: Developed by Google, Android is a mobile operating system based on the Linux kernel. It is widely used on smartphones and tablets, offering a customizable user interface and access to a vast ecosystem of applications.
-- **iOS**: Developed by Apple, iOS is a mobile operating system for Apple's iPhone and iPad devices. It is known for its user-friendly interface, seamless integration with other Apple products, and robust security features.
+sed [options] 'command' file
 
-### Linux Distributions
-Linux distributions, also known as distros, are different versions of the Linux operating system that come with a range of pre-installed software and tools. Some popular Linux distributions include: 
-- **Ubuntu**: A popular and user-friendly Linux distribution based on Debian. It is widely used for desktops and servers.
-- **Fedora**: A community-driven Linux distribution sponsored by Red Hat. It is known for its cutting-edge features and rapid updates.
-- **Debian**: A stable and versatile Linux distribution that is widely used for servers and desktops.  and others ... 
+Key options:
+- `-n`  : suppress automatic printing (use `p` to print matching lines)
+- `-i`  : edit file in-place (use `-i.bak` to keep a backup)
+- `-e`  : add multiple commands
+- `-f`  : read commands from a file
+- `-E`  : use extended regular expressions (portable on macOS/BSD)
 
+Simple examples:
 
-### **GUI vs CLI**
-A graphical user interface (GUI) is a user interface that allows users to interact with electronic devices through graphical icons and visual indicators such as menus, windows, and buttons. It provides a visual representation of the underlying software and hardware, making it easier for users to navigate and perform tasks.
+- Replace all occurrences (show output):
 
-# what we will learn in linux : 
-- file base operations 
-- text editors 
-- text filters 
-- users management 
-- file permission 
-- file ownership
-= archives
-- networking
-- sudo files 
-- sshd_config 
-- package managers 
-- static website hosting (httpd)
-- linux architecture
-- shell scripting 
+```bash
+sed 's/AZURE/AWS/g' file.txt
+```
 
-## Steps : 
-- create an account on aws (free trial)
-- login with your aws account 
-- aws ec2 service to create a linux virtual machine 
-- connect to your linux virtual machine  using  : 
-MobaXterm is a comprehensive remote access tool for Windows that is frequently used to connect to Amazon Web Services (AWS) EC2 instances. It provides a robust SSH client, alongside other functionalities like an X11 server, SFTP client, and various network tools, simplifying remote system management and file transfers.
-![1761680614318](image/3-linux/1761680614318.png)
+- Replace in-place and keep a backup:
 
-## Steps application : 
+```bash
+sed -i.bak 's/AZURE/AWS/g' file.txt
+```
 
-1. search for the ec2 after you created your account in aws : 
+- Delete lines that contain TODO:
 
- -- added the ec2 to the favorites : 
- ![1761681399357](image/3-linux/1761681399357.png)
+```bash
+sed '/TODO/d' file.txt
+```
 
- -- access the ec2 : 
-![1761681423043](image/3-linux/1761681423043.png)
+- Print only lines that match ERROR:
 
--- create a new ec2 instance : 
-![1761681500005](image/3-linux/1761681500005.png)
+```bash
+sed -n '/ERROR/p' logfile.txt
+```
 
----
+- Use alternate delimiter when pattern has `/`:
 
-## 🧩 **Overview of EC2 Instance Creation**
+```bash
+sed 's|/usr/bin|/opt/bin|g' file.txt
+```
 
-When you create an EC2 instance (a virtual server) on AWS, you configure several attributes that define:
+Quick safety tips:
+- Test without `-i` first to preview changes.
+- Use `-i.bak` or `-i ''` (macOS) to avoid accidental data loss.
+- For complex edits prefer a script file (`-f`) or use `awk`/Python when logic exceeds sed's simplicity.
 
-* **What** OS and software it runs (AMI)
-* **How powerful** it is (instance type)
-* **How you access** it (key pair & network)
-* **How secure** it is (security group)
-* **How it stores data** (storage volumes)
-
-Let’s detail each section.
-
----
-
-## 1️⃣ **Name and Tags**
-
-### ➤ Name
-
-* **Example:** `majjid`
-* **Purpose:** A human-readable identifier for your instance.
-* **Impact:** Used in the AWS console to easily identify your instance.
-* **Best practice:** Use clear, structured naming (e.g., `project-env-role`: `erp-prod-api`).
-
-### ➤ Tags
-
-* **Purpose:** Key-value pairs that organize and categorize AWS resources.
-* **Example:**
-
-  * Key: `Environment` | Value: `Production`
-  * Key: `Owner` | Value: `Ayoub Majjid`
-* **Best practice:** Always tag for cost tracking, automation, and organization.
-
----
-
-## 2️⃣ **Application and OS Images (AMI)**
-
-### ➤ AMI (Amazon Machine Image)
-
-* **What it is:** A pre-configured image that includes:
-
-  * Operating system (e.g., Amazon Linux, Ubuntu, Windows)
-  * Optional software (e.g., Nginx, MySQL)
-* **Example:**
-  `Amazon Linux 2023 kernel-6.1 AMI`
-  AMI ID: `ami-0aa78f446b4499266`
-* **Architecture:**
-
-  * `x86` for Intel/AMD
-  * `Arm` for Graviton processors (cheaper, more efficient)
-* **Boot mode:** `uefi-preferred` (modern BIOS standard)
-* **Root device type:** `EBS` → Uses Elastic Block Store for persistent storage.
-* **Username:** Usually `ec2-user` or `ubuntu` (used for SSH login).
-* **Best practice:** Choose AMIs from verified providers (AWS or trusted vendors).
-
----
-
-## 3️⃣ **Instance Type**
-
-### ➤ Example: `t3.micro`
-
-* **Defines the hardware resources**:
-
-  * vCPU: Virtual CPUs (2 here)
-  * Memory: 1 GiB RAM
-  * Family: `t3` = burstable general-purpose instances
-* **Categories:**
-
-  * `t`, `m`: general-purpose
-  * `c`: compute-optimized
-  * `r`: memory-optimized
-  * `p`, `g`: GPU-based (for AI/ML)
-* **Free tier eligible:** t2.micro / t3.micro for 750 hours/month.
+That's a compact set to get started — tell me if you want a printable one-line cheat-sheet or 3 short exercises with solutions.
 * **Pricing:** Pay per hour (on-demand) or reserve for cheaper rates.
 * **Best practice:** Start with `t3.micro` for testing, scale up later.
 
@@ -471,5 +388,235 @@ grep [options] pattern [file...]
 
 * `diff <fileName> <fileName>` : check the difference between two files 
 
-# Text editors in Linux : 
 
+# Text editors in Linux : 
+## Text editors in Linux
+
+Text editors are a core skill in Linux. Whether you're editing config files on a server or writing scripts, knowing a small set of editors and basic commands will make you productive quickly. Below are the most common editors and essential commands to get started.
+
+### Nano (beginner-friendly)
+- Start: `nano <file>`
+- Save: Ctrl+O (then Enter)
+- Exit: Ctrl+X
+- Cut line: Ctrl+K, Paste: Ctrl+U
+- Search: Ctrl+W
+
+Why use it: Nano is simple, installed on most distros, and great for quick edits on remote servers.
+
+### Vim (powerful, modal)
+it's a default editor in linux machines 
+- Start: `vim <file>`
+- Modes: `i` (insert), `Esc` (return to normal), `:` (command-line)
+- Save and quit: `:wq` or `:x`; quit without saving: `:q!`
+- Navigation (normal mode): `h` `j` `k` `l` (left/down/up/right)
+- Common edits: `dd` (delete line), `yy` (yank/copy line), `p` (paste), `u` (undo)
+- Search: `/pattern`  — replace: `:%s/old/new/g`
+
+Why use it: Vim is ubiquitous, extremely fast once learned, and available on virtually every Unix system.
+
+### Emacs (extensible)
+- Save: `C-x C-s` (Ctrl+x then Ctrl+s)
+- Exit: `C-x C-c`
+- Emacs has powerful extensibility via Lisp and many built-in tools (shell, project management, REPLs).
+
+Why use it: Emacs is ideal if you want an all-in-one environment and deep customization.
+
+### GUI editors
+- `gedit`, `kate`, `mousepad` — lightweight graphical editors for desktops
+- `Visual Studio Code` (`code`) — full-featured editor with extensions (install separately)
+
+When to use: Use GUI editors for local development and when you need a richer UI. Use terminal editors when working on headless servers.
+
+
+## SED Simplified Guide
+
+**What is SED?**
+A command-line text editor that automatically transforms text - perfect for find/replace, filtering, and batch edits without opening files.
+
+**Basic Command:**
+```bash
+sed 's/find/replace/[flags]' file.txt
+```
+### Flags : 
+- `/i` : ignore case 
+- `/g` : The /g flag means "global" - it tells sed to replace ALL occurrences on each line, not just the first one.
+
+
+
+**Most Useful Examples:**
+
+1. **Simple replace** (view changes):
+   ```bash
+   sed 's/old/new/g' file.txt
+   ```
+
+2. **Actually edit the file:**
+   ```bash
+   sed -i 's/old/new/g' file.txt        # Linux
+   sed -i '' 's/old/new/g' file.txt     # Mac
+   ```
+3. **Delete lines**
+ ```bash
+  sed -i '$d' file.txt
+  # delete the first line
+  sed -i '1d' file.txt
+
+  # delete the second line : 
+  sed -i '2d' file.txt
+
+  # delete  a range of lines from 1 to 6 : 
+  sed -i '1,6d' file.txt
+
+  # delete from the third line : 
+  sed -i '3,$d' file.txt
+
+
+
+ ```
+
+3. **Delete lines containing "error":**
+   ```bash
+   sed '/error/d' file.txt
+   ```
+
+4. **Find specific lines:**
+   ```bash
+   sed -n '/important/p' file.txt
+   ```
+
+5. **Multiple changes at once:**
+   ```bash
+   sed -e 's/foo/bar/' -e '/^#/d' file.txt
+   ```
+
+6. ## Insert Content at Specific Lines with `sed`
+
+### 1. **Insert BEFORE a specific line number:**
+```bash
+sed '3i\This is inserted before line 3' file.txt
+```
+
+### 2. **Insert AFTER a specific line number:**
+```bash
+sed '3a\This is inserted after line 3' file.txt
+```
+
+### 3. **Insert at the BEGINNING (line 1):**
+```bash
+sed '1i\This is the first line now' file.txt
+```
+
+### 4. **Insert at the END:**
+```bash
+sed '$a\This is the last line' file.txt
+```
+
+## Examples:
+
+**Sample file (file.txt):**
+```
+Line 1: Apple
+Line 2: Banana
+Line 3: Orange
+Line 4: Grape
+```
+
+### Insert before line 3:
+```bash
+sed '3i\INSERTED BEFORE LINE 3' file.txt
+```
+**Output:**
+```
+Line 1: Apple
+Line 2: Banana
+INSERTED BEFORE LINE 3
+Line 3: Orange
+Line 4: Grape
+```
+
+### Insert after line 2:
+```bash
+sed '2a\INSERTED AFTER LINE 2' file.txt
+```
+**Output:**
+```
+Line 1: Apple
+Line 2: Banana
+INSERTED AFTER LINE 2
+Line 3: Orange
+Line 4: Grape
+```
+
+### Insert at beginning:
+```bash
+sed '1i\=== FILE STARTS ===' file.txt
+```
+**Output:**
+```
+=== FILE STARTS ===
+Line 1: Apple
+Line 2: Banana
+Line 3: Orange
+Line 4: Grape
+```
+
+### Insert at end:
+```bash
+sed '$a\=== FILE ENDS ===' file.txt
+```
+**Output:**
+```
+Line 1: Apple
+Line 2: Banana
+Line 3: Orange
+Line 4: Grape
+=== FILE ENDS ===
+```
+
+## Insert Multiple Lines:
+
+**Using `\` for line continuation:**
+```bash
+sed '2i\First new line\
+Second new line\
+Third new line' file.txt
+```
+
+**Or use multiple `-e` options:**
+```bash
+sed -e '1i\Header Line 1' -e '1i\Header Line 2' file.txt
+```
+
+## Insert Based on Pattern:
+
+**Insert before lines containing "Orange":**
+```bash
+sed '/Orange/i\ABOVE ORANGE' file.txt
+```
+
+**Insert after lines containing "Banana":**
+```bash
+sed '/Banana/a\BELOW BANANA' file.txt
+```
+
+## Edit File In-Place:
+
+**Linux:**
+```bash
+sed -i '1i\# New Header' file.txt
+```
+
+**macOS:**
+```bash
+sed -i '' '1i\# New Header' file.txt
+```
+**Pro Tips:**
+- Always test without `-i` first to preview changes
+- Use `|` instead of `/` if your text contains slashes: `s|/usr/bin|/opt/bin|`
+- On Mac, you MUST use `-i ''` for in-place edits
+
+**When to use SED:** Quick text transformations, batch replacements, simple filtering.
+
+**When NOT to use:** Complex logic - switch to awk or Python instead.
+
+Think of SED as "search and replace on steroids" for the command line!
